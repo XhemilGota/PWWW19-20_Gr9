@@ -1,3 +1,8 @@
+#homepage
+{
+    color:#40AED7;
+}
+
 #firstSection img
 {
     float: left;
@@ -36,4 +41,51 @@
 {
     font-size: 30px;
     font-weight: 500;
+}
+
+#secondSection div
+{
+    text-align: center;
+    margin-top:50px 
+    
+}
+
+#secondSection div h1
+{
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+#secondSection div em
+{
+    font-size: 18px;
+}
+
+
+.photos
+{
+    margin-top: 45px;
+}
+
+.photos img
+{
+    margin-right: 25px;
+    margin-bottom: 30px;
+}
+
+.photos img.lastphoto
+{
+    margin-right: 0;
+}
+
+.viewfullgallery
+{
+    width: 332px;
+    height: 45px;
+    font-size: 22px;
+    padding-left: 20px;
+    text-align: left;
+    margin-left:314px;
+    margin-bottom: 40px;
+    margin-top: 10px;
 }
