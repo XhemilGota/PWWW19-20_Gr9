@@ -3,6 +3,8 @@
     color:#40AED7;
 }
 
+/*CSS Design of the first section*/
+
 #firstSection img
 {
     float: left;
@@ -42,6 +44,8 @@
     font-size: 30px;
     font-weight: 500;
 }
+
+/*=================================================*/
 
 #secondSection div
 {
