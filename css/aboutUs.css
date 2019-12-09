@@ -1,0 +1,61 @@
+.entries
+{
+	margin: 50px 0px;
+}
+
+.entries img
+{
+	float: left;
+}
+
+.entries h2
+{
+	font-size: 20px;
+	margin-left: 150px;
+	margin-bottom: 15px; 
+	color: #555555;
+}
+
+.entries h2 span
+{
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px 5px;
+}
+
+.entries ul
+{
+	margin-left: 150px;
+	list-style: none;
+	margin-bottom: 20px;
+}
+
+.entries ul li 
+{
+	margin: 10px 0px;
+}
+
+.entries ul img
+{
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px; 
+}
+
+.entries .description
+{
+	margin-left: 150px;
+	line-height: 25px;
+	height: 25px;	
+	overflow: hidden;
+	transition: height 1s;
+	color: #777777;
+}
+
+.entries .description:hover
+{
+	height: 95px;
+}
+
+

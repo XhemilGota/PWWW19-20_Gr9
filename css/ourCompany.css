@@ -1,0 +1,18 @@
+section h3
+{
+	font-size: 25px;
+	color: black;
+	padding: 25px 5px;
+}
+
+section h4
+{
+	font-size: 20px;
+	padding: 20px 5px 5px 5px;
+}
+
+section p
+{
+	line-height: 30px;
+	padding: 20px 5px;
+}

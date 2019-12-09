@@ -69,6 +69,26 @@ input[type=button]
     
 }
 
+#pageName 
+{
+    background-color: #EDEDED;
+    height: 120px;
+    border-radius: 10px;
+}
+
+#pageName h1
+{
+    font-size: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 25px;
+}
+
+#pageName h1::first-letter
+{
+    font-size: 30px;
+}
+
 .title
 {
    margin-top: -6px;
