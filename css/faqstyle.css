@@ -1,0 +1,55 @@
+
+section .caption
+{
+    font-size: 17px;
+    color:#666666;
+}
+
+article
+{
+    float:left;
+    margin: 30px 0px 0px 0px;  
+}
+
+article.left, article.right
+{
+    width:400px;
+    height:200px;
+    box-sizing: border-box;
+    float: left;
+    overflow: auto;
+    margin-left: 20px;
+ }
+
+.questionmark
+{
+    background: #40ADD6;
+    border-radius: 70%;
+    width: 20px;
+    height: 20px;
+    color: white;
+    text-align: center
+}
+
+article.left
+{
+    margin-right: 80px;
+}
+
+
+article .question
+{
+    font-weight: bold;
+    font-size: 21px;
+    margin-bottom: 20px;
+    text-align: justify;
+    
+}
+
+article .answer
+{
+    color:#666666;
+    font-size:14px;
+    text-align: justify;
+}
+
