@@ -1,0 +1,74 @@
+#pageName
+{
+    background-color: #EDEDED;
+    height: 50px;
+    border-radius: 10px;
+    padding: 20px 0 0 20px;
+}
+
+.form-wrapper
+{
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.form-wrapper input, textarea
+{
+    height: 40px;
+    width: 620px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+}
+
+.form-wrapper textarea
+{
+    height: 50px;
+    padding-top: 15px;
+}
+
+.form-wrapper .name
+{
+    width: 295px;
+    margin-right: 10px;
+}
+
+.form-wrapper input[type="submit"]
+{
+    font-weight: bold;
+    width:637px;
+    background: #40aed7;
+}
+
+#logo-photo
+{
+    vertical-align: top;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+.contact-us
+{
+    margin: 50px 0 0 10px;
+    vertical-align: top;
+    display: inline-block;
+
+}
+
+.contact-us h4
+{
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-us a
+{
+    color: #40aed7;
+}
+
+#phone
+{
+    margin-bottom: 10px;
+}

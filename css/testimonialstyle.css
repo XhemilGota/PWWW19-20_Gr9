@@ -1,0 +1,70 @@
+#pageName
+{
+    background-color: #EDEDED;
+    height: 50px;
+    border-radius: 10px;
+    padding: 20px 0 0 20px;
+}
+
+article
+{
+    float:left;
+    margin: 30px 0px 0px 0px;
+}
+
+article.left, article.right
+{
+    width: 400px;
+    height:200px;
+    box-sizing: border-box;
+    float: left;
+    overflow: auto;
+    margin-left: 20px;
+}
+
+.quote-mark
+{
+    background: #40ADD6;
+    border-radius: 70%;
+    width: 20px;
+    height: 20px;
+    color: white;
+    font-size: 27px;
+    text-align: center;
+    font-weight: bold;
+}
+
+article.left
+{
+    margin-right: 80px;
+}
+
+article .testimonial-title
+{
+    font-weight: bold;
+    font-size: 21px;
+    margin-bottom: 20px;
+    text-align: justify;
+    
+}
+
+article .testimonial
+{
+    color:#666666;
+    font-size:14px;
+    text-align: justify;
+}
+
+.client
+{
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.subtitle-caption
+{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #999999;
+}
