@@ -127,9 +127,14 @@ nav ul li
 {
    list-style: none;
    display: inline-block;
-   text-align: right;
+   text-align: left;
    padding-left: 17px;
-   
+   position: relative;
+}
+
+nav ul li:hover ul
+{
+    display: block;
 }
 
 nav ul li a
@@ -143,6 +148,32 @@ nav ul li a:active
 {
     color:#40AED7;
     text-transform: uppercase;
+}
+
+nav ul li a:hover
+{
+    color:#40AED7;
+}
+
+nav ul li ul 
+{
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 85px;
+    padding-top: 5px;
+    margin: 0 5px 0 5px;
+}
+
+nav ul li ul li
+{
+    text-align: center;
+    padding: 5px 5px;
+}
+
+nav ul li ul li a
+{
+    font-size: 10px;
 }
 
 section
