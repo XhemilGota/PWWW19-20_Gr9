@@ -1,0 +1,64 @@
+
+#pageName
+{
+    margin-bottom:50px;
+}
+
+#sell section h2
+{
+    margin-bottom: 30px;
+    color: #40ADD6;
+}
+form section
+{
+    margin-bottom: 50px;
+    
+}
+
+#sell td input ,select
+{
+    margin-bottom: 10px;
+    border:1px solid #A9A9A9;
+    height: 30px;
+  
+}
+
+#sell input, select, textarea
+{
+    border-radius:7px;
+    background-color: #E9E9E9;
+    padding-left:10px;
+    box-sizing: border-box;
+}
+
+#sell #submit
+{
+    background-color: #40ADD6;
+    color:white;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 7px;
+    width:150px;
+    height:36px;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+#sell input
+{
+    width: 400px;
+}
+
+
+#sell .halflength
+{
+    width:190px;
+    margin-right: 18px;
+    
+}
+
+textarea
+{
+    width:400px;
+}

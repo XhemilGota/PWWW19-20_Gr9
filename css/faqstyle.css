@@ -1,8 +1,14 @@
 
-section .caption
+section .caption, .caption a
 {
     font-size: 17px;
     color:#666666;
+}
+
+section .caption a:hover
+{
+    font-size:18px;
+    color:#111111;
 }
 
 article

@@ -16,6 +16,7 @@ body
     width: 1000px;
     margin: auto;
     overflow-x: hidden;
+    margin-bottom: 40px;
     
 }
 
@@ -74,6 +75,8 @@ input[type=button]
     background-color: #EDEDED;
     height: 120px;
     border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #pageName h1
