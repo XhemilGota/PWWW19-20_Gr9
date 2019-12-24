@@ -7,7 +7,6 @@
 
 body
 {
-    /*width: 1000px;*/
     border-top: 5px #40AED7 solid;
 }
 
@@ -163,7 +162,7 @@ nav ul li ul
     display: none;
     position: absolute;
     background-color: white;
-    width: 85px;
+    width: 115px;
     padding-top: 5px;
     margin: 0 5px 0 5px;
 }
@@ -176,7 +175,7 @@ nav ul li ul li
 
 nav ul li ul li a
 {
-    font-size: 10px;
+    font-size: 13px;
 }
 
 section
