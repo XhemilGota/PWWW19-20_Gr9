@@ -24,7 +24,7 @@
                 </div>
                 
                 <div class="title">
-                    <h1>GALLERIFIC</h1>
+                    <h1>TRUESTATE</h1>
                     <nav>
                         <ul>
                             <li><a href="index.html" id="homepage">HOMEPAGE</a></li>
@@ -41,21 +41,62 @@
                             <li><a href="Contact.html">CONTACT</a></li>
                         </ul>
                     </nav>
-                    <p class="caption">Free PSD Website Template</p>
+                    <p class="caption">Do you wanna buy a home? We make it possible.</p>
                 </div>
             </header>
 
 	               
                     <section id="firstSection">
-                        <img src="img/homepage/715.png" width="715" height="400">
+                         <section id="slideSection">
+                            <a id="slideLink" href="https://facebook.com"><img  width="715" height="400" id="slide"></a>
+                         </section>
 
-                        <div>
-                            <h1>A LARGE TITLE</h1>
-                            <p>Vestassapede et donec ut est libe ros sus et eget sed eget quisq ueta habitur augue</p>
+                        <div id="sideTitle">
+                            <h1 id="title">$500,000</h1>
+                            
+                            <p id="slideCaption"></p>
+                            
+                            
+                            <input type="button" onclick="window.location='sell.html';" value="SEE MORE &raquo;">
 
-                            <input type="button" value="READ MORE &raquo;">
+                            
                         </div>
                     </section>
+                    <script>
+                        
+                            var images = ["img/homes/main1.jpg","img/homes/main2.jpg", "img/homes/main3.png", "img/homes/main4.png"];
+                            var titles = ["CHARMING COTTAGE", "BACKYARD PARADISE", "STUNNING CLASSIC" , "SPARKLING POOL"];
+                            var quotes = ["“The house you looked at today and wanted to think about until tomorrow may be the same house someone looked at yesterday and will buy today.”", "“Winter is the time for comfort, for good food and warmth, for the touch of a friendly hand and for a talk beside the fire: it is the time for home.”", "“Chase your dreams but always know the road that will lead you home again.”", "“Owning a home is a keystone of wealth… both financial affluence and emotional security.”"];
+                            var step=0;
+                            var whichAnimation=0;
+                            
+                            function slideit(){
+                            
+                              if(whichAnimation>1)
+                              {
+                                  whichAnimation=0;
+                              }
+                              document.getElementById("slide").src=images[step];
+                              document.getElementById("slide").style.animation="ani"+whichAnimation+" 5s linear";
+                              document.getElementById("slideCaption").style.animation="textani"+whichAnimation+" 5s linear";
+                              document.getElementById("slideLink").href="https://youtube.com";
+                              document.getElementById("slideCaption").innerHTML=quotes[step];
+                              whichAnimation++;
+                              
+                              document.getElementById("title").innerHTML=titles[step];
+                              
+                              if (step<images.length-1)
+                              {
+                                step++;
+                              }
+                              else 
+                              {
+                                step=0;
+                              }
+                              setTimeout(slideit,5000);
+                            }
+                            slideit();
+                        </script>
 
                     <section id="secondSection">
                         <div>

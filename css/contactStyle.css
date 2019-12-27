@@ -2,7 +2,7 @@
 {
     display: inline-block;
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 
 .form-wrapper input, textarea
@@ -63,12 +63,4 @@
 #phone
 {
     margin-bottom: 10px;
-}
-
-.housing-logos
-{
-    margin-bottom: 10px;
-    position: relative;
-    left: 690px;
-    padding-left: 40px;
 }
