@@ -9,6 +9,7 @@
 
         <link href="css/generalstyle.css" rel="stylesheet">
         <link href="css/homepagestyle.css" rel="stylesheet">
+        <script src="js/homepage.js"></script>
         
         <title>PWWW19-20_Gr9</title>
 
@@ -108,7 +109,7 @@
                         </div>
 
                         <div class="photos" style="margin-top: 50px">
-                            <div class="imgBox">
+                            <div class="imgBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210">
 
                                 <div class="imgInfo">
@@ -121,7 +122,7 @@
                                 </div>
                             </div>
                             
-                            <div class="imgBox">
+                            <div class="imgBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210">
                                 <div class="imgInfo">
                                     <p class="price">$40,500,000</p>
@@ -133,7 +134,7 @@
                                 </div>
                             </div>
                             
-                            <div class="imgBox lastBox">
+                            <div class="imgBox lastBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210" class="lastphoto">
                                 <div class="imgInfo">
                                     <p class="price">$40,500,000</p>
@@ -145,7 +146,7 @@
                                 </div>
                             </div>
                             
-                            <div class="imgBox">
+                            <div class="imgBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210">
                                 <div class="imgInfo">
                                     <p class="price">$40,500,000</p>
@@ -157,7 +158,7 @@
                                 </div>
                             </div>
                             
-                            <div class="imgBox">
+                            <div class="imgBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210">
                                 <div class="imgInfo">
                                     <p class="price">$40,500,000</p>
@@ -169,7 +170,7 @@
                                 </div>
                             </div>
                             
-                            <div class="imgBox lastBox">
+                            <div class="imgBox lastBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210" class="lastphoto">
                                 <div class="imgInfo">
                                     <p class="price">$40,500,000</p>
@@ -181,7 +182,7 @@
                                 </div>
                             </div>
                             
-                            <div class="imgBox">
+                            <div class="imgBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210">
                                 <div class="imgInfo">
                                     <p class="price">$40,500,000</p>
@@ -193,7 +194,7 @@
                                 </div>
                             </div>
                             
-                            <div class="imgBox">
+                            <div class="imgBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210">
                                 <div class="imgInfo">
                                     <p class="price">$40,500,000</p>
@@ -205,7 +206,7 @@
                                 </div>
                             </div>
                             
-                            <div class="imgBox lastBox">
+                            <div class="imgBox lastBox" onclick="getIndex(this); blurOthers(); slide();">
                                 <img src="img/homepage/300.png" width="300" height="210" class="lastphoto">
                                 <div class="imgInfo">
                                     <p class="price">$40,500,000</p>
@@ -223,6 +224,44 @@
         
         </div>
     </div>
+
+             <div id="slideshow">
+
+                        <div>
+                            <p id="pageNum">5/8</p>
+                        </div>
+
+                <div id="slideshow2">
+                    <img src="" id="slideshowImg">
+
+                    <div class="imgInfo">
+                        
+                        <p>950 Lombard St | $40,500,000 | 6 beds 6 baths</p>
+                        
+                    </div>
+
+                    <div class="prev" onclick="plusSlides(-1)"><p>&#10094;</p></div>
+                    <div class="next" onclick="plusSlides(1)"><p>&#10095;</p></div>
+                    <a class="closeBtn" onclick="document.getElementById('slideshow').style.display = 'none'; unBlurOthers();">&times;</a>
+                    <div id="descriptionBtn" onclick="descriptionExpand();"> &#10094; </div>
+                </div>
+
+                 <div id="description">
+                        
+                        <p class="imp" id="street"></p>
+                        <p class="imp" id="price">$</p>
+                        <p id="city"></p>
+                        <p id="bedroom"></p>
+                        <p id="bathroom"></p>
+                        <p id="sqrt"></p>
+
+                        <h2>Description</h2>
+
+                        <p id="descriptionText"></p>
+                        
+                    </div>
+            </div>
+
 
         <footer>
             <!--Footer wrapper, which was used to put the footer part side to side on the browser page-->
