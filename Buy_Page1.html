@@ -46,166 +46,456 @@
         <div id="pageName">
             <h1>Buy</h1>
         </div>
-
+        <section id="filterData">
+            <div>
+                <select onchange="filterData()" id="filterByCity">
+                <option>City</option>
+                <option>New York</option>
+                <option>San Francisco</option>
+                <option>Los Angeles</option>
+                <option>Chicago</option>
+                <option>Cleveland</option>
+                <option>Miami</option>
+                <option>Denver</option>
+            </select>
+            </div>
+            
+            <div>
+            <select onchange="filterData()" id="filterByMinPrice">
+                <option>Min Price</option>
+                <option>$10,000</option>
+                <option>$20,000</option>
+                <option>$30,000</option>
+                <option>$40,000</option>
+                <option>$50,000</option>
+                <option>$100,000</option>
+                <option>$150,000</option>
+                <option>$200,000</option>
+                <option>$250,000</option>
+                <option>$500,000</option>
+                <option>$1,000,000</option>
+                <option>$2,000,000</option>
+            </select> 
+            <select onchange="filterData()" id="filterByMaxPrice">
+                <option>Max Price</option>
+                <option>$10,000</option>
+                <option>$20,000</option>
+                <option>$30,000</option>
+                <option>$40,000</option>
+                <option>$50,000</option>
+                <option>$100,000</option>
+                <option>$150,000</option>
+                <option>$200,000</option>
+                <option>$250,000</option>
+                <option>$500,000</option>
+                <option>$1,000,000</option>
+                <option>$2,000,000</option>
+            </select>
+            </div>
+            
+            <div>
+            <select onchange="filterData()" id="filterByMinSqrfe">
+                <option>Min Square Feet</option>
+                <option>50</option>
+                <option>100</option>
+                <option>150</option>
+                <option>200</option>
+                <option>300</option>
+                <option>400</option>
+                <option>500</option>
+                <option>1000</option>
+                <option>2000</option>
+                <option>3000</option>
+                <option>4000</option>
+                <option>5000+</option>
+            </select> 
+            <select onchange="filterData()" id="filterByMaxSqrfe">
+                <option>Max Square Feet</option>
+                <option>50</option>
+                <option>100</option>
+                <option>150</option>
+                <option>200</option>
+                <option>300</option>
+                <option>400</option>
+                <option>500</option>
+                <option>1000</option>
+                <option>2000</option>
+                <option>3000</option>
+                <option>4000</option>
+                <option>5000+</option>
+            </select>
+            </div>
+            
+            <div>
+            <select onchange="filterData()" id="filterByBedrooms">
+                <option>No. of Bedrooms</option>
+                <option>1+</option>
+                <option>2+</option>
+                <option>3+</option>
+                <option>4+</option>
+                <option>5+</option>
+                <option>10+</option>
+            </select>
+            </div>
+        </section>
+        
+        <p id="write"></p>
+        
         <section id="photoSection">
-            <div class="photos" style="margin-top: 50px">
+            <div class="photos" style="margin-top: 40px; ">
                 <div class="imgBox">
                     <img src="img/homepage/300.png" width="300" height="210">
 
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">Denver</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
                             <img src="img/homepage/bathLogo.JPG"> 3ba
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox">
                     <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
-                        <p class="price">$40,500,000</p>
+                        <p class="city" style="display:none;">Denver</p>
+                        <p class="price">$42,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox lastBox">
-                    <img src="img/homepage/300.png" width="300" height="210" class="lastphoto">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">Denver</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox">
                     <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox">
                     <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox lastBox">
-                    <img src="img/homepage/300.png" width="300" height="210" class="lastphoto">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">Miami</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox">
                     <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">Miami</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox">
                     <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">Denver</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox lastBox">
-                    <img src="img/homepage/300.png" width="300" height="210" class="lastphoto">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox">
                     <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">Denver</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox">
                     <img src="img/homepage/300.png" width="300" height="210">
+
                     <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
-
                 <div class="imgBox lastBox">
-                    <img src="img/homepage/300.png" width="300" height="210" class="lastphoto">
-                    <div class="imgInfo">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo ">
+                        <p class="city" style="display:none;">New York</p>
                         <p class="price">$40,500,000</p>
                         <p>
-                            <img src="img/homepage/bedLogo.JPG"> 6bd
-                            <img src="img/homepage/bathLogo.JPG"> 6bd
-                            <img src="img/homepage/sqrftLogo.JPG"> 5,000 sqrft
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
                         </p>
                     </div>
                 </div>
             </div>
+            
+            
+            
+            <div class="photos" style="margin-top: 40px; display: none;">
+                <div class="imgBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">Denver</p>
+                        <p class="price">$500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">Denver</p>
+                        <p class="price">$42,500</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox lastBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">Denver</p>
+                        <p class="price">$400</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox lastBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox lastBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="imgBox lastBox">
+                    <img src="img/homepage/300.png" width="300" height="210">
+
+                    <div class="imgInfo ">
+                        <p class="city" style="display:none;">New York</p>
+                        <p class="price">$40,500,000</p>
+                        <p>
+                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
+                            <img src="img/homepage/bathLogo.JPG"> 3ba
+                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+         <script src="js/FilterData.js"></script>
+
+        
         </section>
 
         <div id="navigationWrapper">
-            <div class="buyPageNavigator" id="first">&lt;</div>
-            <div class="buyPageNavigator" id="previous">&Lt;</div>
-            <div class="buyPageNavigator">1</div>
-            <a href="Buy_Page2.html"><div class="buyPageNavigator">2</div></a>
-            <a href="Buy_Page3.html"><div class="buyPageNavigator">3</div></a>
+<!--            <div class="buyPageNavigator" id="first">&lt;</div>
+            <div class="buyPageNavigator" id="previous">&Lt;</div>-->
+            <div class="buyPageNavigator" onclick="changePage(1)">1</div>
+            <div class="buyPageNavigator" onclick="changePage(2)">2</div>
+<!--            <a href="Buy_Page3.html"><div class="buyPageNavigator">3</div></a>
             <a href="Buy_Page2.html"><div class="buyPageNavigator" id="next">&gt;</div></a>
-            <a href="Buy_Page3.html"><div class="buyPageNavigator" id="last">&Gt;</div></a>
+            <a href="Buy_Page3.html"><div class="buyPageNavigator" id="last">&Gt;</div></a>-->
         </div>
 
+        <script>
+            
+            function changePage(number)
+            {
+                var page = document.getElementsByClassName("photos");
+              
+                if(number===1)
+                {
+                    page[0].style.display="";
+                    page[1].style.display="none";
+                }
+                else
+                {
+                    page[1].style.display="";
+                    page[0].style.display="none";
+                }
+            }
+            
+         </script>
     </div>
 </div>
 
