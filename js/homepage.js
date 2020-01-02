@@ -189,3 +189,7 @@ function pageNumber()
 	document.getElementById("pageNum").innerHTML = (index + 1) + '/' + photos[index2].length;
 }
 
+function propertyIndex()
+{
+	localStorage.setItem("index", index2);
+}

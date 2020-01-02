@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta name="author" content="Behar Rexhepi, Zgjim Haziri, Xhemil Gota">
+        <meta name="description" content="Projekti ne lenden Programimi ne WWW - Grupi 9">
+        
+        <link href="css/generalstyle.css" rel="stylesheet">
+        <link href="css/sellstyle.css" rel="stylesheet">
+        <script src="js/interestedContact.js"></script>
+        <style type="text/css">
+            #sell .checkB
+{
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+}
+
+#sell input[type=radio], #sell p
+{
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    width: auto;
+    margin: 5px 10px;
+}
+        </style>
+        <title>Titulli</title>
+
+    </head>
+
+    <body>
+    <div id="body-part">
+        <!--Wrapper div used to work with this part as a whole-->
+        <div id="wrapper">
+            <header>
+                <div class="search">
+                    <input type="search" placeholder="Search Our Website..." id="searchBar">
+                    <input type="button" value="SEARCH" id="searchButton">
+                </div>
+                
+                <div class="title">
+                    <h1>TRUESTATE</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html" id="homepage">HOMEPAGE</a></li>
+                            <li><a href="Buy_Page1.html">BUY</a></li>
+                            <li><a href="Sell.html">SELL</a></li>
+                            <li><a href="#">ABOUT US &#9660;</a>
+                                <ul>
+                                    <li><a href="OurCompany.html">OUR COMPANY</a></li>
+                                    <li><a href="AboutUs.html">OUR TEAM</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="Testimonials.html">TESTIMONIALS</a></li>
+                            <li><a href="Contact.html">CONTACT</a></li>
+                        </ul>
+                    </nav>
+                    <p class="caption">Do you wanna buy a home? We make it possible.</p>
+                </div>
+            </header>
+
+             <div id="pageName">
+                <h1>Home Buyer Form</h1>
+            </div>       
+            
+            <form action="" method="post" id="sell">
+               
+                <div class="leftdiv" style="width:50%; float:left;">
+                <section>
+                    <h2>Contact Information</h2>
+                    
+                    <table>
+                        <tr>
+                            <td><input type="text" placeholder="Full name" name="Full name" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="tel" placeholder="Phone" name="Phone" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="email" placeholder="Email" name="email" required></td>
+                        </tr>
+                        
+                    </table>
+                </section>
+                
+                <section>
+                    <h2>Property Information</h2>
+                    
+                    <table>
+                        <tr>Street Address: <br>
+                            <td colspan="2"><input type="text" name="adress1" id="propertyStreet"></td>
+                        </tr>
+                        <tr>
+                            <td>City: <br>  
+                                <input type="text"  name="city" placeholder="City" id="propertyCity" required>
+                            </td>
+                        </tr>
+                        <tr>
+                                                        
+                                <td >Bedrooms:
+                                    <input type="number"  name="city" placeholder="City" id="propertyBed" class="halflength" required>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>Bathrooms:
+                                    <input type="number"  name="city" placeholder="City" id="propertyBath" class="halflength" required>
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                            <td >Square footage:
+                                    <p> <input class="halflength" type="number" id="propertySqrt" name="squarefootage"></p>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td >Price:
+                                    <p> <input class="halflength" type="text" id="propertyPrice" name="squarefootage"></p>
+                            </td>
+                             
+                               
+                        </tr>
+                      
+                    </table>
+                    
+                </section>
+                
+                <section>
+                    <h2>Your Situation</h2>
+                     <table>
+                        <tr>
+                            <td colspan="2"><input type="text"  name="profession" placeholder="Your profession" required></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text"  name="city" placeholder="City" class="halflength" required>
+                                <input type="text"  name="state" placeholder="State/Province" class="halflength">
+                            </td>
+                        </tr>
+                       
+                        
+                        <tr>
+                            <td >Married:<br>
+                                    <input type="radio" name="married" value="Yes" id="marriedYes">
+                                    <label for="marriedYes">Yes</label>
+
+                                    <input type="radio" name="married" value="No" id="marriedNo">
+                                    <label for="marriedNo">No</label><br>
+                            </td>
+                             
+                               
+                        </tr>
+                        <tr>
+                               <td > 
+                                 Down payment:
+                                <p>
+                                    <select class="halflength" name="condition">
+                                        
+                                        <option></option>
+                                        <option>5%</option>
+                                        <option>10%</option>
+                                        <option>15%</option>
+                                        <option>20%</option>
+                                        <option>other</option>
+                                        
+                            
+                                    </select>
+                                </p>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">
+                                    Please select which type of buildings are you interested in:<br><br>
+                                    <input type="checkbox" class="checkB" name="buildingType" value="house" id="house">
+                                    <label for="house"> House</label><br><br>
+                                    <input type="checkbox" class="checkB" name="buildingType" value="apartment">
+                                    <label for="apartment"> Apartment</label><br><br>
+                                    <input type="checkbox" class="checkB" name="buildingType" value="penthouse">
+                                    <label for="penthouse"> Penthouse</label><br><br>
+                                    <input type="checkbox" class="checkB" name="buildingType" value="other">
+                                    <label for="other"> Other</label><br><br><br>
+                                </td>
+                        </tr>
+                    </table>
+                    
+                </section>
+                
+                <section>
+                    <input type="submit" id="submit" value="SUBMIT">
+                </section>
+
+                </div>
+                
+                <div class="rightdiv" style="width:50%; float:right;" align="center">
+                    <section style="height:215px;">
+                        <img src="img/sell/personalInformation.jpg" style="padding-top: 60px;" >
+                    </section>
+                    <section style="height:677px;">
+                        <img src="img/sell/propertyInformation.png" style="padding-top: 180px;">
+                    </section>
+                    <section style="height:192px;">
+                        <img src="img/sell/whyAreYouSelling.png" style="padding-top: 30px;">
+                    </section>
+                </div>
+                  
+                 </form>   
+                </div>
+              </div>
+    
+            
+            
+            <footer>
+            <!--Footer wrapper, which was used to put the footer part side to side on the browser page-->
+            <div id="footer-wrapper">
+                <div id="Company-details">
+                    <h3>Company Details Here</h3>
+
+                    <p>
+                    <Address>
+                        Address Line 1<br>
+                        Address Line 2<br>
+                        Town/City<br>
+                        Postcode/Zip<br>
+                    </Address>
+                    </p>
+
+                    <p id="contact">
+                        Tel: <a href="tel:xxxx xxxx xxxxxx">xxxx xxxx xxxxxx</a><br>
+                        Email: <a href="mailto: contact@domain.com">contact@domain.com</a>
+                    </p>
+                </div>
+
+                <div id="news-events">
+                    <h3>Latest News & Events</h3>
+
+                    <h4><span>Magna phasellus</span></h4>
+
+                    <p>
+                        Vestassapede et donec ut est liberos sus et eget sed eget.<br>
+                        Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
+                        ant curabiturpis.
+                    </p>
+
+                    <h4><span>Magna phasellus</span></h4>
+
+                    <p>
+                        Vestassapede et donec ut est liberos sus et eget sed eget.<br>
+                        Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
+                        ant curabiturpis.
+                    </p>
+                </div>
+
+                <div id="up-to-date">
+                    <h3>Stay Up To Date</h3>
+
+                    <p>Subscribe To Our Newsletter</p>
+
+                    <input type="text" placeholder="Enter Your Email Here">
+                    <input type="button" value="GO">
+                    <br>
+
+                    <a href="#"><img src="img/footer/twitter.jpg" width="45" height="45"></a>
+                    <a href="#"><img src="img/footer/linkedin.png" width="45" height="45"></a>
+                    <a href="#"><img src="img/footer/facebook.png" width="45" height="45"></a>
+                    <a href="#"><img src="img/footer/rss.png" width="45" height="45"></a>
+                </div>
+
+            </div>
+
+            <div id="footer-bottom">
+
+                <div>
+                    <p id="copyright">
+                        Copyright &copy; 2013 - All Rights Reserved - Domain Name
+                    </p>
+
+                    <p id="template-origin">
+                        Template by OS Templates
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
