@@ -47,63 +47,6 @@
     font-size: 18px;
 }
 
-.photos
-{
-    margin-top: 45px;
-}
-
-.photos .imgBox
-{
-    display: inline-block;
-    margin: 0px 25px 30px 0px;
-    width: 300px;
-    height: 210px;
-    transition: box-shadow 0.3s;position: relative;
-}
-
-.photos .imgBox:hover
-{
-    box-shadow: 0 0 7px 7px #999999;
-}
-
-.photos .lastBox
-{
-    margin: 0px 0px 30px 0px;
-}
-
-.imgBox:hover > .imgInfo
-{
-    height: 75px;
-}
-
-.imgBox:hover > img
-{
-    opacity: 0.6;
-}
-
-.imgBox .imgInfo
-{
-    margin-bottom: 0;
-    overflow: hidden;
-    position: absolute;
-    width: 300px;
-    height: 0;
-    background-color: white;
-    bottom: 0px;
-    transition: height 0.5s;
-}
-
-.imgInfo img
-{
-    position: relative;
-    top: 8px;
-}
-
-.imgInfo .price
-{
-    font-size: 27px;
-}
-
 .buyPageNavigator
 {
     display: inline-block;

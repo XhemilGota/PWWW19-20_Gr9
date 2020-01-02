@@ -1,0 +1,248 @@
+.photos
+{
+    margin-top: 45px;
+}
+
+.photos .imgBox
+{
+    display: inline-block;
+    margin: 0px 25px 30px 0px;
+    width: 300px;
+    height: 210px;
+    transition: box-shadow 0.3s;position: relative;
+}
+
+.photos .imgBox:hover
+{
+    box-shadow: 0 0 7px 7px #999999; 
+}
+
+.photos .lastBox
+{
+    margin: 0px 0px 30px 0px;
+}
+
+.imgBox:hover > .imgInfo
+{
+    height: 75px;
+}
+
+.imgBox:hover > img
+{
+    opacity: 0.6;
+}
+
+.imgBox .imgInfo
+{
+    margin-bottom: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 300px;
+    height: 0;
+    background-color: white;
+    bottom: 0px;
+    transition: height 0.5s;
+}
+
+.imgInfo img
+{
+    position: relative;
+    top: 8px;
+}
+
+.imgInfo .price
+{
+    font-size: 27px;
+}
+
+#slideshow
+{
+    display: none;
+    position: absolute;
+    
+    height: 650px;
+    width: 1200px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: black;
+    border-radius: 30px;
+    z-index: 2;
+}
+
+#slideshow2 img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 650px;
+    max-width: 1120px; 
+}
+
+#slideshow2
+{
+    position: relative;
+    height: 650px;
+    background-color: black;
+    border-radius: 30px;
+}
+
+.prev
+{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    height: 100%;
+    width: 45px;
+    opacity: 0.6;
+    transition: opacity 0.5s;
+}
+
+.prev:hover
+{
+    opacity: 1;
+}
+
+.prev p
+{
+    margin-top: 285px;
+}
+
+.next
+{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    height: 100%;
+    width: 45px;
+    opacity: 0.6;
+    transition: opacity 0.5s;
+}
+
+.next:hover
+{
+    opacity: 1;
+}
+
+.next p
+{
+    margin-top: 285px;
+}
+.closeBtn
+{
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -50px;
+    right: -45px;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+#slideshow2:hover > .imgInfo
+{
+    height: 75px;
+    overflow: visible;
+}
+
+#slideshow2 .imgInfo
+{
+    margin-bottom: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    transition: height 0.5s;
+    border-radius: 30px;
+}
+
+#slideshow2 .imgInfo p
+{
+    margin-top: 15px;
+}
+
+#pageNum 
+{
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background-color: transparent;
+    color: white;
+    z-index: 2;
+}
+
+#descriptionBtn
+{
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 35px;
+    bottom: 20px;
+    width: 30px;
+    height: 30px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+    z-index: 2;
+    font-size: 25px;
+}
+
+#description
+{
+    position: relative;
+    line-height: 30px;
+    font-size: 16px;
+    width: 1140px;
+    height: 0px;
+    transition: height 0.5s;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    padding: 30px;
+    top: -60px;
+    border-radius: 30px;
+    z-index: -1;
+}
+
+#description p
+{
+    margin-top: 25px;
+}
+
+#description img
+{
+    position: relative;
+    top: 8px;
+}
+
+#description .imp
+{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#description h2
+{
+    margin-top: 30px;
+}
