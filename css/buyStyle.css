@@ -57,7 +57,7 @@
     border: solid 0.03em;
     margin-left: 5px;
     color: black;
-    
+    cursor: pointer;
 }
 
 #navigationWrapper
@@ -65,9 +65,3 @@
     margin-left: 460px;
 }
 
-#first,#next,#last,#previous
-{
-    width: 30px;
-    background-color: #40ADD6;
-    color:white;
-}

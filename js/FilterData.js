@@ -59,7 +59,7 @@ function filterData()
         sqrfe = Number(sqrfe.replace(/[^0-9.-]+/g,""));
         
         
-        if((price<minPrice || price>maxPrice) && maxPrice !==0)
+        if((price<minPrice || (price>maxPrice && maxPrice !==0)))
         {
             imgBox[i].style.display="none";
         }
@@ -67,7 +67,7 @@ function filterData()
         {
             imgBox[i].style.display="none";
         }
-        else if((sqrfe<minSqrfe || sqrfe>maxSqrfe) && maxSqrfe !== 0)
+        else if((sqrfe<minSqrfe || (sqrfe>maxSqrfe && maxSqrfe !== 0)))
         {
             imgBox[i].style.display="none";
         }
@@ -78,6 +78,7 @@ function filterData()
        
         else
         {
+            imgBox[i].style.display="";
             count++;
            
             if(count%3===0)
@@ -88,7 +89,7 @@ function filterData()
             {
                 imgBox[i].className="imgBox";
             }
-            imgBox[i].style.display="";
+            
             
              if(i>11 && count<=12)
             {
@@ -140,7 +141,8 @@ function filterData()
                   }
                }
                
-
+               console.log(count);
+               count=0;
              }
    
 
