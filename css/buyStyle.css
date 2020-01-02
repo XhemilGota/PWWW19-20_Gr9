@@ -28,6 +28,11 @@
     color:black;
 }
 
+#photoSection .position
+{
+    display:none;
+}
+
 #photoSection div
 {
     text-align: center;
