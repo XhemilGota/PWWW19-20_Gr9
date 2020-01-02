@@ -211,79 +211,104 @@
                  </form>   
                 </div>
               </div>
-    
-            
-            
-            <footer>
-            <!--Footer wrapper, which was used to put the footer part side to side on the browser page-->
-            <div id="footer-wrapper">
-                <div id="Company-details">
-                    <h3>Company Details Here</h3>
 
-                    <p>
-                    <Address>
-                        Address Line 1<br>
-                        Address Line 2<br>
-                        Town/City<br>
-                        Postcode/Zip<br>
-                    </Address>
-                    </p>
 
-                    <p id="contact">
-                        Tel: <a href="tel:xxxx xxxx xxxxxx">xxxx xxxx xxxxxx</a><br>
-                        Email: <a href="mailto: contact@domain.com">contact@domain.com</a>
-                    </p>
-                </div>
 
-                <div id="news-events">
-                    <h3>Latest News & Events</h3>
+    <footer>
 
-                    <h4><span>Magna phasellus</span></h4>
+        <script>
+            function allowDrop(ev)
+            {
+                ev.preventDefault();
+            }
 
-                    <p>
-                        Vestassapede et donec ut est liberos sus et eget sed eget.<br>
-                        Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
-                        ant curabiturpis.
-                    </p>
+            function drag(ev)
+            {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
 
-                    <h4><span>Magna phasellus</span></h4>
+            function drop(ev)
+            {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
 
-                    <p>
-                        Vestassapede et donec ut est liberos sus et eget sed eget.<br>
-                        Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
-                        ant curabiturpis.
-                    </p>
-                </div>
+                var div_drop_element = ev.target.parentElement.parentElement;
+                var div_drag_element = document.getElementById(data).parentElement.parentElement;
 
-                <div id="up-to-date">
-                    <h3>Stay Up To Date</h3>
+                div_drag_element.appendChild(document.getElementById(ev.target.id).parentElement);
+                div_drop_element.appendChild(document.getElementById(data).parentElement);
+            }
+        </script>
 
-                    <p>Subscribe To Our Newsletter</p>
+        <!--Footer wrapper, which was used to put the footer part side to side on the browser page-->
+        <div id="footer-wrapper">
+            <div id="Company-details">
+                <h3>Company Details Here</h3>
 
-                    <input type="text" placeholder="Enter Your Email Here">
-                    <input type="button" value="GO">
-                    <br>
+                <p>
+                <Address>
+                    Address Line 1<br>
+                    Address Line 2<br>
+                    Town/City<br>
+                    Postcode/Zip<br>
+                </Address>
+                </p>
 
-                    <a href="#"><img src="img/footer/twitter.jpg" width="45" height="45"></a>
-                    <a href="#"><img src="img/footer/linkedin.png" width="45" height="45"></a>
-                    <a href="#"><img src="img/footer/facebook.png" width="45" height="45"></a>
-                    <a href="#"><img src="img/footer/rss.png" width="45" height="45"></a>
-                </div>
-
+                <p id="contact">
+                    Tel: <a href="tel:xxxx xxxx xxxxxx">xxxx xxxx xxxxxx</a><br>
+                    Email: <a href="mailto: contact@domain.com">contact@domain.com</a>
+                </p>
             </div>
 
-            <div id="footer-bottom">
+            <div id="news-events">
+                <h3>Latest News & Events</h3>
 
-                <div>
-                    <p id="copyright">
-                        Copyright &copy; 2013 - All Rights Reserved - Domain Name
-                    </p>
+                <h4><span>Magna phasellus</span></h4>
 
-                    <p id="template-origin">
-                        Template by OS Templates
-                    </p>
-                </div>
+                <p>
+                    Vestassapede et donec ut est liberos sus et eget sed eget.<br>
+                    Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
+                    ant curabiturpis.
+                </p>
+
+                <h4><span>Magna phasellus</span></h4>
+
+                <p>
+                    Vestassapede et donec ut est liberos sus et eget sed eget.<br>
+                    Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
+                    ant curabiturpis.
+                </p>
             </div>
-        </footer>
+
+            <div id="up-to-date">
+                <h3>Stay Up To Date</h3>
+
+                <p>Subscribe To Our Newsletter</p>
+
+                <input type="text" placeholder="Enter Your Email Here">
+                <input type="button" value="GO">
+                <br>
+
+                <div class="dd_div"><a href="http://www.twitter.com"><img id="dd1" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/footer/twitter.jpg" width="45" height="45"></a></div>
+                <div class="dd_div"><a href="http://www.linkedin.com"><img id="dd2" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/footer/linkedin.png" width="45" height="45"></a></div>
+                <div class="dd_div"><a href="http://www.facebook.com"><img id="dd3" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/footer/facebook.png" width="45" height="45"></a></div>
+                <div class="dd_div"><a href="http://www.rss.com"><img id="dd4" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/footer/rss.png" width="45" height="45"></a></div>
+            </div>
+
+        </div>
+
+        <div id="footer-bottom">
+
+            <div>
+                <p id="copyright">
+                    Copyright &copy; 2013 - All Rights Reserved - Domain Name
+                </p>
+
+                <p id="template-origin">
+                    Template by OS Templates
+                </p>
+            </div>
+        </div>
+    </footer>
     </body>
 </html>

@@ -271,12 +271,6 @@ span
     margin-top: 20px;
 }
 
-#up-to-date img
-{
-    margin-top: 40px;
-    margin-right: 20px;
-}
-
 #up-to-date input[type="text"]
 {
     background: #1b1b1b;
@@ -336,5 +330,15 @@ address, #contact
 {
     width: 1000px;
     margin: auto;
+}
+
+.dd_div
+{
+    display: inline-block;
+    float: none;
+    width: 45px;
+    height: 45px;
+    margin-top: 40px;
+    margin-right: 20px;
 }
 
