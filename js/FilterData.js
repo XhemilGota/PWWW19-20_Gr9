@@ -59,22 +59,22 @@ function filterData()
         sqrfe = Number(sqrfe.replace(/[^0-9.-]+/g,""));
         
         
-        if((price<minPrice || (price>maxPrice && maxPrice !==0)))
+//        if((price<minPrice || (price>maxPrice && maxPrice !==0)))
+//        {
+//            imgBox[i].style.display="none";
+//        }
+         if(filterByCity!==city && filterByCity !== "City")
         {
             imgBox[i].style.display="none";
         }
-        else if(filterByCity!==city && filterByCity !== "City")
-        {
-            imgBox[i].style.display="none";
-        }
-        else if((sqrfe<minSqrfe || (sqrfe>maxSqrfe && maxSqrfe !== 0)))
-        {
-            imgBox[i].style.display="none";
-        }
-        else if(bedroom<numOfBedrooms)
-        {
-            imgBox[i].style.display="none";
-        }
+//        else if((sqrfe<minSqrfe || (sqrfe>maxSqrfe && maxSqrfe !== 0)))
+//        {
+//            imgBox[i].style.display="none";
+//        }
+//        else if(bedroom<numOfBedrooms)
+//        {
+//            imgBox[i].style.display="none";
+//        }
        
         else
         {
@@ -103,43 +103,43 @@ function filterData()
         
     }
     
-              var firstDivLength = document.getElementsByClassName("photos")[0].childElementCount;
-              
-              var x=0;
-              for(var i=0; i<firstDivLength; i++)
-              {
-                  if(imgBox[i].style.display!=="none")
-                  {
-                      x++;
-                  }
-                 
-              }
-              
-              
-              
-             
-
-              for(var j=x-1; j>=12; j--)
-                 {
-                     document.getElementsByClassName("photos")[1].appendChild(imgBox[j]);
-                 }
-                 
-               firstDivLength = document.getElementsByClassName("photos")[0].childElementCount;
-               
-              
-               var secondDivLength=document.getElementsByClassName("photos")[1].childElementCount;
-               
-               
-               var y =0;
-               for(var i=firstDivLength; i< firstDivLength + secondDivLength; i++)
-               {
-                   if(imgBox[i].style.display!=="none")
-                  {
-                      y++;
-                      if(y%3===0)imgBox[i].className="imgBox lastBox";
-                      else imgBox[i].className="imgBox";
-                  }
-               }
+//              var firstDivLength = document.getElementsByClassName("photos")[0].childElementCount;
+//              
+//              var x=0;
+//              for(var i=0; i<firstDivLength; i++)
+//              {
+//                  if(imgBox[i].style.display!=="none")
+//                  {
+//                      x++;
+//                  }
+//                 
+//              }
+//              
+//              
+//              
+//             
+//
+//              for(var j=x-1; j>=12; j--)
+//                 {
+//                     document.getElementsByClassName("photos")[1].appendChild(imgBox[j]);
+//                 }
+//                 
+//               firstDivLength = document.getElementsByClassName("photos")[0].childElementCount;
+//               
+//              
+//               var secondDivLength=document.getElementsByClassName("photos")[1].childElementCount;
+//               
+//               
+//               var y =0;
+//               for(var i=firstDivLength; i< firstDivLength + secondDivLength; i++)
+//               {
+//                   if(imgBox[i].style.display!=="none")
+//                  {
+//                      y++;
+//                      if(y%3===0)imgBox[i].className="imgBox lastBox";
+//                      else imgBox[i].className="imgBox";
+//                  }
+//               }
                
                console.log(count);
                count=0;

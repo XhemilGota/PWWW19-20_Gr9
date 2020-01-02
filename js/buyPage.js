@@ -70,6 +70,7 @@ var photos = [["img/homepage/1/main.jpg",
 				"img/homepage/9/other5.jpg"],
                             
                                ["img/buy/10/main.jpg",
+                                "img/buy/10/video1.mp4",
 				"img/buy/10/other1.jpg",
                                 "img/buy/10/other2.jpg",
                                 "img/buy/10/other3.jpg",
@@ -232,7 +233,25 @@ function plusSlides(step)
 
 function slide()
 {
+        var whatFile = photos[index2][index].split(".")[1];
+        if(whatFile==="mp4")
+        {
+            console.log("aaaa");
+            document.getElementById("slideshowVideo").src=photos[index2][index];
+            document.getElementById("slideshowVideo").width="1000";
+            document.getElementById("slideshowVideo").style.margin="0 0 0 100px";
+            document.getElementById("slideshowVideo").style.display="";
+            document.getElementById("slideshowVideo").play();
+            document.getElementById("slideshowImg").style.display="none";
+        }
+        else
+        {
 	document.getElementById("slideshowImg").src = photos[index2][index];
+        document.getElementById("slideshowVideo").style.display="none";
+        document.getElementById("slideshowImg").style.display="";
+        document.getElementById("slideshowVideo").pause();
+        }
+        
 	document.getElementById("slideshow").style.display = "block";
 	document.getElementById("street").innerHTML = street[index2];
 	document.getElementById("price").innerHTML = price[index2];
@@ -262,7 +281,9 @@ function unBlurOthers()
 		temp[i].style.filter = 'blur(0px)';
 	}
 
-	document.getElementById("footer-wrapper").style.filter = 'blur(0px)';	
+	document.getElementById("footer-wrapper").style.filter = 'blur(0px)';
+        
+        document.getElementById("slideshowVideo").pause();
 }
 
 function pageNumber()
