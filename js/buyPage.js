@@ -213,6 +213,13 @@ var price = ["$5,000,000", "$6,500,000", "$1,200,000", "$200,000", "$700,000", "
     "$3,500,000", "$200,000", "$1,700,000", "$600,000", "$2,900,000", "$2,000,000", "$800,000","$950,000","$1,100,000","$1,450,000","$900,000","$2,500,000",
 	"$700,000","$1,300,000","$7,200,000"
 ];
+var lat = [37.796400, 37.802250, 29.762510,29.735590,40.599000,34.102540,34.109350,34.092980,34.108790,37.793259,
+    42.358990, 41.884660,41.819310,37.792980,29.773830,29.753160,40.745140,34.087438,25.731611,25.703441,34.039938,
+33.049146,34.154274,34.083576];
+
+var lng = [-122.442910, -122.417470, -95.515083,-95.416557,-73.952790,-118.454790,-118.459020,-118.420350,-118.477490,-122.441521,
+    -71.058630, -88.204900,-87.685710,-122.435790,-95.404140,-95.402440,-74.005200,-118.489763,-80.237529,-80.289808,-118.666951,
+-96.864180,-118.487362,-118.436816];
 
 var descriptions = ["Residence 2646 is the pinnacle of San Francisco residential design a vision of what naturally beautiful, blissful functional living should be. It is a sophisticated San Francisco home designed for the contemporary active family with Golden Gate Bridge views, walkability and a seamless indoor-outdoor connection. Overlooking the San Francisco Bay, Residence 2646 celebrates today's contemporary city-dwelling family, streamlining busy lifestyle with innovative technology and stunning design. Ideally located on a desirable residential block, this home delivers convenient walkability to San Francisco's most coveted independent schools and sophisticated shops and restaurants of Union Street. With four en-suite bedrooms on one level. This exceptional LEED Platinum-certified home is rich with extra amenities. Crowning the home is the penthouse level, including space for work and play with both North and South facing terraces and direct access to the roof deck with a fireplace."
     , "RESIDENCE 950...San Francisco's Newest Masterpiece. Nestled atop a magical park-like setting on one of the City's largest residential lots, this world-class urban estate has been brilliantly re-imagined for the future. A dramatic 40 foot cantilevered infinity pool reflects the shimmering Bay and glittering lights of the City's famed Skyline, while dazzling views of iconic landmarks from Salesforce Tower to The Transamerica Pyramid and beyond provide a stunning panorama surrounding the fabulous resort-like indoor/ outdoor flow of living, dining and entertainment spaces- easily accommodating 300+ guests. The super-advanced, technology enabled health and wellness environment of this sustainably built LEED Platinum Certified, exquisitely designed property, as well as the spa-like guest cottage with steam, sauna, massage room, outdoor shower and hot tub, await the most discerning of owners. Experience the magic of one of California's most extraordinary private residences...",
@@ -265,6 +272,7 @@ function getIndex(x)
 	document.getElementById("slideshow").style.top = (document.documentElement.scrollTop + 30) + 'px';
 
     slide();
+    initMap();
 }
 
 var count  = 0;
@@ -480,4 +488,19 @@ window.onload = function (){
 	}
 
 	sessionStorage.setItem("searched_city","");
+}
+
+function initMap()
+{
+    var location = {lat: lat[index2], lng: lng[index2]};
+    var map = new google.maps.Map(document.getElementById("map"),{
+       zoom:10,
+       center: location
+    });
+    var marker = new google.maps.Marker({
+        position:location,
+        map: map
+    });
+    
+
 }
