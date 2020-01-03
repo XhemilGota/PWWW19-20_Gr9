@@ -437,11 +437,8 @@ window.onload = function(){
 	{
 		var city = imgInfo[i].getElementsByClassName("city")[0].textContent;
 
-		if(filterByCity!==city && filterByCity !== "City")
-		{
-			imgBox[i].style.display="none";
-		}
-		else
+		var regex = new RegExp(filterByCity, "i");
+		if(city.match(regex)!==null && filterByCity.length>=3)
 		{
 			imgBox[i].style.display="";
 			count++;
@@ -459,6 +456,10 @@ window.onload = function(){
 			{
 				document.getElementsByClassName("photos")[0].appendChild(imgBox[i]);
 			}
+		}
+		else
+		{
+			imgBox[i].style.display="none";
 		}
 
 	}
