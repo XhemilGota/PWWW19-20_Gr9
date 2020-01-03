@@ -69,10 +69,11 @@ textarea
 
 #sell select.error
 {
-    background: #ffcdd2 url('img/error.png') no-repeat 90% center;
+    background: #ffcdd2 url('error.png') no-repeat 90% center;
    
     border:2px solid #FF1744;
 }
+
 #sell input.error
 {
     background: #ffcdd2 url('error.png') no-repeat 98% center;

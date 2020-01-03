@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#game 
+		{
+			width: 100%;
+			height: 100%;
+		}
+
+		#backgroundSVG
+		{
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 640px;
+			height: 640px;			
+		}
+
+		#first
+		{
+			padding-left: 50%;
+			margin: auto;
+			position: relative;
+			
+		}
+
+		#first input
+		{
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+		}
+
+		#first #left
+		{
+			margin-left: -54px;
+		}
+	</style>
+</head>
+<body>
+
+	
+	<div id="backgroundSVG">
+		<canvas id="game" width="640px" height="640px"></canvas>
+		
+		<div id="first">
+			<input type="button" onclick="up();" id="up" value="<" style="transform: rotate(90deg); display: block;">
+			<input type="button" onclick="left();" id="left" value="<">	
+			<input type="button" onclick="down();" id="down" value="<" style="transform: rotate(-90deg);">
+			<input type="button" onclick="right();" id="right" value=">">
+		</div>
+	</div>
+
+	
+	<script src="js/game.js"></script>
+</body>
+</html>
