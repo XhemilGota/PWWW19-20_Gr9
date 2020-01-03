@@ -248,10 +248,12 @@ var descriptions = ["Residence 2646 is the pinnacle of San Francisco residential
 
 var temp;
 
-window.onload = function()
+function fillTemp()
 {
 	temp = document.querySelectorAll("body > div:not(#slideshow)");
 }
+
+window.addEventListener("load",fillTemp,false);
 
 var index = 0;
 var index2 = 0;
@@ -377,9 +379,14 @@ function propertyIndex()
 	localStorage.setItem("index", index2);
 }
 
-window.onload = function (){
+window.onload = function(){
 
 	var filterByCity = sessionStorage.getItem("searched_city");
+
+	if(filterByCity==null)
+	{
+		return;
+	}
 
 	if(filterByCity.localeCompare("")==0)
 	{
