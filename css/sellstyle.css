@@ -48,6 +48,7 @@ form section
 }
 
 
+
 #sell input
 {
     width: 400px;
@@ -64,4 +65,17 @@ form section
 textarea
 {
     width:400px;
+}
+
+#sell select.error
+{
+    background: #ffcdd2 url('img/error.png') no-repeat 90% center;
+   
+    border:2px solid #FF1744;
+}
+#sell input.error
+{
+    background: #ffcdd2 url('error.png') no-repeat 98% center;
+   
+    border:2px solid #FF1744;
 }

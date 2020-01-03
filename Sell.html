@@ -9,6 +9,7 @@
         <link href="css/generalstyle.css" rel="stylesheet">
         <link href="css/sellstyle.css" rel="stylesheet">
         <script src="js/search.js"></script>
+        <script src="js/sell.js"></script>
         
         <title>Titulli</title>
 
@@ -50,21 +51,22 @@
             	<h1>Home Seller Form</h1>
             </div>       
             
-            <form action="" method="post" id="sell">
+            <div class="leftdiv" style="width:50%; float:left;">
+            <form action="" method="post" id="sell" onsubmit="return checkForErrors()">
                
-                <div class="leftdiv" style="width:50%; float:left;">
+                
                 <section>
                     <h2>Contact Information</h2>
                     
                     <table>
                         <tr>
-                            <td><input type="text" placeholder="Full name" name="Full name" required></td>
+                            <td><abbr class="message" title=""><input type="text" placeholder="Full name" name="Full name" class="required"></abbr></td>
                         </tr>
                         <tr>
-                            <td><input type="tel" placeholder="Phone" name="Phone" required></td>
+                            <td><abbr class="message" title=""><input type="tel" placeholder="Phone" name="Phone" class="required"></abbr></td>
                         </tr>
                         <tr>
-                            <td><input type="email" placeholder="Email" name="email" required></td>
+                            <td><abbr class="message" title=""><input type="email" placeholder="Email" name="email" class="required"></abbr></td>
                         </tr>
                         
                     </table>
@@ -75,14 +77,14 @@
                     
                     <table>
                         <tr>
-                            <td colspan="2"><input type="text"  name="adress1" placeholder="Street Address" required></td>
+                            <td colspan="2"><abbr class="message" title=""><input type="text"  name="adress1" placeholder="Street Address" class="required"></abbr></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="text"  name="adress1" placeholder="Street Address 2" ></td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="text"  name="city" placeholder="City" class="halflength" required>
+                               <abbr class="message" title=""> <input type="text"  name="city" placeholder="City" class="halflength required"></abbr>
                             </td>
                             <td>
                                 <input type="text"  name="state" placeholder="State/Province" class="halflength">
@@ -90,9 +92,9 @@
                         </tr>
                         <tr>
                                                         
-                                <td >Bedrooms:</p>
+                                <td >Bedrooms:
                                     <p>
-                                        <select class="halflength" name="bedrooms">
+                                        <abbr class="message" title=""><select class="halflength required" name="bedrooms">
                                             <option></option>
                                             <option>1</option>
                                             <option>2</option>
@@ -105,11 +107,12 @@
                                             <option>9</option>
                                             <option>10+</option>
                                         </select>
+                                            </abbr>
                                     </p>
                                 </td>
                                 <td>Bathrooms:
                                     <p>
-                                        <select class="halflength" name="bathrooms">
+                                        <abbr class="message" title=""><select class="halflength required" name="bathrooms">
                                             <option></option>
                                             <option>1</option>
                                             <option>2</option>
@@ -122,13 +125,14 @@
                                             <option>9</option>
                                             <option>10+</option>
                                         </select>
+                                        </abbr>
                                     </p>
                                 </td>
                         </tr>
                         
                         <tr>
                             <td >Square footage:
-                                    <p> <input class="halflength" type="number" name="squarefootage"></p>
+                                    <p><abbr class="message" title=""><input class="halflength required" type="number" name="squarefootage" ></abbr></p>
                             </td>
                              
                                 <td>Garage:
@@ -200,26 +204,29 @@
                 </section>
                 
                 <section>
-                    <input type="submit" id="submit" value="SUBMIT">
+                    <input type="submit" id="submit" value="SUBMIT" >
                 </section>
+                
+                
+            
                 </div>
                 
-                <div class="rightdiv" style="width:50%; float:right;" align="center">
-                    <section style="height:215px;">
+                <div class="rightdiv" style="width:50%; float:right;" align="center; ">
+                    <section style="height:245px;">
                         <img src="img/sell/personalInformation.jpg" style="padding-top: 60px;" >
                     </section>
-                    <section style="height:677px;">
-                        <img src="img/sell/propertyInformation.png" style="padding-top: 180px;">
+                    <section style="height:760px;">
+                        <img src="img/sell/propertyInformation.png" style="padding: 180px 0 0 40px;">
                     </section>
                     <section style="height:192px;">
-                        <img src="img/sell/whyAreYouSelling.png" style="padding-top: 30px;">
+                        <img src="img/sell/whyAreYouSelling.png" style="padding: 30px 0 0 60px;">
                     </section>
                 </div>
                   
                     
                 </div>
               </div>
-	</div>
+	
 
 
     <footer>
