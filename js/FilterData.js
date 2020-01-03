@@ -52,7 +52,6 @@ function filterData()
         }
     }
     
-    
     //sortimi i faqes 2
     for(var i=12; i<24; i++)
     {
@@ -70,7 +69,6 @@ function filterData()
             
         }
     }
-
       
     for(var i=0; i<imgBox.length; i++)
     {
@@ -161,9 +159,4 @@ function filterData()
     {
         document.getElementById("navigationWrapper").style="";
     }
-    
-
-} 
-
-            
-
+}

@@ -368,3 +368,116 @@ function propertyIndex()
 {
 	localStorage.setItem("index", index2);
 }
+
+window.onload = function (){
+
+	var filterByCity = sessionStorage.getItem("searched_city");
+
+	if(filterByCity.localeCompare("")==0)
+	{
+		return;
+	}
+
+
+	var imgBox = document.getElementsByClassName("imgBox");
+
+	var imgInfo = document.getElementsByClassName("imgInfo");
+
+	var count = 0;
+
+	for(var i=0; i<imgBox.length; i++)
+	{
+		var position = imgBox[i].getElementsByClassName("position")[0].textContent;
+		position=parseInt(position);
+		if(position<12)
+		{
+			var item = imgBox[i];
+			var list = document.getElementsByClassName("photos")[0];
+			list.insertBefore(item, list.childNodes[position]);
+
+		}
+		else
+		{
+			document.getElementsByClassName("photos")[1].appendChild(imgBox[i]);
+		}
+	}
+
+	for(var i=12; i<24; i++)
+	{
+
+		for(var j=12; j<24; j++)
+		{
+			var position = imgBox[j].getElementsByClassName("position")[0].textContent;
+			position=parseInt(position);
+			if(position===i)
+			{
+				var item = imgBox[j];
+				var list = document.getElementsByClassName("photos")[1];
+				list.insertBefore(item, list.childNodes[position]);
+			}
+		}
+	}
+
+	for(var i=0; i<imgBox.length; i++)
+	{
+		var city = imgInfo[i].getElementsByClassName("city")[0].textContent;
+
+		if(filterByCity!==city && filterByCity !== "City")
+		{
+			imgBox[i].style.display="none";
+		}
+		else
+		{
+			imgBox[i].style.display="";
+			count++;
+
+			if(count%3===0)
+			{
+				imgBox[i].className="imgBox lastBox";
+			}
+			else
+			{
+				imgBox[i].className="imgBox";
+			}
+
+			if(i>11 && count<=12)
+			{
+				document.getElementsByClassName("photos")[0].appendChild(imgBox[i]);
+			}
+		}
+
+	}
+
+	if(count<=12)
+	{
+		document.getElementById("page2").style.display="none";
+		changePage(1);
+	}
+	else
+	{
+		document.getElementById("page2").style.display="";
+	}
+
+	if(count===0)
+	{
+		document.getElementById("notFound").style.display="";
+		document.getElementById("page1").style.display="none";
+	}
+	else
+	{
+		document.getElementById("notFound").style.display="none";
+		document.getElementById("page1").style.display="";
+	}
+
+	var check = document.getElementsByClassName("photos")[1].style.display;
+	if(count<=2 || (check!=="none"&&count>12&&count<=14))
+	{
+		document.getElementById("navigationWrapper").style="position:absolute; bottom:-30px;";
+	}
+	else
+	{
+		document.getElementById("navigationWrapper").style="";
+	}
+
+	sessionStorage.setItem("searched_city","");
+}
