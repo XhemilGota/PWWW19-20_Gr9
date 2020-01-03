@@ -49,24 +49,30 @@
         </div>
 
         <section>
-            <div class="form-wrapper" action="/action_page.php">
+            <div class="form-wrapper" action="/action_page.php" style="float:left">
                 <form id="contact-form" method="post">
                     <input class="name" type="text" placeholder="First Name" name="first_name">
                     <input class="name" type="text" placeholder="Last Name" name="last_name"><br>
                     <input type="email" placeholder="Email Address" name="email_address"><br>
                     <input type="tel" placeholder="Phone Number" name="phone_number"><br>
+                    <input class="name" type="text" readonly name="latitude" id="latitude"value="Latitude: ">
+                    <input class="name" type="text" readonly name="longitude" id="longitude" value="Longitude: "><br>
                     <textarea rows="5" cols="50" placeholder="Comments/Questions" name="comments_questions"></textarea><br>
                     <input type="submit" value="SEND">
                 </form>
             </div>
 
-            <img id="logo-photo" src="" width="120" height="60">
-            <div class="contact-us">
-                <h4>CONTACT US</h4>
-                <p>Phone:</p>
-                <a href="tel:xxx-xxx-xxxx"><p id="phone">xxx-xxx-xxxx</p></a>
-                <a href="mailto:contact@domain.com"><p>Email Us</p></a>
+            
+            
+            <div class="mapstyle" id="map" style="width:275px; height:200px; border:1px solid red; margin">
+                
+                <script src="js/contact.js"></script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBxeeraroriooA1NxYn6QW6NLlYlvQvn4&callback=initMap">
+                </script>
             </div>
+            
+            
+            <div id="mapCaption">Your Location</div>
         </section>
     </div>
     <img class="housing-logos" src="img/contact/ehq.png" width="55">
