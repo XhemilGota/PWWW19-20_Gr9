@@ -46,19 +46,29 @@ document.addEventListener("keydown", direction);
 
 function direction(event){
     var key = event.keyCode;
-    if( key == 37 && direction != "RIGHT"){
+
+    if(key==37 || key==38 || key==39 || key==40)
+    {
+        event.preventDefault();
+    }
+
+    if( key == 37 && direction != "RIGHT")
+    {
         direction = "LEFT";
         document.getElementById("left").click();
     
-    }else if(key == 38 && direction != "DOWN"){
+    }else if(key == 38 && direction != "DOWN")
+    {
         direction = "UP";
         document.getElementById("up").click();
-        
-    }else if(key == 39 && direction != "LEFT"){
+
+    }else if(key == 39 && direction != "LEFT")
+    {
         direction = "RIGHT";
         document.getElementById("right").click();
 
-    }else if(key == 40 && direction != "UP"){
+    }else if(key == 40 && direction != "UP")
+    {
         direction = "DOWN";
         document.getElementById("down").click();
     }

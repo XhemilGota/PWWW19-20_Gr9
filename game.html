@@ -3,6 +3,14 @@
 <head>
 	<title></title>
 	<style type="text/css">
+		body
+		{
+			background-image: url(img/game/background_above2.png), url(img/game/background2.jpg);
+			background-repeat: no-repeat, repeat;
+			background-size: 550px , cover;
+			background-position: center bottom, left bottom;
+		}
+
 		#game 
 		{
 			width: 100%;
@@ -16,15 +24,14 @@
 			right: 0;
 			margin: auto;
 			width: 640px;
-			height: 640px;			
+			height: 640px;
 		}
 
 		#first
 		{
-			padding-left: 50%;
+			padding-left: 46%;
 			margin: auto;
 			position: relative;
-			
 		}
 
 		#first input
@@ -38,10 +45,31 @@
 		{
 			margin-left: -54px;
 		}
+
+		figure
+		{
+			margin-left:560px ;
+			margin-bottom:150px;
+			font-weight: bold;
+		}
+		
+		#game_title
+		{
+			font-weight: bold;
+			font-size: 28px;
+			margin-left: 630px;
+			text-shadow: 2px 3px 5px #999999;
+		}
 	</style>
 </head>
 <body>
+<div id="body_wrapper">
 
+	<p id="game_title">The classic 'Snake' game</p>
+	<figure>
+		<img src="img/game/snake_cover.jpg" height="250">
+		<figcaption>Use the arrow keys or the buttons below to control your snake</figcaption>
+	</figure>
 	
 	<div id="backgroundSVG">
 		<canvas id="game" width="640px" height="640px"></canvas>
@@ -53,8 +81,8 @@
 			<input type="button" onclick="right();" id="right" value=">">
 		</div>
 	</div>
-
 	
 	<script src="js/game.js"></script>
+</div>
 </body>
 </html>
