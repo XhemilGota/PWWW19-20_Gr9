@@ -162,15 +162,16 @@ nav ul li ul
     display: none;
     position: absolute;
     background-color: white;
-    width: 155px;
+    width: 150px;
     padding-top: 0px;
-    margin: 0 5px 0 5px;
+    margin:  0 0 0 -10px;
+    z-index: 2;
 }
 
 nav ul li ul li
 {
     text-align: left;
-    padding: 5px 5px;
+    padding: 7px 3px;
     display: block;
 }
 

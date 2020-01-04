@@ -29,17 +29,18 @@
                     <nav>
                         <ul>
                             <li><a href="index.html" id="homepage">HOMEPAGE</a></li>
-                            <li><a href="Buy_Page1.html">BUY</a></li>
-                            <li><a href="Sell.html">SELL</a></li>
-                            <li><a href="#">ABOUT US &#9660;</a>
+                            <li><a href="Buy_Page1.html" id="buy" onclick="changeColorOfMenu('buy')">BUY</a></li>
+                            <li><a href="Sell.html" id="sell">SELL</a></li>
+                            <li><a href="#" id="aboutUs">ABOUT US &#9660;</a>
                                 <ul>
                                     <li><a href="OurCompany.html">OUR COMPANY</a></li>
                                     <li><a href="AboutUs.html">OUR TEAM</a></li>
+                                    <li><a href="blog.html">BLOG</a></li>
                                 </ul>
                             </li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="Testimonials.html">TESTIMONIALS</a></li>
-                            <li><a href="Contact.html">CONTACT</a></li>
+                            <li><a href="faq.html" id="faq">FAQ</a></li>
+                            <li><a href="Testimonials.html" id="testimonials">TESTIMONIALS</a></li>
+                            <li><a href="Contact.html" id="contact">CONTACT</a></li>
                         </ul>
                     </nav>
                     <p class="caption">Do you wanna buy a home? We make it possible.</p>
@@ -144,5 +145,7 @@
             </div>
         </div>
     </footer>
+                <script src="js/general.js" onload="changeColorOfMenu('aboutUs')"></script>
+
     </body>
 </html>
