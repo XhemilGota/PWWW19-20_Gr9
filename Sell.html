@@ -53,7 +53,7 @@
             </div>       
             
             <div class="leftdiv" style="width:50%; float:left;">
-            <form action="" method="post" id="sell" onsubmit="return checkForErrors()">
+                <form action="" method="post" id="sell" onsubmit="return checkForErrors()" autocomplete="on">
                
                 
                 <section>
@@ -78,17 +78,26 @@
                     
                     <table>
                         <tr>
-                            <td colspan="2"><abbr class="message" title=""><input type="text"  name="adress1" placeholder="Street Address" class="required"></abbr></td>
+                            <td colspan="2"><abbr class="message" title=""><input type="text"  name="adress1" placeholder="Street Address" class="required" autocomplete="off"></abbr></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="text"  name="adress1" placeholder="Street Address 2" ></td>
+                            <td colspan="2"><input type="text"  name="adress1" placeholder="Street Address 2" autocomplete="off"></td>
                         </tr>
                         <tr>
+                            
                             <td>
-                               <abbr class="message" title=""> <input type="text"  name="city" placeholder="City" class="halflength required"></abbr>
+                               <abbr class="message" title=""> <input type="text"  list="city" name="city" placeholder="City" class="halflength required" autocomplete="off"></abbr>
+                                <datalist id="city">
+                                <option value="New York">
+                                <option value="San Francisco">
+                                <option value="Houston">
+                                <option value="Miami">
+                                <option value="Boston">
+                                <option value="Chicago">
+                             </datalist>
                             </td>
                             <td>
-                                <input type="text"  name="state" placeholder="State/Province" class="halflength">
+                                <input type="text"  name="state" placeholder="State/Province" class="halflength" autocomplete="off">
                             </td>
                         </tr>
                         <tr>
@@ -133,7 +142,7 @@
                         
                         <tr>
                             <td >Square footage:
-                                    <p><abbr class="message" title=""><input class="halflength required" type="number" name="squarefootage" ></abbr></p>
+                                    <p><abbr class="message" title=""><input class="halflength required" type="number" step="1" min="50" name="squarefootage" ></abbr></p>
                             </td>
                              
                                 <td>Garage:
@@ -179,7 +188,7 @@
                         <tr>
                                 <td colspan="2">
                                     How many years have you owned this home:
-                                    <p><input type="number" name="how many years"></p>
+                                    <p><input type="number" name="how many years" autocomplete="off"></p>
                                 </td>
                         </tr>
                         <tr>
@@ -191,7 +200,7 @@
                         <tr>
                                 <td colspan="2">
                                     How long has the property been for sale?
-                                    <p><input class="halflength" type="number" name="how long"></p>
+                                    <p><input class="halflength" type="number" name="how long" autocomplete="off"></p>
                                 </td>
                         </tr>
                     </table>
@@ -202,7 +211,24 @@
                     <h2>Your Situation</h2>
                     <p>What's your situation? Why are you selling?</p>
                     <p> <textarea  rows="7" name="your situtation"></textarea></p>
+                    <p>Date of your application</p>
+                    <input type="text" id="date" readonly name="date of application">
                 </section>
+                
+                  <script>
+                    var d = new Date();
+                    var month = d.getMonth()+1;
+                    var day = d.getDate();
+                    var year = d.getFullYear();
+                    if(day/10<1)
+                    {
+                        day = "0"+day;
+                    }
+
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    month = months[month];
+                    document.getElementById("date").value=day + " " + month + " " + year;
+                </script>
                 
                 <section>
                     <input type="submit" id="submit" value="SUBMIT" >

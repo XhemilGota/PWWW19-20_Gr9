@@ -58,4 +58,25 @@
 	height: 95px;
 }
 
+ol
+{
+    list-style-position: inside;
+}
+
+dl
+{
+
+    margin-top: 50px;
+    margin-bottom:100px;
+    margin-left: 25px;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+dl dd
+{
+    padding-top:5px;
+    padding-left:50px;
+}
+
 

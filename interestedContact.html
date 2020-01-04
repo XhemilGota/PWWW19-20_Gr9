@@ -9,6 +9,7 @@
         <link href="css/generalstyle.css" rel="stylesheet">
         <link href="css/sellstyle.css" rel="stylesheet">
         <script src="js/interestedContact.js"></script>
+        <script src="js/interestedContactValidation.js"></script>
         <script src="js/search.js"></script>
         <script src="js/game.js"></script>
         
@@ -72,7 +73,7 @@
                 <h1>Home Buyer Form</h1>
             </div>       
             
-            <form action="" method="post" id="sell">
+            <form action="" method="post" id="sell" onsubmit="return checkForErrors()">
                
                 <div class="leftdiv" style="width:50%; float:left;">
                 <section>
@@ -80,13 +81,13 @@
                     
                     <table>
                         <tr>
-                            <td><input type="text" placeholder="Full name" name="Full name" required></td>
+                            <td><abbr class="message" title=""><input type="text" placeholder="Full name" name="Full name" class="required" autofocus></abbr></td>
                         </tr>
                         <tr>
-                            <td><input type="tel" placeholder="Phone" name="Phone" required></td>
+                            <td><abbr class="message" title=""><input type="tel" placeholder="Phone" name="Phone" class="required"></abbr></td>
                         </tr>
                         <tr>
-                            <td><input type="email" placeholder="Email" name="email" required></td>
+                            <td><abbr class="message" title=""><input type="email" placeholder="Email" name="email" class="required"></abbr></td>
                         </tr>
                         
                     </table>
@@ -97,33 +98,33 @@
                     
                     <table>
                         <tr>Street Address: <br>
-                            <td colspan="2"><input type="text" name="adress1" id="propertyStreet"></td>
+                            <td colspan="2"><input type="text" name="adress1" id="propertyStreet" readonly></td>
                         </tr>
                         <tr>
                             <td>City: <br>  
-                                <input type="text"  name="city" placeholder="City" id="propertyCity" required>
+                                <input type="text"  name="city" placeholder="City" id="propertyCity" readonly required>
                             </td>
                         </tr>
                         <tr>
                                                         
                                 <td >Bedrooms:
-                                    <input type="number"  name="city" placeholder="City" id="propertyBed" class="halflength" required>
+                                    <input type="number"  name="city" placeholder="City" id="propertyBed" class="halflength" readonly required>
                                 </td>
                         </tr>
                         <tr>
                                 <td>Bathrooms:
-                                    <input type="number"  name="city" placeholder="City" id="propertyBath" class="halflength" required>
+                                    <input type="number"  name="city" placeholder="City" id="propertyBath" class="halflength"  readonly required>
                                 </td>
                         </tr>
                         
                         <tr>
                             <td >Square footage:
-                                    <p> <input class="halflength" type="number" id="propertySqrt" name="squarefootage"></p>
+                                    <p> <input class="halflength" type="number" id="propertySqrt" name="squarefootage" readonly></p>
                             </td>
                         </tr>
                          <tr>
                             <td >Price:
-                                    <p> <input class="halflength" type="text" id="propertyPrice" name="squarefootage"></p>
+                                    <p> <input class="halflength" type="text" id="propertyPrice" name="squarefootage" readonly></p>
                             </td>
                              
                                
@@ -137,11 +138,11 @@
                     <h2>Your Situation</h2>
                      <table>
                         <tr>
-                            <td colspan="2"><input type="text"  name="profession" placeholder="Your profession" required></td>
+                            <td colspan="2"><abbr class="message" title=""><input type="text"  name="profession" placeholder="Your profession" class="required"></abbr></td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="text"  name="city" placeholder="City" class="halflength" required>
+                              <abbr class="message" title="">  <input type="text"  name="city" placeholder="City" class="halflength required" > </abbr>
                                 <input type="text"  name="state" placeholder="State/Province" class="halflength">
                             </td>
                         </tr>

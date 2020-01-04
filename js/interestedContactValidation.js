@@ -3,14 +3,16 @@ var isAnyFieldBlank=false;
 
 function checkForErrors()
 {
-    console.log("abc");
+    
     isBlank();
     if(!isAnyFieldBlank){
       var isAnyErrorForPhoneNumber = checkErrorsForPhoneNumber(); 
       var isAnyErrorForCity= checkErrorsForCity();
+      
+      
       if(!(isAnyErrorForCity || isAnyErrorForPhoneNumber))
       {
-          alert("Thanks for choosing our company to sell your house! \n\n\
+          alert("Thanks for choosing our company to buy a new home! \n\n\
 Our team will contact you very soon!");
           document.getElementById("sell").reset();
       }
