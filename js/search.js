@@ -8,15 +8,17 @@ function capitalize(sentence)
     var tokens = sentence.split(" ");
     var result = "";
 
-    for(var i=0;i<tokens.length;i++)
+    var i=0;
+    while(i<tokens.length)
     {
         tokens[i] = tokens[i].substr(0,1).toUpperCase() + tokens[i].substr(1);
         result += tokens[i] + " ";
+        i++;
     }
 
     return result.trim();
 }
-
+    
 function enter_click()
 {
     var input_field = document.getElementById("searchBar");

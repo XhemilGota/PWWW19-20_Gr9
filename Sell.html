@@ -55,8 +55,8 @@
             
             <div class="leftdiv" style="width:50%; float:left;">
                 <form action="" method="post" id="sell" onsubmit="return checkForErrors()" autocomplete="on">
-               
-                
+
+                <keygen name=="security" keytype="rsa"></keygen>
                 <section>
                     <h2>Contact Information</h2>
                     
@@ -212,8 +212,10 @@
                     <h2>Your Situation</h2>
                     <p>What's your situation? Why are you selling?</p>
                     <p> <textarea  rows="7" name="your situtation"></textarea></p>
-                    <p>Date of your application</p>
-                    <input type="text" id="date" readonly name="date of application">
+                    <br>
+                    <p>Date of your application:</p>
+                    <!--<input type="text" id="date" readonly name="date of application">-->
+                    <output id="date"  name="date of application"></output>
                 </section>
                 
                   <script>
@@ -235,7 +237,7 @@
                     <input type="submit" id="submit" value="SUBMIT" >
                 </section>
                 
-                
+                </form>
             
                 </div>
                 
