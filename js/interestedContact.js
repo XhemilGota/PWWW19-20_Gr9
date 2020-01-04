@@ -24,10 +24,17 @@ var price = ["$5,000,000", "$6,500,000", "$1,200,000", "$200,000", "$700,000", "
 window.onload = function (){
 	var index = localStorage.getItem("index");
 	console.log(index);
-	document.getElementById("propertyStreet").value = street[Number(index)];
-	document.getElementById('propertyCity').value = city[Number(index)];
-	document.getElementById('propertyBed').value = bedroom[Number(index)];
-	document.getElementById('propertyBath').value = bathroom[Number(index)];
-	document.getElementById('propertySqrt').value = sqrt[Number(index)];
-	document.getElementById('propertyPrice').value = price[index];
+	try
+	{
+		document.getElementById("propertyStreet").value = street[Number(index)];
+		document.getElementById('propertyCity').value = city[Number(index)];
+		document.getElementById('propertyBed').value = bedroom[Number(index)];
+		document.getElementById('propertyBath').value = bathroom[Number(index)];
+		document.getElementById('propertySqrt').value = sqrt[Number(index)];
+		document.getElementById('propertyPrice').value = price[index];
+	}
+	catch(err)
+	{
+		console.log("Data for the given index doesn't exist in the array");
+	}
 }

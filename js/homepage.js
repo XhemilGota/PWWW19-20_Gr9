@@ -156,16 +156,23 @@ function plusSlides(step)
 
 function slide()
 {
-	document.getElementById("slideshowImg").src = photos[index2][index];
-	document.getElementById("slideshow").style.display = "block";
-	document.getElementById("street").innerHTML = street[index2];
-	document.getElementById("price").innerHTML = price[index2];
-	document.getElementById("city").innerHTML = city[index2];
-	document.getElementById("bedroom").innerHTML = 'Bedrooms: ' + bedroom[index2];
-	document.getElementById("bathroom").innerHTML = 'Bathrooms: ' + bathroom[index2];
-	document.getElementById("sqrt").innerHTML = 'Sqrt: ' + sqrt[index2];
-	document.getElementById("descriptionText").innerHTML = descriptions[index2];
-	document.getElementById("hoverText").innerHTML = street[index2] + ' | ' + price[index2] + ' | ' + bedroom[index2] + ' beds ' + bathroom[index2] + ' baths';
+	try
+	{
+		document.getElementById("slideshowImg").src = photos[index2][index];
+		document.getElementById("slideshow").style.display = "block";
+		document.getElementById("street").innerHTML = street[index2];
+		document.getElementById("price").innerHTML = price[index2];
+		document.getElementById("city").innerHTML = city[index2];
+		document.getElementById("bedroom").innerHTML = 'Bedrooms: ' + bedroom[index2];
+		document.getElementById("bathroom").innerHTML = 'Bathrooms: ' + bathroom[index2];
+		document.getElementById("sqrt").innerHTML = 'Sqrt: ' + sqrt[index2];
+		document.getElementById("descriptionText").innerHTML = descriptions[index2];
+		document.getElementById("hoverText").innerHTML = street[index2] + ' | ' + price[index2] + ' | ' + bedroom[index2] + ' beds ' + bathroom[index2] + ' baths';
+	}
+	catch(err)
+	{
+		console.log("Data for the given index doesn't exist in the array");
+	}
 	pageNumber();
 }
 
