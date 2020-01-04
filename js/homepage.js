@@ -158,6 +158,12 @@ function slide()
 {
 	try
 	{
+		if(index2 >= photos.length)
+			throw "The property doesn't exist";
+
+		if(index >= photos[index2].length)
+			throw "The required photo isn't in the array";
+
 		document.getElementById("slideshowImg").src = photos[index2][index];
 		document.getElementById("slideshow").style.display = "block";
 		document.getElementById("street").innerHTML = street[index2];
@@ -171,7 +177,7 @@ function slide()
 	}
 	catch(err)
 	{
-		console.log("Data for the given index doesn't exist in the array");
+		console.log(err);
 	}
 	pageNumber();
 }
