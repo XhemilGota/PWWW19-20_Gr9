@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="author" content="Behar Rexhepi, Zgjim Haziri, Xhemil Gota">
+    <meta name="description" content="Projekti ne lenden Programimi ne WWW - Grupi 9">
+
+    <script src="js/search.js"></script>
+
+    <title>About Us</title>
+
+    <style>
+        *
+        {
+            margin:0;
+            font-family: "georgia";
+        }
+
+        body
+        {
+            /*width: 1000px;*/
+            border-top: 5px #40AED7 solid;
+        }
+
+        #wrapper
+        {
+            width: 1000px;
+            margin: auto;
+            overflow-x: hidden;
+            margin-bottom: 20px;
+        }
+
+        header
+        {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #D6D6D6;
+        }
+
+        #searchBar
+        {
+            background-color: #E9E9E9;
+            width: 245px;
+            height: 36px;
+            border-radius: 7px;
+            text-align: left;
+            font-size: 12px;
+            border:none;
+            outline: none;
+            padding-left: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type=button]
+        {
+            background-color: #40ADD6;
+            color:white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            box-sizing: border-box;
+            border-radius: 7px;
+        }
+
+        #searchButton
+        {
+            width: 68px;
+            height: 36px;
+            font-size: 12px;
+        }
+
+        .search
+        {
+
+            margin-top: 25px;
+            position: relative;
+            left:642px
+
+        }
+
+        #pageName
+        {
+            background-color: #EDEDED;
+            height: 120px;
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        #pageName h1
+        {
+            font-size: 30px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 25px;
+        }
+
+        #pageName h1::first-letter
+        {
+            font-size: 30px;
+        }
+
+        .title
+        {
+            margin-top: -6px;
+
+        }
+
+        .caption
+        {
+            margin-top: 4px;
+            margin-bottom: 27px;
+            font-size: 12px;
+            color: #999999;
+            margin-left:2px;
+        }
+
+        h1
+        {
+            font-family: "task small caps";
+            font-size: 30px;
+            color: #333333;
+            text-transform: uppercase;
+        }
+
+        h1::first-letter
+        {
+            font-size:36px;
+        }
+
+        nav
+        {
+            float:right;
+        }
+
+        nav ul li
+        {
+            list-style: none;
+            display: inline-block;
+            text-align: left;
+            padding-left: 17px;
+            position: relative;
+        }
+
+        nav ul li:hover ul
+        {
+            display: block;
+        }
+
+        nav ul li a
+        {
+            text-decoration: none;
+            color: #666666;
+            font-size: 13px;
+        }
+
+        nav ul li a:active
+        {
+            color:#40AED7;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover
+        {
+            color:#40AED7;
+        }
+
+        nav ul li ul
+        {
+            display: none;
+            position: absolute;
+            background-color: white;
+            width: 155px;
+            padding-top: 5px;
+            margin: 0 5px 0 5px;
+        }
+
+        nav ul li ul li
+        {
+            text-align: center;
+            padding: 5px 5px;
+        }
+
+        nav ul li ul li a
+        {
+            font-size: 13px;
+        }
+
+        section
+        {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        footer
+        {
+            background: #1b1b1b;
+            width: 100%;
+            margin-top: 1px;
+
+        }
+
+        #body-part
+        {
+            border-bottom: 1px solid #A4A4A4;
+
+        }
+
+        #footer-bottom
+        {
+            background: #161616;
+            margin-top: 33px;
+        }
+
+        div h3
+        {
+            font-family: "Georgia";
+            font-size: 16px;
+            font-weight: lighter;
+            color: #ffffff;
+        }
+
+        #Company-details
+        {
+            padding-left: 20px;
+            padding-top: 33px;
+            display: inline-block;
+        }
+
+        footer p,address,a
+        {
+            color: #979797;
+            text-decoration: none;
+        }
+
+        span
+        {
+            color: #40aed7;
+            font-weight: lighter;
+        }
+
+        #news-events
+        {
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 123px;
+            padding-top: 33px;
+        }
+
+        #news-events p
+        {
+            position: relative;
+            top: 40px;
+            margin-bottom:22px;
+            line-height: 20px;
+        }
+
+        #news-events h4
+        {
+            position: relative;
+            top: 33px;
+        }
+
+        #up-to-date
+        {
+            display: inline-block;
+            vertical-align: top;
+            padding-top: 33px;
+            padding-left: 65px;
+        }
+
+        #up-to-date p
+        {
+            padding-top: 33px;
+        }
+
+        #up-to-date input
+        {
+            margin-top: 20px;
+        }
+
+        #up-to-date input[type="text"]
+        {
+            background: #1b1b1b;
+            border: #161616 solid 1px;
+            padding: 9px 33px 9px 10px;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        #up-to-date input[type="button"]
+        {
+            background: #1b1b1b;
+            color: #40aed7;
+            border: #161616 solid 1px;
+            padding: 10px;
+        }
+
+        #copyright
+        {
+            display: inline-block;
+            padding-left: 20px;
+        }
+
+        #template-origin
+        {
+            display: inline-block;
+            float: right;
+            padding-right: 20px;
+
+        }
+
+        footer p,address,h4
+        {
+            font-size: 13px;
+            font-family: "Georgia";
+            font-style: normal;
+        }
+
+        address, #contact
+        {
+            line-height: 20px;
+            margin: 30px 0px;
+        }
+
+        #footer-bottom
+        {
+            padding: 25px 0;
+        }
+
+        #footer-bottom p
+        {
+            color: #ffffff;
+            font-weight: lighter;
+        }
+
+        #footer-wrapper, #footer-bottom div
+        {
+            width: 1000px;
+            margin: auto;
+        }
+
+        .dd_div
+        {
+            display: inline-block;
+            float: none;
+            width: 45px;
+            height: 45px;
+            margin-top: 40px;
+            margin-right: 20px;
+        }
+
+
+        #table
+        {
+            margin: 50px 0 70px 50px;
+            font-size: 0.9em;
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        #table th, #table td
+        {
+            width: 275px;
+            height: 40px;
+            font-family: myFont;
+        }
+
+        #table thead tr
+        {
+            background-color: #40ADD6;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        #table tbody tr
+        {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        #table tbody tr:nth-of-type(even)
+        {
+            background-color: #f3f3f3;
+        }
+
+        #table tbody tr:last-of-type
+        {
+            border-bottom: 2px solid #40ADD6;
+        }
+
+        #table caption
+        {
+            text-align: left;
+            padding: 10px 10px;
+            font-size:18px;
+            font-style: italic;
+        }
+
+        @font-face
+        {
+            font-family: myFont;
+            src: url(font/font1.ttf);
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="body-part">
+    <!--Wrapper div used to work with this part as a whole-->
+    <div id="wrapper">
+        <header>
+            <div class="search">
+                <input type="search" placeholder="Search by city" id="searchBar">
+                <input type="button" value="SEARCH" id="searchButton" onclick="search(); window.location.href = 'Buy_Page1.html';">
+            </div>
+
+            <div class="title">
+                <h1>TRUESTATE</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" id="homepage">HOMEPAGE</a></li>
+                        <li><a href="Buy_Page1.html">BUY</a></li>
+                        <li><a href="Sell.html">SELL</a></li>
+                        <li><a href="#">ABOUT US &#9660;</a>
+                            <ul>
+                                <li><a href="OurCompany.html">OUR COMPANY</a></li>
+                                <li><a href="AboutUs.html">OUR TEAM</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="Testimonials.html">TESTIMONIALS</a></li>
+                        <li><a href="Contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <p class="caption">Do you wanna buy a home? We make it possible.</p>
+            </div>
+        </header>
+
+        <div id="pageName">
+            <h1>Top 10</h1>
+        </div>
+
+
+        <table border="1" cellpadding="10" cellspacing="0" id="table">
+            <caption>The top 10 houses, rated by our experts:</caption>
+            <thead>
+                <tr>
+                    <th>House</th><th>City</th><th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10250 W SUNSET</td><td>Bel-Air</td><td>$8,000,000</td></tr>
+                <tr><td>277 Saint Pierre Rd</td><td>Los Angeles</td><td>$7,200,000</td></tr>
+                <tr><td>950 Lombard St</td><td>San Francisco</td><td>$6,500,000</td></tr>
+                <tr><td>2646 Union St</td><td>San Francisco</td><td>$5,000,000</td></tr>
+                <tr><td>2799 Broadway St</td><td>San Francisco</td><td>$3,500,000</td></tr>
+                <tr><td>2590 Green St</td><td>San Francisco</td><td>$2,900,000</td></tr>
+                <tr><td>22648 Pacific Coast Highway</td><td>Malibu</td><td>$2,500,000</td></tr>
+                <tr><td>632 W Deming Pl</td><td>Chicago</td><td>$1,700,000</td></tr>
+                <tr><td>1218 Roberto Lane</td><td>Los Angeles</td><td>$2,450,000</td></tr>
+                <tr><td>602 Birdsall St</td><td>Houston</td><td>$2,000,000</td></tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<footer>
+
+    <script>
+        function allowDrop(ev)
+        {
+            ev.preventDefault();
+        }
+
+        function drag(ev)
+        {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev)
+        {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+
+            var div_drop_element = ev.target.parentElement.parentElement;
+            var div_drag_element = document.getElementById(data).parentElement.parentElement;
+
+            div_drag_element.appendChild(document.getElementById(ev.target.id).parentElement);
+            div_drop_element.appendChild(document.getElementById(data).parentElement);
+        }
+    </script>
+
+    <!--Footer wrapper, which was used to put the footer part side to side on the browser page-->
+    <div id="footer-wrapper">
+        <div id="Company-details">
+            <h3>Company Details Here</h3>
+
+            <p>
+            <Address>
+                Address Line 1<br>
+                Address Line 2<br>
+                Town/City<br>
+                Postcode/Zip<br>
+            </Address>
+            </p>
+
+            <p id="contact">
+                Tel: <a href="tel:xxxx xxxx xxxxxx">xxxx xxxx xxxxxx</a><br>
+                Email: <a href="mailto: contact@domain.com">contact@domain.com</a>
+            </p>
+        </div>
+
+        <div id="news-events">
+            <h3>Latest News & Events</h3>
+
+            <h4><span>Magna phasellus</span></h4>
+
+            <p>
+                Vestassapede et donec ut est liberos sus et eget sed eget.<br>
+                Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
+                ant curabiturpis.
+            </p>
+
+            <h4><span>Magna phasellus</span></h4>
+
+            <p>
+                Vestassapede et donec ut est liberos sus et eget sed eget.<br>
+                Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
+                ant curabiturpis.
+            </p>
+        </div>
+
+        <div id="up-to-date">
+            <h3>Stay Up To Date</h3>
+
+            <p>Subscribe To Our Newsletter</p>
+
+            <input type="text" placeholder="Enter Your Email Here">
+            <input type="button" value="GO">
+            <br>
+
+            <div class="dd_div"><a href="http://www.twitter.com"><img id="dd1" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/footer/twitter.jpg" width="45" height="45"></a></div>
+            <div class="dd_div"><a href="http://www.linkedin.com"><img id="dd2" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/footer/linkedin.png" width="45" height="45"></a></div>
+            <div class="dd_div"><a href="http://www.facebook.com"><img id="dd3" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/footer/facebook.png" width="45" height="45"></a></div>
+            <div class="dd_div"><a href="http://www.rss.com"><img id="dd4" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" src="img/footer/rss.png" width="45" height="45"></a></div>
+        </div>
+
+    </div>
+
+    <div id="footer-bottom">
+
+        <div>
+            <p id="copyright">
+                Copyright &copy; 2013 - All Rights Reserved - Domain Name
+            </p>
+
+            <p id="template-origin">
+                Template by OS Templates
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
