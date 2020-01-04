@@ -1,0 +1,135 @@
+.blog-container 
+{
+  display: grid;
+  margin-left: 25px;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 15px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.blog-item 
+{
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;  
+}
+
+.blog-item-card
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: 10px;
+	transform-style: preserve-3d;
+	transition: all 0.8s;
+}
+
+.blog-item-card-x
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.8s;
+}
+
+.blog-item h3
+{
+	transform: translateZ(5rem);
+}
+
+.blog-item:hover > .blog-item-card
+{
+	transform: rotateY(180deg);
+}
+
+.blog-item:hover > .blog-item-card-x
+{
+  transform: rotateX(180deg);
+}
+
+.blog-card-front h3
+{
+	color: black;
+	padding-top: 215px;
+	transform: translateZ(5rem);
+	font-size: 30px;
+}
+
+.blog-card-back h3
+{
+	color: #444;
+	padding: 130px 20px 0 20px;
+	font-size: 22px;	
+}
+
+.blog-card-back-x h3
+{
+  color: #444;
+  padding: 130px 20px 0 20px;
+  font-size: 22px;  
+}
+
+.blog-card-front img
+{
+	border-radius: 10px;
+}
+
+.blog-card-front
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+.blog-card-back
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+  border: 1px solid lightgreen;
+}
+.blog-card-back-x
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+  transform: rotateX(180deg);
+  border: 1px solid lightgreen;
+}

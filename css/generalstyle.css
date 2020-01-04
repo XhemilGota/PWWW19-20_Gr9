@@ -163,14 +163,15 @@ nav ul li ul
     position: absolute;
     background-color: white;
     width: 155px;
-    padding-top: 5px;
+    padding-top: 0px;
     margin: 0 5px 0 5px;
 }
 
 nav ul li ul li
 {
-    text-align: center;
+    text-align: left;
     padding: 5px 5px;
+    display: block;
 }
 
 nav ul li ul li a
