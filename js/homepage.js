@@ -98,7 +98,7 @@ var bathroom = [7, 8, 3, 2, 3, 7, 22,8,6,9,5];
 
 var sqrt = [5465, 9495, 3200, 1100,3368, 5777, 30000, 8060 ,8542,2100,4301];
 
-var price = ["$5,000,000", "$6,500,000", "$1,200,000", "$200,000", "$700,000", "$2,450,000", "$8,000,000","$1,250,000","$1,500,000","$3,500,000", "$1,450,000"];
+var price = [5000000, 6500000, 1200000, 200000, 700000, 2450000, 8000000,1250000,1500000,3500000, 1450000];
 
 var lat = [37.796400, 37.802250, 29.762510,29.735590,40.599000,34.102540,34.109350,34.092980,34.108790,37.793259,25.731611];
 
@@ -120,7 +120,8 @@ var temp;
 window.onload = function()
 {
 	temp = document.querySelectorAll("body > div:not(#slideshow)");
-}
+
+	}
 
 var index = 0;
 var index2 = 0;
@@ -182,6 +183,40 @@ function plusSlides(step)
 	slide();
 }
 
+var propertyInfoProto = {
+	downPayment : function() {
+		return "Down Payment: $" + (this.propPrice * 0.1).toPrecision(2);
+	},
+
+	monthlyInstallment : function() {
+		return "Monthly Installment: $" + (this.propPrice / (20 * 12)).toLocaleString("en-US");
+	},
+
+	hoverText : function() {
+		return this.propStr + ' | $' + this.propPrice + ' | ' + this.propBeds + ' beds ' + this.propBaths + ' baths';
+	}
+};
+
+function propertyInfo(propStr, propPrice, propCity, propBeds, propBaths, propSqrt, propDescription)
+{
+	this.propStr = propStr;
+	this.propPrice = propPrice;
+	this.propCity = propCity;
+	this.propBeds =propBeds;
+	this.propBaths = propBaths;
+	this.propSqrt = propSqrt;
+	this.propDescription = propDescription;
+}
+
+propertyInfo.prototype = propertyInfoProto;
+
+
+var propInfos = [];
+for(var i = 0; i < photos.length; i++)
+	propInfos[i] = new propertyInfo(street[i], price[i], city[i], bedroom[i], bathroom[i], sqrt[i], descriptions[i]);
+
+
+
 function slide()
 {
 	try
@@ -194,14 +229,17 @@ function slide()
 
 		document.getElementById("slideshowImg").src = photos[index2][index];
 		document.getElementById("slideshow").style.display = "block";
-		document.getElementById("street").innerHTML = street[index2];
-		document.getElementById("price").innerHTML = price[index2];
-		document.getElementById("city").innerHTML = city[index2];
-		document.getElementById("bedroom").innerHTML = 'Bedrooms: ' + bedroom[index2];
-		document.getElementById("bathroom").innerHTML = 'Bathrooms: ' + bathroom[index2];
-		document.getElementById("sqrt").innerHTML = 'Sqrt: ' + sqrt[index2];
-		document.getElementById("descriptionText").innerHTML = descriptions[index2];
-		document.getElementById("hoverText").innerHTML = street[index2] + ' | ' + price[index2] + ' | ' + bedroom[index2] + ' beds ' + bathroom[index2] + ' baths';
+		document.getElementById("street").innerHTML = propInfos[index2].propStr;
+		document.getElementById("price").innerHTML = propInfos[index2].propPrice;
+		document.getElementById("city").innerHTML = propInfos[index2].propCity;
+		document.getElementById("bedroom").innerHTML = 'Bedrooms: ' + propInfos[index2].propBeds;
+		document.getElementById("bathroom").innerHTML = 'Bathrooms: ' + propInfos[index2].propBaths;
+		document.getElementById("sqrt").innerHTML = 'Sqrt: ' + propInfos[index2].propSqrt;
+		document.getElementById("descriptionText").innerHTML = propInfos[index2].propDescription;
+		document.getElementById("hoverText").innerHTML = propInfos[index2].hoverText();
+		document.getElementById("downPayment").innerHTML = propInfos[index2].downPayment();
+		document.getElementById("installment").innerHTML = propInfos[index2].monthlyInstallment();
+			
 	}
 	catch(err)
 	{
@@ -209,6 +247,7 @@ function slide()
 	}
 	pageNumber();
 }
+
 
 function blurOthers()
 {
