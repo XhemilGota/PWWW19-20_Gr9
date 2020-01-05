@@ -18,6 +18,7 @@ function filterData()
         maxSqrfe = Number(maxSqrfe.replace(/[^0-9.-]+/g,""));
      
     var numOfBedrooms = document.getElementById("filterByBedrooms").value;
+    console.log(isNaN("behar"));
         if(numOfBedrooms==="No. of Bedrooms")
         {
             numOfBedrooms=0;

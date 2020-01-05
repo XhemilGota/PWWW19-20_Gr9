@@ -47,7 +47,7 @@ function isBlank()
 
 function checkErrorsForPhoneNumber()
 {
-    var str = importantInputs[1].value;
+    var str = importantInputs[1].value.toString();
     var count = 0;
     if(str.trim().substring(0,1)!=="+")
     {
@@ -59,7 +59,7 @@ function checkErrorsForPhoneNumber()
     
     // true nese stringu ka karaktere tjera perveq numrave
     
-    else if(str.match(/^[0-9 /+]+$/) === null)
+    else if(isNaN(str))
     {
         message[1].title="Please insert a valid phone number";
         importantInputs[1].classList.add("error");

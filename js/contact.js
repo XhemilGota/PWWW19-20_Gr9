@@ -22,7 +22,6 @@
                         if (navigator.geolocation) {
                           navigator.geolocation.getCurrentPosition(showPosition);
                         } else { 
-                          x.innerHTML = "Geolocation is not supported by this browser.";
                         }
                     }
 
@@ -30,7 +29,7 @@
                     {
                         lat = position.coords.latitude;
                         long = position.coords.longitude;
-                        document.getElementById("latitude").value="Latitude: " + lat;
-                        document.getElementById("longitude").value="Longitude: " + long;
+                        document.getElementById("latitude").value="Latitude: " + lat.toPrecision(5);
+                        document.getElementById("longitude").value="Longitude: " + long.toPrecision(5);
                         initMap();
                     }
