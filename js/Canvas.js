@@ -12,8 +12,13 @@ grd.addColorStop(0, "#EE2C2C");
 circle(x_pos, y_pos, radius,grd);
 
 ctx.beginPath();
-ctx.moveTo(x_pos - 1/2*radius,y_pos+3/5*radius);
-ctx.quadraticCurveTo(x_pos,y_pos,x_pos+1/2*radius,y_pos+3/5*radius);
+
+var mouth_x = x_pos;
+var mouth_y = y_pos+3/5*radius;
+var mouth_radius = 3/5*radius;
+
+ctx.moveTo(mouth_x-1/2*radius,mouth_y);
+ctx.quadraticCurveTo(mouth_x+mouth_radius*Math.cos(1.5708),mouth_y-mouth_radius*Math.sin(1.5708),mouth_x+1/2*radius,mouth_y);
 ctx.stroke();
 
 circle(x_pos - 1/3*radius,y_pos-1.7/5*radius, radius/7,"#5C342C");
