@@ -52,6 +52,7 @@
         <div id="pageName">
             <h1>Buy</h1>
         </div>
+        <form action="#">
         <section id="filterData">
             <div>
                 <select onchange="filterData()" id="filterByCity">
@@ -137,13 +138,14 @@
             </select>
             </div>
         </section>
+        </form>
         
         <p id="write"></p>
         
         <section id="photoSection">
             <div class="photos" style="margin-top: 40px; ">
                 <div class="imgBox" onclick="getIndex(0); blurOthers(); slide();">
-                    <img src="img/homepage/1/main.jpg" width="300" height="210">
+                    <img src="img/homepage/1/main.jpg" width="300" height="210" alt="San Francisco, CA 94123, Cow Hollow">
 
                     <div class="imgInfo">
                         <p class="position">0</p>
@@ -157,7 +159,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(1); blurOthers(); slide();">
-                    <img src="img/homepage/2/950Lombard-big-7.jpg" width="300" height="210">
+                    <img src="img/homepage/2/950Lombard-big-7.jpg" width="300" height="210" alt="San Francisco, CA 94133, Russian Hill">
 
                     <div class="imgInfo">
                         <p class="position">1</p>
@@ -171,7 +173,7 @@
                     </div>
                 </div>
                 <div class="imgBox lastBox" onclick="getIndex(2); blurOthers(); slide();">
-                    <img src="img/homepage/3/main.jpg" width="300" height="210">
+                    <img src="img/homepage/3/main.jpg" width="300" height="210" alt="Houston, TX 77024Piney Point">
 
                     <div class="imgInfo">
                         <p class="position">2</p>
@@ -185,7 +187,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(3); blurOthers(); slide();">
-                    <img src="img/homepage/4/main.jpg" width="300" height="210">
+                    <img src="img/homepage/4/main.jpg" width="300" height="210" alt="Houston, TX 77098">
 
                     <div class="imgInfo">
                         <p class="position">3</p>
@@ -199,7 +201,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(4); blurOthers(); slide();">
-                    <img src="img/homepage/5/main.jpg" width="300" height="210">
+                    <img src="img/homepage/5/main.jpg" width="300" height="210" alt="Brooklyn, NY 11235Sheepshead Bay">
 
                     <div class="imgInfo">
                         <p class="position">4</p>
@@ -213,7 +215,7 @@
                     </div>
                 </div>
                 <div class="imgBox lastBox" onclick="getIndex(5); blurOthers(); slide();">
-                    <img src="img/homepage/6/main.jpg" width="300" height="210">
+                    <img src="img/homepage/6/main.jpg" width="300" height="210" alt="Los Angeles, CA 90077">
 
                     <div class="imgInfo">
                         <p class="position">5</p>
@@ -227,7 +229,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(6); blurOthers(); slide();">
-                    <img src="img/homepage/7/main.jpg" width="300" height="210">
+                    <img src="img/homepage/7/main.jpg" width="300" height="210" alt="Bel-Air / Holmby Hills, California">
 
                     <div class="imgInfo">
                         <p class="position">6</p>
@@ -241,7 +243,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(7); blurOthers(); slide();">
-                    <img src="img/homepage/8/main.jpg" width="300" height="210">
+                    <img src="img/homepage/8/main.jpg" width="300" height="210" alt="Beverly Hills, California">
 
                     <div class="imgInfo">
                         <p class="position">7</p>
@@ -255,7 +257,7 @@
                     </div>
                 </div>
                 <div class="imgBox lastBox" onclick="getIndex(8); blurOthers(); slide();">
-                    <img src="img/homepage/9/main.jpg" width="300" height="210">
+                    <img src="img/homepage/9/main.jpg" width="300" height="210" alt="Bel-Air / Holmby Hills, California">
 
                     <div class="imgInfo">
                         <p class="position">8</p>
@@ -269,7 +271,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(9); blurOthers(); slide();">
-                    <img src="img/buy/10/main.jpg" width="300" height="210">
+                    <img src="img/buy/10/main.jpg" width="300" height="210" alt="San Francisco, CA 94115Pacific Heights">
 
                     <div class="imgInfo">
                         <p class="position">9</p>
@@ -283,7 +285,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(10); blurOthers(); slide();">
-                    <img src="img/buy/11/main1.jpg" width="300" height="210">
+                    <img src="img/buy/11/main1.jpg" width="300" height="210" alt="Boston, MA 02135Brighton">
 
                     <div class="imgInfo">
                         <p class="position">10</p>
@@ -297,7 +299,7 @@
                     </div>
                 </div>
                 <div class="imgBox lastBox" onclick="getIndex(11); blurOthers(); slide();">
-                    <img src="img/buy/12/main.jpg" width="300" height="210">
+                    <img src="img/buy/12/main.jpg" width="300" height="210" alt="Chicago, IL 60614Park West">
 
                     <div class="imgInfo ">
                         <p class="position">11</p>
@@ -316,7 +318,7 @@
             
             <div class="photos" style="margin-top: 40px; display: none;">
                 <div class="imgBox" onclick="getIndex(12); blurOthers(); slide();">
-                    <img src="img/buy/13/main.jpg" width="300" height="210">
+                    <img src="img/buy/13/main.jpg" width="300" height="210" alt="Chicago, IL 60614Lincoln Park">
 
                     <div class="imgInfo">
                         <p class="position">12</p>
@@ -330,7 +332,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(13); blurOthers(); slide();">
-                    <img src="img/buy/14/main.jpg" width="300" height="210">
+                    <img src="img/buy/14/main.jpg" width="300" height="210" alt="San Francisco, CA 94123Cow Hollow">
 
                     <div class="imgInfo">
                         <p class="position">13</p>
@@ -344,7 +346,7 @@
                     </div>
                 </div>
                 <div class="imgBox lastBox" onclick="getIndex(14); blurOthers(); slide();">
-                    <img src="img/buy/15/main.jpg" width="300" height="210">
+                    <img src="img/buy/15/main.jpg" width="300" height="210" alt="Houston, TX 77007">
 
                     <div class="imgInfo">
                         <p class="position">14</p>
@@ -358,7 +360,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(15); blurOthers(); slide();">
-                    <img src="img/buy/16/main.jpg" width="300" height="210">
+                    <img src="img/buy/16/main.jpg" width="300" height="210" alt="Houston, TX 77019">
 
                     <div class="imgInfo">
                         <p class="position">15</p>
@@ -372,7 +374,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(16); blurOthers(); slide();">
-                    <img src="img/buy/17/main.jpg" width="300" height="210">
+                    <img src="img/buy/17/main.jpg" width="300" height="210" alt="New York">
 
                     <div class="imgInfo">
                         <p class="position">16</p>
@@ -386,7 +388,7 @@
                     </div>
                 </div>
                 <div class="imgBox lastBox" onclick="getIndex(17); blurOthers(); slide();">
-                    <img src="img/buy/18/main.jpg" width="300" height="210">
+                    <img src="img/buy/18/main.jpg" width="300" height="210" alt="Los Angeles, CA 90049">
 
                     <div class="imgInfo">
                         <p class="position">17</p>
@@ -400,7 +402,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(18); blurOthers(); slide();">
-                    <img src="img/buy/19/main.jpg" width="300" height="210">
+                    <img src="img/buy/19/main.jpg" width="300" height="210" alt="Coconut Grove, FL 33133">
 
                     <div class="imgInfo">
                         <p class="position">18</p>
@@ -414,7 +416,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(19); blurOthers(); slide();">
-                    <img src="img/buy/20/main.jpg" width="300" height="210">
+                    <img src="img/buy/20/main.jpg" width="300" height="210" alt="Coral Gables, FL 33143">
 
                     <div class="imgInfo">
                         <p class="position">19</p>
@@ -428,7 +430,7 @@
                     </div>
                 </div>
                 <div class="imgBox lastBox" onclick="getIndex(20); blurOthers(); slide();">
-                    <img src="img/buy/21/main.jpg" width="300" height="210">
+                    <img src="img/buy/21/main.jpg" width="300" height="210" alt="Malibu, CA 90265">
 
                     <div class="imgInfo">
                         <p class="position">20</p>
@@ -442,7 +444,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(21); blurOthers(); slide();">
-                    <img src="img/buy/22/main.jpg" width="300" height="210">
+                    <img src="img/buy/22/main.jpg" width="300" height="210" alt="Carrollton, TX 75010">
 
                     <div class="imgInfo">
                         <p class="position">21</p>
@@ -456,7 +458,7 @@
                     </div>
                 </div>
                 <div class="imgBox" onclick="getIndex(22); blurOthers(); slide();">
-                    <img src="img/buy/23/main.jpg" width="300" height="210">
+                    <img src="img/buy/23/main.jpg" width="300" height="210" alt="Encino, CA 91436">
 
                     <div class="imgInfo">
                         <p class="position">22</p>
@@ -470,7 +472,7 @@
                     </div>
                 </div>
                 <div class="imgBox lastBox" onclick="getIndex(23); blurOthers(); slide();">
-                    <img src="img/buy/24/main.jpg" width="300" height="210">
+                    <img src="img/buy/24/main.jpg" width="300" height="210" alt="Los Angeles, CA 90077">
 
                     <div class="imgInfo ">
                         <p class="position">23</p>
@@ -618,42 +620,40 @@
     <!--Footer wrapper, which was used to put the footer part side to side on the browser page-->
     <div id="footer-wrapper">
         <div id="Company-details">
-            <h3>Company Details Here</h3>
+                <h3>Company Details Here</h3>
 
-            <p>
-            <Address>
-                Address Line 1<br>
-                Address Line 2<br>
-                Town/City<br>
-                Postcode/Zip<br>
-            </Address>
-            </p>
+                <p>
+                <Address>
+                    530 Southside Lane<br>
+                    4391 Hillhaven Drive<br>
+                    Los Angeles<br>
+                    90023<br>
+                </Address>
+                </p>
 
-            <p id="contact">
-                Tel: <a href="tel:xxxx xxxx xxxxxx">xxxx xxxx xxxxxx</a><br>
-                Email: <a href="mailto: contact@domain.com">contact@domain.com</a>
-            </p>
-        </div>
+                <p id="contact">
+                    Tel: <a href="tel:213-201-0000">213-201-0000</a><br>
+                    Email: <a href="mailto: contact@truestate.com">contact@tstate.com</a>
+                </p>
+            </div>
 
         <div id="news-events">
-            <h3>Latest News & Events</h3>
+                <h3>Latest News & Events</h3>
 
-            <h4><span>Magna phasellus</span></h4>
+                <h4><span>Mortgage Applications</span></h4>
 
-            <p>
-                Vestassapede et donec ut est liberos sus et eget sed eget.<br>
-                Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
-                ant curabiturpis.
-            </p>
+                <p>
+                    Mortgage Applications Dip in Late December<br>
+                    According to the Mortgage Bankers Association's
+                </p>
 
-            <h4><span>Magna phasellus</span></h4>
+                <h4><span>Southern U.S. Cities</span></h4>
 
-            <p>
-                Vestassapede et donec ut est liberos sus et eget sed eget.<br>
-                Quisqueta habitur augue magnisl magna phasellus sagittitor<br>
-                ant curabiturpis.
-            </p>
-        </div>
+                <p>
+                    Southern U.S. Cities to be Hottest Housing Markets in 2020<br>
+                    According to a panel of economists and real estate experts
+                </p>
+            </div>
 
         <div id="up-to-date">
             <h3>Stay Up To Date</h3>
