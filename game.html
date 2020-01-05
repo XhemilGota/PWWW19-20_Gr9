@@ -60,6 +60,42 @@
 			margin-left: 630px;
 			text-shadow: 2px 3px 5px #999999;
 		}
+
+		#animated-box
+		{
+			background-color: blue;
+			position: absolute;
+			height:5px;
+			width:5px;
+			left:780px;
+			bottom:470px;
+			transform: skew(20deg, 0deg);
+			animation-name: box-movement;
+			animation-duration: 1s;
+			animation-iteration-count:infinite;
+			animation-direction: initial;
+			animation-timing-function: linear;
+		}
+
+		@keyframes box-movement
+		{
+			25%
+			{
+				transform: translate(10px, -10px);
+			}
+			50%
+			{
+				transform: translate(20px, 0px);
+			}
+			75%
+			{
+				transform: translate(10px, 10px);
+			}
+			100%
+			{
+				transform: translate(0px, 0px);
+			}
+		}
 	</style>
 </head>
 <body>
@@ -81,6 +117,8 @@
 			<input type="button" onclick="right();" id="right" value=">">
 		</div>
 	</div>
+
+	<div id="animated-box"></div>
 	
 	<script src="js/game.js"></script>
 </div>
