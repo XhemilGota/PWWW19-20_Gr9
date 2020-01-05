@@ -490,21 +490,10 @@ window.onload = function(){
 		if(city.match(regex)!==null && filterByCity.length>=3)
 		{
 			imgBox[i].style.display="";
+
+			document.getElementById("filterByCity").value=city;
+			filterData();
 			count++;
-
-			if(count%3===0)
-			{
-				imgBox[i].className="imgBox lastBox";
-			}
-			else
-			{
-				imgBox[i].className="imgBox";
-			}
-
-			if(i>11 && count<=12)
-			{
-				document.getElementsByClassName("photos")[0].appendChild(imgBox[i]);
-			}
 		}
 		else
 		{
