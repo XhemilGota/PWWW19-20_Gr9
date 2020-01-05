@@ -67,25 +67,42 @@ var photos = [["img/homepage/1/main.jpg",
 				"img/homepage/9/other2.jpg",
 				"img/homepage/9/other3.jpg",
 				"img/homepage/9/other4.jpg",
-				"img/homepage/9/other5.jpg"]
+				"img/homepage/9/other5.jpg"],
+                            
+                                ["img/buy/10/main.jpg",
+				"img/buy/10/other1.jpg",
+				"img/buy/10/other2.jpg",
+				"img/buy/10/other3.jpg",
+				"img/buy/10/other4.jpg",
+				"img/buy/10/other5.jpg"],
+                            
+                       ["img/buy/19/main.jpg",
+                        "img/buy/19/other1.jpg",
+                        "img/buy/19/other2.jpg",
+                        "img/buy/19/other3.jpg",
+                        "img/buy/19/other4.jpg",
+                        "img/buy/19/other5.jpg",
+                        "img/buy/19/other6.jpg"]
                         ];
 
-var street = ["2646 Union St", "950 Lombard St", "11526 Wendover Ln", "3102 Ferndale St", "2448 E 12th St","1218 Roberto Lane","10250 W SUNSET","1160 SAN YSIDRO Drive", "2223 QUEENSBOROUGH Lane"];
+var street = ["2646 Union St", "950 Lombard St", "11526 Wendover Ln", "3102 Ferndale St", "2448 E 12th St","1218 Roberto Lane","10250 W SUNSET","1160 SAN YSIDRO Drive", "2223 QUEENSBOROUGH Lane"
+, "2799 Broadway St" ,"4160 Raynolds Ave"];
 
 var city = ["San Francisco, CA 94123, Cow Hollow", "San Francisco, CA 94133, Russian Hill", "Houston, TX 77024Piney Point",
-    "Houston, TX 77098", "Brooklyn, NY 11235Sheepshead Bay","Los Angeles, CA 90077","Bel-Air / Holmby Hills, California","Beverly Hills, California","Bel-Air / Holmby Hills, California"];
+    "Houston, TX 77098", "Brooklyn, NY 11235Sheepshead Bay","Los Angeles, CA 90077","Bel-Air / Holmby Hills, California","Beverly Hills, California","Bel-Air / Holmby Hills, California", 
+"San Francisco, CA 94115Pacific Heights" ,"Coconut Grove, FL 33133"];
 
-var bedroom = [4, 6, 5, 3, 4, 6, 17,6,5];
+var bedroom = [4, 6, 5, 3, 4, 6, 17,6,5,6,5];
 
-var bathroom = [7, 8, 3, 2, 3, 7, 22,8,6];
+var bathroom = [7, 8, 3, 2, 3, 7, 22,8,6,9,5];
 
-var sqrt = [5465, 9495, 3200, 1100,3368, 5777, 30000, 8060 ,8542];
+var sqrt = [5465, 9495, 3200, 1100,3368, 5777, 30000, 8060 ,8542,2100,4301];
 
-var price = ["$5,000,000", "$6,500,000", "$1,200,000", "$200,000", "$700,000", "$2,450,000", "$8,000,000","$1,250,000","$1,500,000"];
+var price = ["$5,000,000", "$6,500,000", "$1,200,000", "$200,000", "$700,000", "$2,450,000", "$8,000,000","$1,250,000","$1,500,000","$3,500,000", "$1,450,000"];
 
-var lat = [37.796400, 37.802250, 29.762510,29.735590,40.599000,34.102540,34.109350,34.092980,34.108790];
+var lat = [37.796400, 37.802250, 29.762510,29.735590,40.599000,34.102540,34.109350,34.092980,34.108790,37.793259,25.731611];
 
-var lng = [-122.442910, -122.417470, -95.515083,-95.416557,-73.952790,-118.454790,-118.459020,-118.420350,-118.477490];
+var lng = [-122.442910, -122.417470, -95.515083,-95.416557,-73.952790,-118.454790,-118.459020,-118.420350,-118.477490,-122.441521,-80.237529];
 
 var descriptions = ["Residence 2646 is the pinnacle of San Francisco residential design a vision of what naturally beautiful, blissful functional living should be. It is a sophisticated San Francisco home designed for the contemporary active family with Golden Gate Bridge views, walkability and a seamless indoor-outdoor connection. Overlooking the San Francisco Bay, Residence 2646 celebrates today's contemporary city-dwelling family, streamlining busy lifestyle with innovative technology and stunning design. Ideally located on a desirable residential block, this home delivers convenient walkability to San Francisco's most coveted independent schools and sophisticated shops and restaurants of Union Street. With four en-suite bedrooms on one level. This exceptional LEED Platinum-certified home is rich with extra amenities. Crowning the home is the penthouse level, including space for work and play with both North and South facing terraces and direct access to the roof deck with a fireplace."
     , "RESIDENCE 950...San Francisco's Newest Masterpiece. Nestled atop a magical park-like setting on one of the City's largest residential lots, this world-class urban estate has been brilliantly re-imagined for the future. A dramatic 40 foot cantilevered infinity pool reflects the shimmering Bay and glittering lights of the City's famed Skyline, while dazzling views of iconic landmarks from Salesforce Tower to The Transamerica Pyramid and beyond provide a stunning panorama surrounding the fabulous resort-like indoor/ outdoor flow of living, dining and entertainment spaces- easily accommodating 300+ guests. The super-advanced, technology enabled health and wellness environment of this sustainably built LEED Platinum Certified, exquisitely designed property, as well as the spa-like guest cottage with steam, sauna, massage room, outdoor shower and hot tub, await the most discerning of owners. Experience the magic of one of California's most extraordinary private residences...",
@@ -95,7 +112,9 @@ var descriptions = ["Residence 2646 is the pinnacle of San Francisco residential
 "This Jaw-dropping contemporary new construction in highly desired Bel Air epitomizes Los Angeles living at its finest. Built and designed by ANR Signature Collection, this masterpiece offers it all. From the moment of entry one is greeted with jetliner views from nearly every room of the home, from the San Gabriel mountains, head on downtown Los Angeles, Century City, all the way to the Pacific Ocean. The main floor offers formal living, dining, bedroom suite, a designer kitchen with Miele appliances all overlooking the grassy backyard and expansive views. Upstairs there are four bedrooms all en-suite, including a dreamy Master bed/sitting and master bath with city/ocean views. In addition to the four upstairs bedrooms there is a bonus flex room that could be office, media room, gym, etc. Outside there is an infinity edge pool looking straight onto downtown, covered pool cabana with BBQ and a 3/4th pool bath. This home is in a class of its own.",
 "Fashion designers Lubov and Max Azria's 30,000-square-foot estate on Sunset Boulevard, Maison du Soleil, was built in the 1930s by legendary architect Paul Williams-who helped shape the legacy of classic Hollywood Regency design. The iconic 60-room residence merges colonial architecture with modern design, resulting in a grand estate that's luxurious, chic and timeless. A seamless blend of worldly influences, the property features Japanese and French gardens, a Moroccan-style pool house complete with a custom hammam and floor-to-ceiling marble tile, a spacious 6,000-sq-ft private movie theater with an attached catering kitchen, greenhouse, a glass-walled tennis court, plus multiple dining patios and fire pits. Yet with all of its scale and grandeur, the home remains warm, whimsical and inviting, making it a unique retreat for intimate family life while still poised for large-scale entertaining.",
 "Situated behind gates and elevated high above prime lower San Ysidro Drive in the City of Beverly Hills, this newly constructed residence totaling over 8,000 sf with 3 structures (main house, guest house and pool house) was designed by one of California's greatest living architects, Ray Kappe. A stunning 2 story masterpiece (plus basement) features Kappe's quintessential use of poured in place concrete, glass, teak and redwood that took over 6 years to build and was completed in 2017. Perfect for entertaining, the main house with dramatic open spaces includes a sunken living room, dining room, Bulthaup kitchen, family room and office. The home also features a screening room, gym and wine cellar. There is also a full one bedroom guest house with kitchenette and separate pool house structure. The property which spans approx. 30,000 sf includes an incredible swimmer's pool, large lawns, expansive patios and a viewing deck overlooking the city, canyons and ocean.",
-"Versace Mansion - West. One of a kind Versace-themed estate located in the gated community of Bel Air Crest. This amazing house features recent design and materials upgrades, transforming it into a warm and inviting architectural gem. Enter through the grand front gate and step into the welcoming foyer entry with double staircase adorned by a hanging crystal chandelier, soaring ceilings and majestic windows which flood the main floor with natural sunlight. Enjoy 5 magnificent fireplaces, recessed lighting, custom movie theater, magnificent library with built-in cabinets, and a 4-car garage with epoxy-coated floor and glass roll-up garage door. Extensive use of Gianni Versace-inspired details create an atmosphere of luxurious and warm modernism. Relish the California sunshine as you entertain guests in the expansive grassy yard, complete with pool, spa, lounge, fire pit, BBQ, and outdoor kitchen."];
+"Versace Mansion - West. One of a kind Versace-themed estate located in the gated community of Bel Air Crest. This amazing house features recent design and materials upgrades, transforming it into a warm and inviting architectural gem. Enter through the grand front gate and step into the welcoming foyer entry with double staircase adorned by a hanging crystal chandelier, soaring ceilings and majestic windows which flood the main floor with natural sunlight. Enjoy 5 magnificent fireplaces, recessed lighting, custom movie theater, magnificent library with built-in cabinets, and a 4-car garage with epoxy-coated floor and glass roll-up garage door. Extensive use of Gianni Versace-inspired details create an atmosphere of luxurious and warm modernism. Relish the California sunshine as you entertain guests in the expansive grassy yard, complete with pool, spa, lounge, fire pit, BBQ, and outdoor kitchen.",
+"The legendary Gold Coast of Pacific Heights is an elite enclave on Outer Broadway known for its majestic homes, notable residents and unsurpassed views. Here, on a coveted corner lot set high above the city and the bay, this imposing 11,600� square-foot mansion is the foremost offering on the market in San Francisco, presenting a rare opportunity to own a custom-built residence in a world-class location with world-class views. Impressively engineered of concrete and steel and completed circa 2004, it displays quality construction, craftsmanship and refinement. The eminently comfortable home has six bedrooms--five en suite--seven full baths, and two half baths. Floors are clad in walnut, raw limestone and marble. High-ceilinged public spaces are airy, open, and ideal for entertaining on any scale. The centerpiece of the home is a spectacular serpentine staircase with ornate railings crafted by Italian artisans. The property features interior design by both Ken Fulk and Eric Cohler, elevator access to four levels, a secondary back staircase, smart home technology, radiant heating, two working fireplaces, hand-plastered walls, mahogany doors and windows, a four-car garage with an EV charging station, and abundant storage. A formal entry facing Broadway begins with a grand portrait hall with 20-foot ceilings, marble floors, and a dramatic double staircase. An extensive wine cellar with tasting area is also located on this level. The second level is comprised of a study and two bedrooms, including a two-room guest suite. On the third level is a vibrant, open library with mahogany-paneled walls, coffered ceilings, built-in bookcases, a bay window with a lovely view, and a decorative fireplace with a custom glass mosaic. The handsome pub and billiards room has an antique bar reclaimed from a British tavern. Completing this level are an elegant guest suite with quilted leather walls, a private fitness room, and a large laundry room with a pet bathing station. The fourth floor is the heart of the home. Filled with glorious volume and light, the main public spaces feature 14 sets of French doors and include a living and dining salon with bay views and glowing cerulean walls of burnished enamel; a separate sitting area; and a magnificent, open-plan great room encompassing the kitchen, a casual dining space with built-in banquette, and a family room with a wall of bookshelves. Four sets of French doors give way to a protected, sunny south terrace and artificial-turf lawn. Chefs and entertainers will appreciate the kitchen, which features an island; custom mahogany cabinetry; Italian milk glass countertops; a Thermador range with a copper hood; pairs of Sub-Zero refrigerators, dishwashers, ovens, and sinks; a built- in desk; and a butler's pantry with a third Sub-Zero",
+"Spectacular architectural masterwork designed by the award-winning & published design teams of James Duncan Interiors and Jose Lobos SOW Design Studio. Gated, new construction (5158 SF) residence set behind a coral rock wall & surrounded by 10,836 ~ SF of ultra-private, lush tropical grounds canopied by majestic oaks. Light-filled living spaces offer double-height vaulted wood ceilings, dramatic skylights, Provenza oak wood flooring, 432 bottle wine cellar & Smart Home technologies throughout. Stunning custom kitchen features European style cabinetry, Thermador appliances & marble countertops. Walls of glass throughout create a seamless blending of interior & fabulous exterior spaces with covered terrace for lounging/dining + summer kitchen and pool overlooking the enchanting garden."];
 var temp;
 
 window.onload = function()
@@ -113,6 +132,15 @@ function getIndex(x)
     index = 0;
 	document.getElementById("slideshow").style.top = (document.documentElement.scrollTop + 30) + 'px';
 
+    initMap();
+    slide();
+}
+
+function getIndex1(x)
+{
+    index2=x;
+    index=0;
+    document.getElementById("slideshow").style.top = (document.documentElement.scrollTop + 30) + 'px';
     initMap();
     slide();
 }
@@ -209,7 +237,12 @@ function pageNumber()
 
 function propertyIndex()
 {
+        if(index2<10)
 	localStorage.setItem("index", index2);
+        else if(index2===10)
+        {
+            localStorage.setItem("index", 18);
+        }
 }
 
 function initMap()

@@ -14,7 +14,7 @@
         <script src="js/search.js"></script>
         <script src="js/game.js"></script>
         
-        <title>PWWW19-20_Gr9</title>
+        <title>Truestate: Real estate listings, Homes for sale</title>
 
     </head>
 
@@ -53,8 +53,9 @@
 
                    
                     <section id="firstSection">
-                         <section id="slideSection">
-                            <a id="slideLink" href="https://facebook.com"><img  width="715" height="400" id="slide"></a>
+                         <section id="slideSection" style="cursor: pointer;">
+                             <p id="whichIndex" style="display: none">1</p>
+                             <img  width="715" height="400" id="slide" onclick="getIndex1(parseInt(document.getElementById('whichIndex').textContent)); blurOthers(); slide();">
                          </section>
 
                         <div id="sideTitle">
@@ -63,7 +64,7 @@
                             <p id="slideCaption"></p>
                             
                             
-                            <input type="button" onclick="window.location='sell.html';" value="SEE MORE &raquo;">
+                            <input type="button" onclick="window.location='Buy_Page1.html';" value="SEE MORE &raquo;">
 
                             
                         </div>
@@ -72,10 +73,10 @@
                         
                             var images = ["img/homes/main1.jpg","img/homes/main2.jpg", "img/homes/main3.png", "img/homes/main4.png"];
                             var titles = ["CHARMING COTTAGE", "BACKYARD PARADISE", "STUNNING CLASSIC" , "SPARKLING POOL"];
-                            var quotes = ["�The house you looked at today and wanted to think about until tomorrow may be the same house someone looked at yesterday and will buy today.�", "�Winter is the time for comfort, for good food and warmth, for the touch of a friendly hand and for a talk beside the fire: it is the time for home.�", "�Chase your dreams but always know the road that will lead you home again.�", "�Owning a home is a keystone of wealth� both financial affluence and emotional security.�"];
+                            var quotes = ["&quotThe house you looked at today and wanted to think about until tomorrow may be the same house someone looked at yesterday and will buy today.&quot", "&quotWinter is the time for comfort, for good food and warmth, for the touch of a friendly hand and for a talk beside the fire: it is the time for home.&quot", "&quotChase your dreams but always know the road that will lead you home again.&quot", "&quotOwning a home is a keystone of wealth&rsquo; both financial affluence and emotional security.&quot"];
                             var step=0;
                             var whichAnimation=0;
-                            
+                            var indexOfPhoto =[1,9,10,5];
                             function slideit(){
                             
                               if(whichAnimation>1)
@@ -84,8 +85,8 @@
                               }
                               document.getElementById("slide").src=images[step];
                               document.getElementById("slide").style.animation="ani"+whichAnimation+" 5s linear";
+                              document.getElementById("whichIndex").innerHTML=indexOfPhoto[step];
                               document.getElementById("slideCaption").style.animation="textani"+whichAnimation+" 5s linear";
-                              document.getElementById("slideLink").href="https://youtube.com";
                               document.getElementById("slideCaption").innerHTML=quotes[step];
                               whichAnimation++;
                               
@@ -259,7 +260,7 @@
                          
                      </script>
                         
-                        <div style="width:400px; margin-bottom: 30px;">
+                        <div style="width:400px; height:400px; margin-bottom: 30px;">
                         <p class="imp" id="street"></p>
                         <p class="imp" id="price">$</p>
                         <p id="city"></p>
