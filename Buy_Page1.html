@@ -508,17 +508,24 @@
             {
                 var page = document.getElementsByClassName("photos");
               
-                if(number===1)
+                switch(number)
                 {
-                    page[0].style.display="";
-                    page[1].style.display="none";
-                }
-                else
-                {
-                    page[1].style.display="";
-                    page[0].style.display="none";
+                    case 1:
+                    {
+                       page[0].style.display="";
+                       page[1].style.display="none";
+                       break; 
+                    }
                     
+                    case 2:
+                    {
+                       page[1].style.display="";
+                       page[0].style.display="none";
+                       break;
+                    }
+
                 }
+    
             }
             
          </script>

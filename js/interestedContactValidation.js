@@ -8,9 +8,9 @@ function checkForErrors()
     if(!isAnyFieldBlank){
       var isAnyErrorForPhoneNumber = checkErrorsForPhoneNumber(); 
       var isAnyErrorForCity= checkErrorsForCity();
+      var isAnyErrorForSSN = checkErrorsForSSN();
       
-      
-      if(!(isAnyErrorForCity || isAnyErrorForPhoneNumber))
+      if(!(isAnyErrorForCity || isAnyErrorForPhoneNumber || isAnyErrorForSSN))
       {
           alert("Thanks for choosing our company to buy a new home! \n\n\
 Our team will contact you very soon!");
@@ -59,7 +59,7 @@ function checkErrorsForPhoneNumber()
         return true;
     }
     
-    // true nese stringu ka karaktere tjera perveq numrave
+    // true nese stringu ka karaktere tjera perveq numrave dhe + it
     
     else if(str.match(/^[0-9 /+]+$/) === null)
     {
@@ -103,6 +103,38 @@ function checkErrorsForCity()
          message[4].title="";
          if(importantInputs[4].classList.contains("error"))
             importantInputs[4].classList.toggle("error");
+         return false;
+    }
+}
+
+function checkErrorsForSSN()
+{
+    var ssn = importantInputs[5].value;
+    
+    var errorMessage="SSN contains only numbers!";
+    
+    //kontrollon nese stringu permban vetem numra, true nese po
+
+    var patt = new RegExp("[a-zA-Z!@#\$%\^\&*\)\(+=._-]");
+  
+    if(patt.exec(ssn)!==null)
+    {
+        message[5].title=errorMessage;
+        importantInputs[5].classList.add("error");
+        return true;
+    }
+    else if(ssn.length!==9)
+    {
+        errorMessage=errorMessage.replace("only numbers", "9 numbers");
+        message[5].title=errorMessage;
+        importantInputs[5].classList.add("error");
+        return true;
+    }
+    else
+    {   
+        message[4].title="";
+         if(importantInputs[5].classList.contains("error"))
+            importantInputs[5].classList.toggle("error");
          return false;
     }
 }

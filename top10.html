@@ -351,11 +351,16 @@
             margin-top: 40px;
             margin-right: 20px;
         }
-
+        
+        svg
+        {
+            margin-top: 40px;
+            margin-left: 25px;
+        }
 
         #table
         {
-            margin: 50px 0 70px 50px;
+            margin: 0px 0 70px 50px;
             font-size: 0.9em;
             border-radius: 5px 5px 0 0;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -445,9 +450,26 @@
             <h1>Top 10</h1>
         </div>
 
+          <svg height="70" width="600">
+                <text x="30" y="45" fill="black" style="font-size:30px">The top 10</text>
+                <text x="220" y="45" fill="black" style="font-size:30px">, rated by our experts:</text>
+                  <polygon points="10,19.5 30,1 50,19.5" style="stroke-width:1; stroke:rgb(0,0,0);fill:#40ADD6;" transform="translate(165,5)"/>
+                 <rect width="40" height="35" 
+                style="fill:#40ADD6;stroke-width:1;stroke:rgb(0,0,0)" transform="translate(175,25)" />
+                 <rect width="10" height="8"
+                 style="fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)"
+                 transform="translate(179,29)"/> 
+                 <rect width="10" height="8"
+                 style="fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)"
+                 transform="translate(201,29)"/>
+                 <rect width="10" height="11"
+                 style="fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)"
+                 transform="translate(190,49)"/>
+            </svg>
 
         <table border="1" cellpadding="10" cellspacing="0" id="table">
-            <caption>The top 10 houses, rated by our experts:</caption>
+            
+          
             <thead>
                 <tr>
                     <th>House</th><th>City</th><th>Price</th>
