@@ -58,7 +58,7 @@
             
             
             document.getElementsByClassName("testimonial-title")[i].innerHTML = testimonials[i].testimonialTitle;
-            document.getElementsByClassName("testimonial")[i].innerHTML = testimonials[i].testimonialText;
+            document.getElementsByClassName("testimonial")[i].innerHTML= '&ldquo;' + testimonials[i].testimonialText+'&rdquo;';
             document.getElementsByClassName('client')[i].innerHTML = "- "+testimonials[i].fullName();
             
         }
