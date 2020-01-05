@@ -262,14 +262,7 @@ var index2 = 0;
 
 function getIndex(x)
 {
-    //console.log(Array.from(x.parentNode.children).indexOf(x));
-    //index2 = Array.from(x.parentNode.children).indexOf(x);
     index2=x;
-//    var photos = document.getElementsByClassName("photos")[1];
-//    if(photos.contains(x))
-//    {
-//        index2+=12;
-//    }
     index = 0;
 	document.getElementById("slideshow").style.top = (document.documentElement.scrollTop + 30) + 'px';
 

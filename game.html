@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Snake Game</title>
+	
+	<link rel="icon" type="image/png" href="img/logo.png">
+
 	<style type="text/css">
 		body
 		{
@@ -58,7 +61,7 @@
 			font-weight: bold;
 			font-size: 28px;
 			margin-left: 630px;
-			text-shadow: 2px 3px 5px #999999;
+			text-shadow: 2px 3px 5px #222222;
 		}
 
 		#animated-box
@@ -69,12 +72,43 @@
 			width:5px;
 			left:780px;
 			bottom:470px;
+			-webkit-transform: skew(20deg, 0deg); 
+			-moz-transform: skew(20deg, 0deg); 
+			-ms-transform: skew(20deg, 0deg); 
+			-o-transform: skew(20deg, 0deg); 
 			transform: skew(20deg, 0deg);
+
+			-webkit-animation-name: box-movement;
+			-moz-animation-name: box-movement;
+			-ms-animation-name: box-movement;
+			-o-animation-name: box-movement;
 			animation-name: box-movement;
+
+			-webkit-animation-duration: 1s;
+			-moz-animation-duration: 1s;
+			-ms-animation-duration: 1s;
+			-o-animation-duration: 1s;
 			animation-duration: 1s;
+
+			-webkit-animation-iteration-count:infinite;
+			-moz-animation-iteration-count:infinite;
+			-ms-animation-iteration-count:infinite;
+			-o-animation-iteration-count:infinite;
 			animation-iteration-count:infinite;
+			
+			-webkit-animation-direction: initial;
+			-moz-animation-direction: initial;
+			-ms-animation-direction: initial;
+			-o-animation-direction: initial;
 			animation-direction: initial;
+			
+			-webkit-animation-timing-function: linear;
+			-moz-animation-timing-function: linear;
+			-ms-animation-timing-function: linear;
+			-o-animation-timing-function: linear;
 			animation-timing-function: linear;
+			
+			
 		}
 
 		@keyframes box-movement
@@ -111,9 +145,20 @@
 		<canvas id="game" width="640px" height="640px"></canvas>
 		
 		<div id="first">
-			<input type="button" onclick="up();" id="up" value="<" style="transform: rotate(90deg); display: block;">
+			<input type="button" onclick="up();" id="up" value="<" 
+			style="    -webkit-transform: rotate(90deg); 
+    					-moz-transform: rotate(90deg); 
+    					-ms-transform: rotate(90deg); 
+    					-o-transform: rotate(90deg); 
+    					transform: rotate(90deg); 
+    					display: block;">
 			<input type="button" onclick="left();" id="left" value="<">	
-			<input type="button" onclick="down();" id="down" value="<" style="transform: rotate(-90deg);">
+			<input type="button" onclick="down();" id="down" value="<" 
+			style="-webkit-transform: rotate(-90deg);
+    					-moz-transform: rotate(-90deg);
+    					-ms-transform: rotate(-90deg);
+    					-o-transform: rotate(-90deg);
+    					transform: rotate(-90deg);">
 			<input type="button" onclick="right();" id="right" value=">">
 		</div>
 	</div>

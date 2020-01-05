@@ -2,10 +2,9 @@
 function filterData()
 {
     
-    //Number(minPrice.replace(/[^0-9.-]+/g,""));
     var minPrice = document.getElementById("filterByMinPrice").value;
         minPrice = Number(minPrice.replace(/[^0-9.-]+/g,""));
-//        
+      
     var maxPrice = document.getElementById("filterByMaxPrice").value;
         maxPrice = Number(maxPrice.replace(/[^0-9.-]+/g,""));
         
@@ -41,7 +40,6 @@ function filterData()
         position=parseInt(position);
         if(position<12)
         {
-             //document.getElementsByClassName("photos")[0].appendChild(imgBox[i]);
            var item = imgBox[i];
            var list = document.getElementsByClassName("photos")[0];
            list.insertBefore(item, list.childNodes[position]);
