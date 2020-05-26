@@ -15,17 +15,16 @@
 </head>
 <body>
     <div id="body-part">
-        <!--Wrapper div used to work with this part as a whole-->
         <div id="wrapper">
         <?php include("menu.php");?>
 
         <div id="pageName">
             <h1>Buy</h1>
         </div>
-        <form action="#">
+        <form id="filter" action="Buy_Page1.php" method="get">
         <section id="filterData">
             <div>
-                <select onchange="filterData()" id="filterByCity">
+                <select  id="filterByCity" name="city">
                 <option>City</option>
                 <option>New York</option>
                 <option>San Francisco</option>
@@ -39,7 +38,7 @@
             </div>
             
             <div>
-            <select onchange="filterData()" id="filterByMinPrice">
+            <select  id="filterByMinPrice" name="minPrice">
                 <option>Min Price</option>
                 <option>$50,000</option>
                 <option>$100,000</option>
@@ -52,7 +51,7 @@
                 <option>$5,000,000</option>
                 <option>$10,000,000</option>
             </select> 
-            <select onchange="filterData()" id="filterByMaxPrice">
+            <select id="filterByMaxPrice" name="maxPrice">
                 <option>Max Price</option>
                 <option>$50,000</option>
                 <option>$100,000</option>
@@ -68,7 +67,7 @@
             </div>
             
             <div>
-            <select onchange="filterData()" id="filterByMinSqrfe">
+            <select id="filterByMinSqrfe" name="minSqrfe">
                 <option>Min Square Feet</option>
                 <option>200</option>
                 <option>300</option>
@@ -81,7 +80,7 @@
                 <option>5000</option>
                 <option>10000</option>
             </select> 
-            <select onchange="filterData()" id="filterByMaxSqrfe">
+            <select id="filterByMaxSqrfe" name="maxSqrfe">
                 <option>Max Square Feet</option>
                 <option>200</option>
                 <option>300</option>
@@ -95,11 +94,10 @@
                 <option>10000</option>
             </select>
             </div>
-            
             <div>
-            <select onchange="filterData()" id="filterByBedrooms">
+            <select id="filterByBedrooms" name="bedrooms" value="1+">
                 <option>No. of Bedrooms</option>
-                <option>1+</option>
+                <option >1+</option>
                 <option>2+</option>
                 <option>3+</option>
                 <option>4+</option>
@@ -107,6 +105,7 @@
                 <option>10+</option>
             </select>
             </div>
+            <input type="submit" id="submit" name="submit" value="Search">
         </section>
         </form>
         
@@ -114,393 +113,112 @@
         
         <section id="photoSection">
             <div class="photos" style="margin-top: 40px; ">
-                <div class="imgBox" onclick="getIndex(0); blurOthers(); slide();">
-                    <img src="img/homepage/1/main.jpg" width="300" height="210" alt="San Francisco, CA 94123, Cow Hollow">
-
-                    <div class="imgInfo">
-                        <p class="position">0</p>
-                        <p class="city" style="display:none;">San Francisco</p>
-                        <p class="price">$5,000,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">4bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">7ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,465 sqrft</span>
-                        </p>
-                    </div>
+                <div id="notFound" style="display: none;">
+                    <canvas id="emoji" width="1000" height="300" ></canvas>
                 </div>
-                <div class="imgBox" onclick="getIndex(1); blurOthers(); slide();">
-                    <img src="img/homepage/2/950Lombard-big-7.jpg" width="300" height="210" alt="San Francisco, CA 94133, Russian Hill">
-
-                    <div class="imgInfo">
-                        <p class="position">1</p>
-                        <p class="city" style="display:none;">San Francisco</p>
-                        <p class="price">$6,500,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">8ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">9,495 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox lastBox" onclick="getIndex(2); blurOthers(); slide();">
-                    <img src="img/homepage/3/main.jpg" width="300" height="210" alt="Houston, TX 77024Piney Point">
-
-                    <div class="imgInfo">
-                        <p class="position">2</p>
-                        <p class="city" style="display:none;">Houston</p>
-                        <p class="price">$1,500,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">5bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">2ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">3,200 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(3); blurOthers(); slide();">
-                    <img src="img/homepage/4/main.jpg" width="300" height="210" alt="Houston, TX 77098">
-
-                    <div class="imgInfo">
-                        <p class="position">3</p>
-                        <p class="city" style="display:none;">Houston</p>
-                        <p class="price">$200,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">3bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">2ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">1,100 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(4); blurOthers(); slide();">
-                    <img src="img/homepage/5/main.jpg" width="300" height="210" alt="Brooklyn, NY 11235Sheepshead Bay">
-
-                    <div class="imgInfo">
-                        <p class="position">4</p>
-                        <p class="city" style="display:none;">New York</p>
-                        <p class="price">$700,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">4bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">3ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">3,368 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox lastBox" onclick="getIndex(5); blurOthers(); slide();">
-                    <img src="img/homepage/6/main.jpg" width="300" height="210" alt="Los Angeles, CA 90077">
-
-                    <div class="imgInfo">
-                        <p class="position">5</p>
-                        <p class="city" style="display:none;">Los Angeles</p>
-                        <p class="price">$2,450,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">7ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,777 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(6); blurOthers(); slide();">
-                    <img src="img/homepage/7/main.jpg" width="300" height="210" alt="Bel-Air / Holmby Hills, California">
-
-                    <div class="imgInfo">
-                        <p class="position">6</p>
-                        <p class="city" style="display:none;">Los Angeles</p>
-                        <p class="price">$8,000,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">17bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">22ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">30,000 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(7); blurOthers(); slide();">
-                    <img src="img/homepage/8/main.jpg" width="300" height="210" alt="Beverly Hills, California">
-
-                    <div class="imgInfo">
-                        <p class="position">7</p>
-                        <p class="city" style="display:none;">Los Angeles</p>
-                        <p class="price">$1,250,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">8ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">8,060 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox lastBox" onclick="getIndex(8); blurOthers(); slide();">
-                    <img src="img/homepage/9/main.jpg" width="300" height="210" alt="Bel-Air / Holmby Hills, California">
-
-                    <div class="imgInfo">
-                        <p class="position">8</p>
-                        <p class="city" style="display:none;">Los Angeles</p>
-                        <p class="price">$1,500,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">5bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">6ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">8,442 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(9); blurOthers(); slide();">
-                    <img src="img/buy/10/main.jpg" width="300" height="210" alt="San Francisco, CA 94115Pacific Heights">
-
-                    <div class="imgInfo">
-                        <p class="position">9</p>
-                        <p class="city" style="display:none;">San Francisco</p>
-                        <p class="price">$3,500,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">9ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">2,100 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(10); blurOthers(); slide();">
-                    <img src="img/buy/11/main1.jpg" width="300" height="210" alt="Boston, MA 02135Brighton">
-
-                    <div class="imgInfo">
-                        <p class="position">10</p>
-                        <p class="city" style="display:none;">Boston</p>
-                        <p class="price">$300,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">5bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">3ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">2,010 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox lastBox" onclick="getIndex(11); blurOthers(); slide();">
-                    <img src="img/buy/12/main.jpg" width="300" height="210" alt="Chicago, IL 60614Park West">
-
-                    <div class="imgInfo ">
-                        <p class="position">11</p>
-                        <p class="city" style="display:none;">Chicago</p>
-                        <p class="price">$1,700,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">9ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">9,000 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
             
-            
-            
-            <div class="photos" style="margin-top: 40px; display: none;">
-                <div class="imgBox" onclick="getIndex(12); blurOthers(); slide();">
-                    <img src="img/buy/13/main.jpg" width="300" height="210" alt="Chicago, IL 60614Lincoln Park">
+                <script src="js/Canvas.js"></script>
 
-                    <div class="imgInfo">
-                        <p class="position">12</p>
-                        <p class="city" style="display:none;">Chicago</p>
-                        <p class="price">$500,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">3ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,000 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(13); blurOthers(); slide();">
-                    <img src="img/buy/14/main.jpg" width="300" height="210" alt="San Francisco, CA 94123Cow Hollow">
+                <?php
 
-                    <div class="imgInfo">
-                        <p class="position">13</p>
-                        <p class="city" style="display:none;">San Francisco</p>
-                        <p class="price">$2,900,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">5bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">8ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">2,100 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox lastBox" onclick="getIndex(14); blurOthers(); slide();">
-                    <img src="img/buy/15/main.jpg" width="300" height="210" alt="Houston, TX 77007">
+                require_once("configDB.php");
 
-                    <div class="imgInfo">
-                        <p class="position">14</p>
-                        <p class="city" style="display:none;">Houston</p>
-                        <p class="price">$2,000,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">4bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">5ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">4,100 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(15); blurOthers(); slide();">
-                    <img src="img/buy/16/main.jpg" width="300" height="210" alt="Houston, TX 77019">
+                $conn=Database::getConnection();
 
-                    <div class="imgInfo">
-                        <p class="position">15</p>
-                        <p class="city" style="display:none;">Houston</p>
-                        <p class="price">$800,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">4bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">7ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">3,900 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(16); blurOthers(); slide();">
-                    <img src="img/buy/17/main.jpg" width="300" height="210" alt="New York">
+                $city_query =isset($_GET['city']) && $_GET['city']!="City" ? " AND city LIKE ". "'%".$_GET['city']."%' " : "";
+                $minPrice_query =isset($_GET['minPrice']) && $_GET['minPrice']!="Min Price" 
+                ? "AND price >= ". preg_replace('/[^0-9]/', '', $_GET['minPrice']) ." " : "";
+                $maxPrice_query =isset($_GET['maxPrice']) && $_GET['maxPrice']!="Max Price" 
+                ? "AND price <= ". preg_replace('/[^0-9]/', '', $_GET['maxPrice']). " " : "";
+                $minSqrfe_query =isset($_GET['minSqrfe']) && $_GET['minSqrfe']!="Min Square Feet" 
+                ? "AND sqrfe >= ". preg_replace('/[^0-9]/', '', $_GET['minSqrfe']). " " : "";
+                $maxSqrfe_query =isset($_GET['maxSqrfe']) && $_GET['maxSqrfe']!="Max Square Feet" 
+                ? "AND sqrfe <= ". preg_replace('/[^0-9]/', '', $_GET['maxSqrfe']). " " : "";
+                $bedrooms_query =isset($_GET['bedrooms']) && $_GET['bedrooms']!="No. of Bedrooms" 
+                ? "AND bedroom >= ". preg_replace('/[^0-9]/', '', $_GET['bedrooms']). " " : "";
 
-                    <div class="imgInfo">
-                        <p class="position">16</p>
-                        <p class="city" style="display:none;">New York</p>
-                        <p class="price">$950,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">4bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">4ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">3,794 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox lastBox" onclick="getIndex(17); blurOthers(); slide();">
-                    <img src="img/buy/18/main.jpg" width="300" height="210" alt="Los Angeles, CA 90049">
-
-                    <div class="imgInfo">
-                        <p class="position">17</p>
-                        <p class="city" style="display:none;">Los Angeles</p>
-                        <p class="price">$1,100,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">5bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">4ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,978 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(18); blurOthers(); slide();">
-                    <img src="img/buy/19/main.jpg" width="300" height="210" alt="Coconut Grove, FL 33133">
-
-                    <div class="imgInfo">
-                        <p class="position">18</p>
-                        <p class="city" style="display:none;">Miami</p>
-                        <p class="price">$1,450,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">5bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">5ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">4,301 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(19); blurOthers(); slide();">
-                    <img src="img/buy/20/main.jpg" width="300" height="210" alt="Coral Gables, FL 33143">
-
-                    <div class="imgInfo">
-                        <p class="position">19</p>
-                        <p class="city" style="display:none;">Miami</p>
-                        <p class="price">$900,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">5bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">6ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,112 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox lastBox" onclick="getIndex(20); blurOthers(); slide();">
-                    <img src="img/buy/21/main.jpg" width="300" height="210" alt="Malibu, CA 90265">
-
-                    <div class="imgInfo">
-                        <p class="position">20</p>
-                        <p class="city" style="display:none;">Malibu</p>
-                        <p class="price">$2,500,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">13bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">13ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">8,402 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(21); blurOthers(); slide();">
-                    <img src="img/buy/22/main.jpg" width="300" height="210" alt="Carrollton, TX 75010">
-
-                    <div class="imgInfo">
-                        <p class="position">21</p>
-                        <p class="city" style="display:none;">Texas</p>
-                        <p class="price">$700,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">5bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">4ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">5,093 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox" onclick="getIndex(22); blurOthers(); slide();">
-                    <img src="img/buy/23/main.jpg" width="300" height="210" alt="Encino, CA 91436">
-
-                    <div class="imgInfo">
-                        <p class="position">22</p>
-                        <p class="city" style="display:none;">Los Angeles</p>
-                        <p class="price">$1,300,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">6bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">6ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">6,625 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="imgBox lastBox" onclick="getIndex(23); blurOthers(); slide();">
-                    <img src="img/buy/24/main.jpg" width="300" height="210" alt="Los Angeles, CA 90077">
-
-                    <div class="imgInfo ">
-                        <p class="position">23</p>
-                        <p class="city" style="display:none;">Los Angeles</p>
-                        <p class="price">$7,200,000</p>
-                        <p>
-                            <img src="img/homepage/bedLogo.JPG"> <span class="bedroom">8bd</span>
-                            <img src="img/homepage/bathLogo.JPG"> <span class="bathroom">20ba</span>
-                            <img src="img/homepage/sqrftLogo.JPG"> <span class="sqrfe">36,000 sqrft</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="notFound" style="display: none;">
-                <canvas id="emoji" width="1000" height="300" ></canvas>
-            </div>
-            
-         <script src="js/FilterData.js"></script>
-         <script src="js/Canvas.js"></script>
-
-        
-        </section>
-
-        <div id="navigationWrapper">
-
-            <div class="buyPageNavigator" id="page1" onclick="changePage(1); filterData(); ">1</div>
-            <div class="buyPageNavigator" id="page2" onclick="changePage(2); filterData();">2</div>
-
-        </div>
-
-        <script>
-            
-            function changePage(number)
-            {
-                var page = document.getElementsByClassName("photos");
-              
-                switch(number)
+                if(isset($_GET["submit"]))
                 {
-                    case 1:
-                    {
-                       page[0].style.display="";
-                       page[1].style.display="none";
-                       break; 
-                    }
-                    
-                    case 2:
-                    {
-                       page[1].style.display="";
-                       page[0].style.display="none";
-                       break;
-                    }
-
+                     $sql = "SELECT listings.Id, city, bedroom, bathroom, sqrfe, price, temp.imagePath
+                             FROM listings,
+                             (SELECT * FROM `house_photos` WHERE imagePath LIKE '%main%') as temp
+                             WHERE listings.Id = temp.Id $city_query $minPrice_query $maxPrice_query $minSqrfe_query $maxSqrfe_query 
+                             $bedrooms_query";
                 }
-    
+                else
+                {
+                    $sql = "SELECT listings.Id, city, bedroom, bathroom, sqrfe, price, temp.imagePath
+                            FROM listings,
+                            (SELECT * FROM `house_photos` WHERE imagePath LIKE '%main%') as temp
+                            WHERE listings.Id = temp.Id";
+                }
+                $result = mysqli_query($conn, $sql);
+                $number_of_results = mysqli_num_rows($result);
+                $results_per_page = 12;
+                $number_of_pages = ceil($number_of_results/$results_per_page);
+                if (!isset($_GET['page']))$page = 1;
+                else $page = $_GET['page'];
+
+                $this_page_first_result = ($page-1)*$results_per_page;
+
+                $sql .= " LIMIT " . $this_page_first_result . ',' .  $results_per_page;
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) 
+                { 
+                  $count = 1;
+                  while($row = mysqli_fetch_assoc($result)) 
+                  {
+                    $tempId=$row['Id']; 
+                    $tempCity=$row['city'];
+                    $tempBedroom=$row['bedroom'];
+                    $tempBathroom=$row['bathroom'];
+                    $tempSqrfe=$row['sqrfe'];
+                    $tempPrice=$row['price'];
+                    $tempImagePath=$row['imagePath'];
+                    if($count%3==0)$tempClass_Name = "imgBox lastBox";
+                    else $tempClass_Name = "imgBox";
+                    $count++;
+                    echo 
+                        "<script>
+                            var index = '$tempId';
+                            var city = '$tempCity';
+                            var bedroom = '$tempBedroom';
+                            var bathroom = '$tempBathroom';
+                            var sqrfe = '$tempSqrfe';
+                            var price = '$tempPrice';
+                            var imagePath = '$tempImagePath';
+                            var class_Name='$tempClass_Name';
+                        </script>";
+                    echo "<script src='js/printListings.js'></script>";
+                  }
+                }
+                else 
+                {
+                    echo "<script>
+                            document.getElementById('notFound').style.display='block';
+                         </script>";
+                }
+            echo "</div>";
+            echo "<div id='navigationWrapper'>";
+            for ($page=1;$page<=$number_of_pages;$page++) 
+            {
+                $url =  "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+                $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
+                $a="";
+                if(strpos($escaped_url, '?'))
+                {   
+                    $a = explode("?", $escaped_url)[1];
+                    $search = "page";
+                    if(preg_match("/{$search}/i", $a)) {
+                        $a = substr($a, 11);
+                    }
+                }                
+                echo '<a class="buyPageNavigator" href="Buy_Page1.php?page=' . $page . "&$a". '">' . $page . '</a> ';                
             }
-            
-         </script>
+            echo"</div>";
+                ?>                
+            </div>
+        </section>
     </div>
 </div>
 

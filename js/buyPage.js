@@ -6,7 +6,7 @@ var photos = [["img/homepage/1/main.jpg",
 				"img/homepage/1/other5.jpg", 
 				"img/homepage/1/other6.jpg"],
 
-				["img/homepage/2/950Lombard-big-1.jpg", 
+				["img/homepage/2/main.jpg", 
 				"img/homepage/2/950Lombard-big-2.jpg", 
 				"img/homepage/2/950Lombard-big-3.jpg", 
 				"img/homepage/2/950Lombard-big-4.jpg", 
@@ -247,6 +247,22 @@ var descriptions = ["Residence 2646 is the pinnacle of San Francisco residential
 "A regal compound, just moments through the prized Bel Air east gate, this is a residence of sophistication and incomparable opulence. Concealed behind private gates on a rare flat acre parcel, it is a world apart - where every comfort and luxury has been accounted for and no expense has been spared. From the vaulted entry, with its high windows and sweeping staircase, to the lavish wine cellar, this is truly a resort oasis providing the perfect environment for lavish entertainment and exceedingly gracious living. On the lower level the majesty of this home reveals itself, opening to the approx. 20,000 square foot entertainment space that includes a resplendent indoor full resort spa and pool, with massage room, sauna and steam bath, game rooms, bowling alley, expansive cinema, full bar, basketball and racquetball court, as well as gracious guest living quarters. The gorgeous grounds include an in-ground swimming pool, attached spa, outdoor kitchen, and dining area. Truly majestic."];
 
 var temp;
+
+//"INSERT INTO `house_photos` (`Id`, `imagePath`) VALUES ('0', 'img/homepage/1/main.jpg'), ('0', 'img/homepage/1/other1.jpg'),('0', 'img/homepage/1/other2.jpg'),('0', 'img/homepage/1/other3.jpg'),('0', 'img/homepage/1/other4.jpg'),('0', 'img/homepage/1/other5.jpg'),('0', 'img/homepage/1/other6.jpg')"
+
+function printForMySQL()
+{
+	for(var i=1; i<street.length; i++)
+	{ 
+		var sql = "INSERT INTO `house_photos` (`Id`, `imagePath`) VALUES ";
+		for(var j=0; j<photos[i].length; j++)
+		{
+			sql+="(" +"'" + i +"'," + "'" + photos[i][j] + "'" + ")"
+			if(j!=photos[i].length-1)sql+=",";
+		}
+		console.log(sql);
+	}
+}
 
 function fillTemp()
 {

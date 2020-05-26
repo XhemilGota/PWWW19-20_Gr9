@@ -11,13 +11,12 @@ class Database{
   
         $conn = null;
 
-        $conn = new mysqli(self::host, self::username, self::password, self::db_name);
+        $conn = mysqli_connect(self::host, self::username, self::password, self::db_name);
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        if (!$conn) 
+        {
+            die("Connection failed: " . mysqli_connect_error());
         }
-  
-        echo "u lidh";
 
         return $conn;
     }

@@ -27,6 +27,27 @@
     font-size: 13.5px;
 }
 
+#filterData input[type=submit]
+{
+    width:130px;
+    height:40px;
+    border: 1px solid #A9A9A9;
+    border-radius: 7px;
+    outline: none;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#filterData input[type=submit]:hover
+{
+    cursor: pointer;
+}
 #photoSection span
 {
     color:black;
@@ -64,13 +85,14 @@
     text-align: center;
     font-size: 22px;
     border: solid 0.03em;
-    margin-left: 5px;
     color: black;
     cursor: pointer;
+    margin: auto;
+    border: 1px solid #A9A9A9;
 }
 
 #navigationWrapper
 {
-    margin-left: 460px;
+    width: 100%;
 }
 
