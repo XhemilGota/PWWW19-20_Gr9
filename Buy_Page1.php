@@ -174,22 +174,25 @@
                     $tempBathroom=$row['bathroom'];
                     $tempSqrfe=$row['sqrfe'];
                     $tempPrice=$row['price'];
+                    $tempPrice = "$". number_format($tempPrice); 
                     $tempImagePath=$row['imagePath'];
                     if($count%3==0)$tempClass_Name = "imgBox lastBox";
                     else $tempClass_Name = "imgBox";
                     $count++;
-                    echo 
-                        "<script>
-                            var index = '$tempId';
-                            var city = '$tempCity';
-                            var bedroom = '$tempBedroom';
-                            var bathroom = '$tempBathroom';
-                            var sqrfe = '$tempSqrfe';
-                            var price = '$tempPrice';
-                            var imagePath = '$tempImagePath';
-                            var class_Name='$tempClass_Name';
-                        </script>";
-                    echo "<script src='js/printListings.js'></script>";
+
+                    echo
+                    "<div class= '" . $tempClass_Name . "'" . "onclick='getIndex(".$tempId."); blurOthers(); slide();'>\n" .
+                        "<img src=" .$tempImagePath." width='300' height='210' alt='Chicago, IL 60614Park West'>\n" .
+                        "<div class='imgInfo '>\n" .
+                            "<p class='city' style='display:none;'>".$tempCity."</p>\n" .
+                            "<p class='price'>".$tempPrice."</p>\n" .
+                            "<p>\n" .
+                                "<img src='img/homepage/bedLogo.JPG'> <span class='bedroom'>".$tempBedroom."bd</span>\n" .
+                                "<img src='img/homepage/bathLogo.JPG'> <span class='bathroom'>".$tempBathroom."ba</span>\n" .
+                                "<img src='img/homepage/sqrftLogo.JPG'> <span class='sqrfe'>".$tempSqrfe."sqrft</span>\n" .
+                            "</p>\n" .
+                        "</div>\n" .
+                    "</div>\n" ;
                   }
                 }
                 else 
