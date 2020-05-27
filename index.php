@@ -2,10 +2,7 @@
 <html>
 
     <head>
-        <?php 
-        
-            include("header.php");
-        ?>
+        <?php include("header.php");?>
  
         <link href='css/homepagestyle.css' rel='stylesheet'>
         <link href='css/entry.css' rel='stylesheet'>
@@ -84,44 +81,92 @@
        <div class="photos" style="margin-top: 50px">
   
            <?php
-                            include("configDB.php");
 
-                            $conn = Database::getConnection();
+                $cookies = [];
+                if (isset($_COOKIE['listingCookie'])) {
+                    foreach ($_COOKIE['listingCookie'] as $name => $value) {
+                        if(in_array($value, $cookies))
+                        {
+                            $cookies[array_search($value, $cookies)] = -1;
+                        }
+                        $cookies[] = $value;
+                    }
+                }
                 
-                            $listing_data_query = "SELECT * FROM listings LIMIT 10";
+                include("configDB.php");
 
-                            $listing_data_query = "SELECT listings.Id, city, bedroom, bathroom, sqrfe, price, temp.imagePath
-                            FROM listings,
-                            (SELECT * FROM `house_photos` WHERE imagePath LIKE '%main%') as temp
-                            WHERE listings.Id = temp.Id LIMIT 9";
+                $conn = Database::getConnection();
+
+                $ID = [];
+
+                for($i = 0; $i < count($cookies); $i++)
+                {
+                    if($cookies[$i] != -1)
+                        $ID[] = $cookies[$i];
+                }
+                $ID = array_reverse($ID);
+
+                $query = "SELECT * FROM listings";
+
+                $query_result = mysqli_query($conn, $query);
+
+                $num_of_listings = mysqli_num_rows($query_result);
                 
-                            $query_result = mysqli_query($conn, $listing_data_query);
-                        
-                                $count = 1;
+                while(count($ID) < 9)
+                {
+                    $rnd = rand(1,$num_of_listings - 1);
+
+                    if(!in_array($rnd, $ID))
+                    {
+                        $ID[] = $rnd;
+                    }
+                }
+
+                printListings($ID,$conn);    
                                 
-                                while($row = mysqli_fetch_assoc($query_result)) 
-                                {
-                                  if($count%3==0)$tempClass_Name = "imgBox lastBox";
-                                  else $tempClass_Name = "imgBox";
-                                  $count++;
+                function printListings($ID, $conn)
+                {
+                    $count = 1;
+                    
+                    for($i = 0; $i < count($ID); $i++)
+                    {
+                        $listing_data_query = "SELECT listings.Id, city, bedroom, bathroom, sqrfe, price, temp.imagePath
+                        FROM listings,
+                        (SELECT * FROM `house_photos` WHERE imagePath LIKE '%main%') as temp
+                        WHERE listings.Id = $ID[$i] AND listings.Id = temp.Id";
+                    
+                        $query_result = mysqli_query($conn, $listing_data_query);                               
 
-                                  echo
-                                  "<div class= '" . $tempClass_Name . "' >" .
-                                  "<a href='listing.php?id=" . $row['Id'] . "' target='_blank' class='links'>" .
-                                      "<img src='" .$row['imagePath']."' width='300' height='210' alt='Chicago, IL 60614Park West'>\n" .
-                                      "<div class='imgInfo'>\n" .
-                                          "<p class='city' style='display:none;'>".$row['city']."</p>\n" .
-                                          "<p class='price'>$".number_format($row['price'],2)."</p>\n" .
-                                          "<p>\n" .
-                                              "<img src='img/homepage/bedLogo.JPG'> <span class='bedroom'>".$row['bedroom']."bd</span>\n" .
-                                              "<img src='img/homepage/bathLogo.JPG'> <span class='bathroom'>".$row['bathroom']."ba</span>\n" .
-                                              "<img src='img/homepage/sqrftLogo.JPG'> <span class='sqrfe'>".$row['sqrfe']."sqrft</span>\n" .
-                                          "</p>\n" .
-                                      "</div>\n" .
-                                      "</a>".
-                                  "</div>\n" ;
-                                }
-                            ?>
+                        if($row = mysqli_fetch_assoc($query_result)) 
+                        {
+                        if($count%3==0)
+                            $tempClass_Name = "imgBox lastBox";
+                            
+                        else 
+                            $tempClass_Name = "imgBox";
+                
+                        $count++;
+
+                        echo
+                            "<div class= '" . $tempClass_Name . "' >" .
+                                "<a href='listing.php?id=" . $row['Id'] . "' target='_blank' class='links'>" .
+                                    "<img src='" .$row['imagePath']."' width='300' height='210' alt='Chicago, IL 60614Park West'>\n" .
+                                        "<div class='imgInfo'>\n" .
+                                            "<p class='city' style='display:none;'>".$row['city']."</p>\n" .
+                                            "<p class='price'>$".number_format($row['price'],2)."</p>\n" .
+                                            "<p>\n" .
+                                                "<img src='img/homepage/bedLogo.JPG'> <span class='bedroom'>".$row['bedroom']."bd</span>\n" .
+                                                "<img src='img/homepage/bathLogo.JPG'> <span class='bathroom'>".$row['bathroom']."ba</span>\n" .
+                                                "<img src='img/homepage/sqrftLogo.JPG'> <span class='sqrfe'>".$row['sqrfe']."sqrft</span>\n" .
+                                            "</p>\n" .
+                                        "</div>\n" .
+                                "</a>".
+                            "</div>\n" ;
+                        }
+                    }
+                }
+                
+                ?>
                    
                         
                         </div>

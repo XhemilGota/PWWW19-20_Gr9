@@ -2,7 +2,25 @@
 <html>
 
     <head>
-        <?php include("header.php");?>
+        <?php 
+        
+            include("header.php");
+
+            $views = 0;
+            $visitors_file = "visitors.txt";
+
+            if (file_exists($visitors_file))
+            {
+                $views = (int)file_get_contents($visitors_file); 
+            }
+
+            $views++;
+
+            $views %= 9;
+
+            file_put_contents($visitors_file, $views);
+        
+        ?>
 
         <link href='css/homepagestyle.css' rel='stylesheet'>
         <link href='css/entry.css' rel='stylesheet'>
@@ -15,6 +33,8 @@
 
             $listing_ID = intval($_GET['id']);
             
+            setcookie("listingCookie[".$views."]", $listing_ID, time() + 86400);
+
             $listing_data_query = "SELECT * FROM listings WHERE Id = $listing_ID";
 
             $query_result = mysqli_query($conn, $listing_data_query);
