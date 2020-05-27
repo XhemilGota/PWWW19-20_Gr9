@@ -59,6 +59,7 @@
         <div id="body-part">
             <div id="wrapper" style="height: 800px;">
             <?php include("menu.php");?>
+            <?php include("adminPrivileges.php");?>
 
              <div id="pageName">
               <h1>UPDATE LISTINGS</h1>

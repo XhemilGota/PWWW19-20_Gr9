@@ -17,7 +17,13 @@
         <div id="body-part">
             <!--Wrapper div used to work with this part as a whole-->
             <div id="wrapper">
-            <?php include("menu.php");?>
+            <?php include("menu.php");
+                  if(!isset($_SESSION['admin']))
+                  {
+                      header("location: LoginPage.php");
+                  }
+            ?>
+
 
              <div id="pageName">
             	<h1>Home Seller Form</h1>

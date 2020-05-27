@@ -22,6 +22,7 @@
         <div id="body-part">
             <div id="wrapper">
             <?php include("menu.php");?>
+            <?php include("adminPrivileges.php");?>
                 <div id="pageName">
                 	<h1>ADD LISTINGS</h1>
                 </div>                   

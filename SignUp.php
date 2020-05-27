@@ -13,7 +13,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     if($conn->query($sql))
     {
-
         $message = "<p>You signed up successfully</p><p><a href='LoginPage.php'>Click here to login</a></p>";
     }
     else
