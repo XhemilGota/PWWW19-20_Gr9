@@ -18,9 +18,17 @@
                                     <li><a href='blog.php'>BLOG</a></li>
                                 </ul>
                             </li>
-                            <li><a href='faq.php' id='faq'>FAQ</a></li>
-                            <li><a href='Testimonials.php' id='testimonials'>TESTIMONIALS</a></li>
+                            <!-- <li><a href='faq.php' id='faq'>FAQ</a></li>
+                            <li><a href='Testimonials.php' id='testimonials'>TESTIMONIALS</a></li> -->
                             <li><a href='Contact.php' id='contact'>CONTACT</a></li>
+                            <li>
+                                <a href="#" id="manageListings">MANAGE LISTINGS &#9660;</a>
+                                <ul>
+                                    <li><a href="add_listings.php">ADD</a></li>
+                                    <li><a href="update_listings.php">UPDATE</a></li>
+                                    <li><a href="delete_listings.php">DELETE</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                     <p class='caption'>Do you wanna buy a home? We make it possible.</p>
