@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include("header.php");?>
+		<?php 
+		
+			include("header.php");
+
+			include("configDB.php");
+
+            $conn=Database::getConnection();
+
+            $listing_ID = intval($_GET['Id']);
+            
+			$listing_data_query = "SELECT * FROM listings WHERE Id = $listing_ID";
+			
+			$query_result = mysqli_query($conn, $listing_data_query);
+
+            $listing_data = mysqli_fetch_assoc($query_result);
+			
+		?>
 
 		<link href="css/sellstyle.css" rel="stylesheet" />
 
-		<script src="js/interestedContact.js"></script>
 		<script src="js/interestedContactValidation.js"></script>
 
 		<style type="text/css">
@@ -100,6 +115,7 @@
 											type="text"
 											name="adress1"
 											id="propertyStreet"
+											value="<?php echo $listing_data['street'] ?>"
 											readonly
 										/>
 									</td>
@@ -112,6 +128,7 @@
 											name="city"
 											placeholder="City"
 											id="propertyCity"
+											value="<?php echo $listing_data['city'] ?>"
 											readonly
 											required
 										/>
@@ -126,6 +143,7 @@
 											placeholder="City"
 											id="propertyBed"
 											class="halflength"
+											value="<?php echo $listing_data['bedroom'] ?>"
 											readonly
 											required
 										/>
@@ -140,6 +158,7 @@
 											placeholder="City"
 											id="propertyBath"
 											class="halflength"
+											value="<?php echo $listing_data['bathroom'] ?>"
 											readonly
 											required
 										/>
@@ -155,6 +174,7 @@
 												type="number"
 												id="propertySqrt"
 												name="squarefootage"
+												value="<?php echo $listing_data['sqrfe'] ?>"
 												readonly
 											/>
 										</p>
@@ -169,6 +189,7 @@
 												type="text"
 												id="propertyPrice"
 												name="squarefootage"
+												value="$ <?php echo number_format($listing_data['price'],2) ?>"
 												readonly
 											/>
 										</p>

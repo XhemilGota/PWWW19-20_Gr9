@@ -181,7 +181,8 @@
                     $count++;
 
                     echo
-                    "<div class= '" . $tempClass_Name . "'" . "onclick='getIndex(".$tempId."); blurOthers(); slide();'>\n" .
+                    "<div class= '" . $tempClass_Name . "' >" .
+                    "<a href='listing.php?id=" . $tempId . "' target='_blank' class='links'>" .
                         "<img src=" .$tempImagePath." width='300' height='210' alt='Chicago, IL 60614Park West'>\n" .
                         "<div class='imgInfo '>\n" .
                             "<p class='city' style='display:none;'>".$tempCity."</p>\n" .
@@ -192,6 +193,7 @@
                                 "<img src='img/homepage/sqrftLogo.JPG'> <span class='sqrfe'>".$tempSqrfe."sqrft</span>\n" .
                             "</p>\n" .
                         "</div>\n" .
+                        "</a>".
                     "</div>\n" ;
                   }
                 }
@@ -225,64 +227,8 @@
     </div>
 </div>
 
-           <div id="slideshow">
 
-                        <div>
-                            <p id="pageNum"></p>
-                        </div>
-
-                <div id="slideshow2">
-                    <img src="" id="slideshowImg">
-                    
-                    <video  controls id="slideshowVideo" style="display: none">
-                        <source src="" type="video/mp4">
-                        <source src="" type="video/ogg">
-                    </video>
-                    
-                    <div class="imgInfo">
-                        
-                        <p id="hoverText"></p>
-                        
-                    </div>
-
-                    <div class="prev" onclick="plusSlides(-1)"><p>&#10094;</p></div>
-                    <div class="next" onclick="plusSlides(1)"><p>&#10095;</p></div>
-                    <a class="closeBtn" onclick="document.getElementById('slideshow').style.display = 'none'; unBlurOthers();">&times;</a>
-                    <div id="descriptionBtn" onclick="descriptionExpand();"> &#10094; </div>
-                </div>
-
-                 <div id="description">
-                        
-                         <div id="map" style="width:450px; height: 350px; float:right; margin: 30px 150px 0 0; border: 1px solid white;">
-                            
-                        </div>
-                     
-                     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBxeeraroriooA1NxYn6QW6NLlYlvQvn4&callback=initMap">
-                         
-                     </script>
-                        
-                        <div style="width:400px; height:400px; margin-bottom: 30px;">
-                        <p class="imp" id="street"></p>
-                        <p class="imp" id="price">$</p>
-                        <p id="city"></p>
-                        <p id="bedroom"></p>
-                        <p id="bathroom"></p>
-                        <p id="sqrt"></p>
-                        <p id="downPayment"></p>
-                        <p id="installment"></p>
-                        </div>
-
-                        <h2>Description</h2>
-
-                        <p id="descriptionText"></p>
-
-                        <p>If you're interested in this property, then <a onclick="propertyIndex();" href="interestedContact.html" id="descriptionContact" target="blank">Contact Us</a></p>
-                        <p>Did you like this? Then check our <a href="top10.html">top 10 houses</a> this year.</p>
-
-                    </div>
-            </div>
-
-            <?php include("footer.php");?>
+        <?php include("footer.php");?>
         <script src="js/general.js" onload="changeColorOfMenu('buy')"></script>
 
     </body>
