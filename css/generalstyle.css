@@ -343,3 +343,7 @@ address, #contact
     margin-right: 20px;
 }
 
+#logout:hover
+{
+    color:#40AED7;
+}

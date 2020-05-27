@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+?>
+
+<?php
+if(isset($_POST["log-out-submit"]))
+{
+    $_SESSION = [];
+    header("location: LoginPage.php",true);
+}
+?>
+
 <header>
                 <div class='search'>
                     <input type='search' placeholder='Search by city' id='searchBar'>
@@ -28,6 +41,30 @@
                                     <li><a href="update_listings.php">UPDATE</a></li>
                                     <li><a href="delete_listings.php">DELETE</a></li>
                                 </ul>
+                            </li>
+                            <li><?php
+                                if(isset($_SESSION["login_user"]))
+                                {
+                                    echo '<form method="post" action=""><input id=\'logout\' name="log-out-submit" style="background: none;
+                                                                                   border: none;
+                                                                                   font: inherit;
+                                                                                   cursor: pointer;
+                                                                                   outline: none;
+                                                                                   font-size: 13px;
+                                                                                   text-align: left;
+                                                                                   padding: 7px 3px;
+                                                                                   display: block;
+                                                                                   text-decoration: none;
+                                                                                   color: #666666;
+                                                                                   " 
+                                           type="submit" value="LOG OUT"></form>';
+                                }
+                                else
+                                {
+                                    echo '<a href=\'LoginPage.php\' id=\'login\'>LOG IN</a>';
+                                }
+
+                                ?>
                             </li>
                         </ul>
                     </nav>
