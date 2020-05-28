@@ -31,7 +31,7 @@
             $myusername = mysqli_real_escape_string($conn,$_POST['username']);
             $mypassword = mysqli_real_escape_string($conn,$_POST['password']);
 
-            $sql = "SELECT adminStatus
+            $sql = "SELECT adminStatus, name, lname
             FROM users
             WHERE username = '$myusername' and password = '$mypassword'";
 
@@ -39,6 +39,8 @@
             $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
             $adminStatus = $row['adminStatus'];
+            $firstName = $row['name'];
+            $lastName = $row['lname'];
 
             $count = mysqli_num_rows($result);
 
@@ -46,6 +48,8 @@
             {
                 $_SESSION['login_user'] = $myusername;
                 $_SESSION['admin'] = $adminStatus;
+                $_SESSION['firstName'] = $firstName;
+                $_SESSION['lastName']= $lastName;
 
                 header("location: index.php");
             }

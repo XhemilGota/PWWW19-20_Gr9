@@ -8,6 +8,15 @@ if(isset($_POST["log-out-submit"]))
 }
 ?>
 <header>
+    <div style="position: absolute;top: 40px; color: #40ADD6;">
+        <?php
+        if(isset($_SESSION['firstName']) && isset($_SESSION['lastName']))
+        {
+            echo "<img src='img/user.png' width='20' >";
+            echo  " " . $_SESSION['firstName'] . " " . $_SESSION['lastName'];
+        }
+        ?>
+    </div>
                 <div class='search'>
                     <input type='search' placeholder='Search by city' id='searchBar'>
 

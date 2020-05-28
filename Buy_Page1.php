@@ -217,13 +217,13 @@
                 $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
                 $a="";
                 if(strpos($escaped_url, '?'))
-                {   
+                {
                     $a = explode("?", $escaped_url)[1];
                     $search = "page";
-                    if(preg_match("/{$search}/i", $a)) {
+                    if(preg_match("/{$search}/", $a)) {
                         $a = substr($a, 11);
                     }
-                } 
+                }
                                
                 echo '<a class="buyPageNavigator" href="Buy_Page1.php?page=' . $page . "&$a". '">' . $page . '</a> ';                
             }
