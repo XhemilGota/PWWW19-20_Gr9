@@ -104,69 +104,43 @@
                     if($cookies[$i] != -1)
                         $ID[] = $cookies[$i];
                 }
+                
                 $ID = array_reverse($ID);
 
-                $query = "SELECT * FROM listings";
+                $idCount = count($ID);
+
+                $query = "SELECT Id, price FROM listings";
 
                 $query_result = mysqli_query($conn, $query);
 
                 $num_of_listings = mysqli_num_rows($query_result);
                 
-                while(count($ID) < 9)
+                $rndArray = [];
+
+                while((count($rndArray) + $idCount) < 9)
                 {
                     $rnd = rand(1,$num_of_listings - 1);
 
-                    if(!in_array($rnd, $ID))
+                    if(!in_array($rnd, $ID) && !in_array($rnd, $rndArray))
                     {
-                        $ID[] = $rnd;
+                        $rndArray[] = $rnd;
                     }
                 }
 
-                printListings($ID,$conn);    
-                                
-                function printListings($ID, $conn)
+                sort($rndArray);
+
+                for($i = $idCount; $i < 9; $i++)
                 {
-                    $count = 1;
-                    
-                    for($i = 0; $i < count($ID); $i++)
-                    {
-                        $listing_data_query = "SELECT listings.Id, city, bedroom, bathroom, sqrfe, price, temp.imagePath
-                        FROM listings,
-                        (SELECT * FROM `house_photos` WHERE imagePath LIKE '%main%') as temp
-                        WHERE listings.Id = $ID[$i] AND listings.Id = temp.Id";
-                    
-                        $query_result = mysqli_query($conn, $listing_data_query);                               
-
-                        if($row = mysqli_fetch_assoc($query_result)) 
-                        {
-                        if($count%3==0)
-                            $tempClass_Name = "imgBox lastBox";
-                            
-                        else 
-                            $tempClass_Name = "imgBox";
-                
-                        $count++;
-
-                        echo
-                            "<div class= '" . $tempClass_Name . "' >" .
-                                "<a href='listing.php?id=" . $row['Id'] . "' target='_blank' class='links'>" .
-                                    "<img src='" .$row['imagePath']."' width='300' height='210' alt='Chicago, IL 60614Park West'>\n" .
-                                        "<div class='imgInfo'>\n" .
-                                            "<p class='city' style='display:none;'>".$row['city']."</p>\n" .
-                                            "<p class='price'>$".number_format($row['price'],2)."</p>\n" .
-                                            "<p>\n" .
-                                                "<img src='img/homepage/bedLogo.JPG'> <span class='bedroom'>".$row['bedroom']."bd</span>\n" .
-                                                "<img src='img/homepage/bathLogo.JPG'> <span class='bathroom'>".$row['bathroom']."ba</span>\n" .
-                                                "<img src='img/homepage/sqrftLogo.JPG'> <span class='sqrfe'>".$row['sqrfe']."sqrft</span>\n" .
-                                            "</p>\n" .
-                                        "</div>\n" .
-                                "</a>".
-                            "</div>\n" ;
-                        }
-                    }
+                    $ID[$i] = $rndArray[$i - $idCount];
                 }
                 
-                ?>
+                require_once("printListings.php");
+
+                $printer = new Printer($conn);
+
+                $printer -> printListings($ID);    
+
+            ?>
                    
                         
                         </div>

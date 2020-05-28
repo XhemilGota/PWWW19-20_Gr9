@@ -1,8 +1,9 @@
 <?php
 
-require("BaseValidator.php");
+require("LoginValidator.php");
+require("uniqueInterface.php");
 
-class SignUpValidator extends BaseValidator 
+class SignUpValidator extends LoginValidator implements ContainsUnique
 {
     public function __construct()
     {
@@ -14,31 +15,6 @@ class SignUpValidator extends BaseValidator
         $this -> validateEmail('email', 'REQUIRED');
         $this -> validateEmail('email', 'UNIQUE');
         $this -> checkPassword('password');
-    }
-
-    public function checkPassword($field) {
-    
-        if($this -> isEmpty($field))
-        {
-            return false;
-        }    
-
-        if (strlen($_POST[$field]) < 8) {
-            $this -> addError($field, 'Password too short!');
-            return false;
-        }
-    
-        if (!preg_match("#[0-9]+#", $_POST[$field])) {
-            $this -> addError($field, 'Password must include at least one number!');
-            return false;
-        }
-    
-        if (!preg_match("#[a-zA-Z]+#", $_POST[$field])) {
-            $this -> addError($field, 'Password must include at least one letter!');
-            return false;
-        }     
-    
-        return true;
     }
 
     public function isUnique($field) : bool

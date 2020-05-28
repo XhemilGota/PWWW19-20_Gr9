@@ -16,7 +16,7 @@ abstract class BaseValidator {
             
         }
 
-        if(preg_match('/[^A-Za-z]/', $_POST[$field]))
+        if(preg_match('/[^A-Za-z ]/', $_POST[$field]))
         {
             $this -> addError($field, 'The field must not contain special characters!');
             return false;
@@ -105,7 +105,6 @@ abstract class BaseValidator {
         return false;
     }
 
-        abstract function isUnique($field) : bool;
 
         function addError($key, $val){
             $this->errors[$key] = $val;
@@ -115,6 +114,7 @@ abstract class BaseValidator {
         {
             return $this -> errors;
         }
+        
     }
   
    
