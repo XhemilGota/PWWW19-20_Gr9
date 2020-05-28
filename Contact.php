@@ -3,11 +3,49 @@
 
 <head>
 
-    <?php include("header.php");?>
+    <?php include("header.php");
+
+    require_once("validator/ContactValidator.php");
+
+    if(isset($_POST['submit']))
+    {
+        $validatorObj = new ContactValidator();
+
+        $errors = $validatorObj -> getErrors();
+
+        if(count($errors) == 0)
+        {
+            require_once("configDB.php");
+
+            $conn = Database::getConnection();
+
+            $sql = "INSERT INTO newsletter (email, first_name, last_name, phone_number, comments_questions)
+            VALUES ('".$_POST["email_address"]."', '".$_POST["first_name"]."', '".$_POST["last_name"]."', '".$_POST["phone_number"]."', '".$_POST["comments_questions"]."')";
+
+            $conn->query($sql);
+        }
+    }
+
+    function showError($field, $text)
+    {
+        if(isset($GLOBALS["errors"]) && isset($GLOBALS["errors"][$field]))
+        {
+            $errors = $GLOBALS["errors"];
+            echo $errors[$field] . '" style= "border: 1px solid red; ';
+        }
+        else
+        {
+            $temp = "";
+
+            if(isset($_POST[$field]))
+            {
+                $temp = $_POST[$field];
+            }
+            echo $text . '" value="'.$temp.'"';
+        }
+    }?>
 
     <link href="css/contactStyle.css" rel="stylesheet">
-    
-    <script src="js/contactValidation.js"></script>
     
     <title>Contact</title>
 
@@ -23,16 +61,16 @@
 
         <section>
             <div class="form-wrapper"  style="float:left">
-                <form id="contact-form" method="post"  autocomplete="on" onsubmit="return checkForErrors()" action="">
-                    <input class="name required" type="text" placeholder="First Name" name="first_name">
-                    <input class="name required" type="text" placeholder="Last Name" name="last_name"><br>
-                    <input class="required" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email Address" name="email_address"><br>
-                    <input type="tel" placeholder="Phone Number" name="phone_number"><br>
+                <form id="contact-form" method="post" autocomplete="on" action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>">
+                    <input class="name" type="text" placeholder="<?php showError('first_name', "First Name") ?>" name="first_name" required>
+                    <input class="name" type="text" placeholder="<?php showError('last_name', "Last Name") ?>" name="last_name" required><br>
+                    <input class="" type="email" placeholder="<?php showError('email_address', "Email") ?>" name="email_address" required><br>
+                    <input type="tel" placeholder="<?php showError('phone_number', "Phone Number")?>" name="phone_number" required><br>
                     <input class="name" type="text" readonly name="latitude" id="latitude" value="Latitude: ">
                     <input class="name" type="text" readonly name="longitude" id="longitude" value="Longitude: "><br>
                     <input type="text" id="date" readonly><br>
-                    <textarea class="required" rows="5" cols="50" placeholder="Comments/Questions" name="comments_questions"></textarea><br>
-                    <input type="submit" value="SEND">
+                    <textarea class="" rows="5" cols="50" required placeholder="<?php showError('comments_questions', "Comments/Questions") ?>" name="comments_questions"></textarea><br>
+                    <input type="submit" name="submit" value="SEND">
                 </form>
             </div>
 
