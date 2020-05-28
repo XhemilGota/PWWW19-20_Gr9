@@ -33,11 +33,10 @@
 
             $sql = "SELECT adminStatus
             FROM users
-            WHERE (username = '$myusername' or email = '$myusername') and password = '$mypassword'";
+            WHERE username = '$myusername' and password = '$mypassword'";
 
             $result = mysqli_query($conn,$sql);
             $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-            $active = $row['active'];
 
             $adminStatus = $row['adminStatus'];
 
@@ -52,7 +51,7 @@
             }
             else
             {
-                $error = "Invalid Username or Password!";
+                $error = "Username and Password don't match!";
             }
         }
 

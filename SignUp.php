@@ -34,10 +34,6 @@ if(isset($_POST['submit']))
         {
             $message = "<p>You signed up successfully</p><p><a href='LoginPage.php'>Click here to login</a></p>";
         }
-        else
-        {
-            $message = "This username already exists";
-        }
     }
 }
     function showError($field, $text)

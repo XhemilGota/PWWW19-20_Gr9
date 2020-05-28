@@ -1,16 +1,12 @@
 <?php
 session_start();
 
-?>
-
-<?php
 if(isset($_POST["log-out-submit"]))
 {
     $_SESSION = [];
-    header("location: LoginPage.php",true);
+    header("location: LoginPage.php");
 }
 ?>
-
 <header>
                 <div class='search'>
                     <input type='search' placeholder='Search by city' id='searchBar'>
@@ -47,6 +43,8 @@ if(isset($_POST["log-out-submit"]))
                             <!-- <li><a href='faq.php' id='faq'>FAQ</a></li>
                             <li><a href='Testimonials.php' id='testimonials'>TESTIMONIALS</a></li> -->
                             <li><a href='Contact.php' id='contact'>CONTACT</a></li>
+                            <?php if(isset($_SESSION["admin"]) && $_SESSION["admin"]==1) {
+                                echo '
                             <li>
                                 <a href="#" id="manageListings">MANAGE LISTINGS &#9660;</a>
                                 <ul>
@@ -54,7 +52,9 @@ if(isset($_POST["log-out-submit"]))
                                     <li><a href="update_listings.php">UPDATE</a></li>
                                     <li><a href="delete_listings.php">DELETE</a></li>
                                 </ul>
-                            </li>
+                            </li>';
+                            }
+                            ?>
                             <li><?php
                                 if(isset($_SESSION["login_user"]))
                                 {
@@ -76,9 +76,7 @@ if(isset($_POST["log-out-submit"]))
                                 {
                                     echo '<a href=\'LoginPage.php\' id=\'login\'>LOG IN</a>';
                                 }
-
-                                ?>
-                            </li>
+                                ?></li>
                         </ul>
                     </nav>
                     <p class='caption'>Do you wanna buy a home? We make it possible.</p>
