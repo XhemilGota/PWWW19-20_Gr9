@@ -11,8 +11,46 @@
         
         <title>Sell</title>
 
-    </head>
+    
+<?php 
+    require_once("validator/SellValidator.php");
 
+    if(isset($_POST['submit']))
+    {
+        $validatorObj = new SellValidator;
+
+        $errors = $validatorObj -> getErrors();
+
+        if(count($errors) == 0)
+        {
+            require_once("configDB.php");
+
+            $conn = Database::getConnection();
+
+
+        }
+    }
+
+    function showError($field, $text)
+    {
+        if(isset($GLOBALS["errors"]) && isset($GLOBALS["errors"][$field]))
+        {
+            $errors = $GLOBALS["errors"];
+            echo $errors[$field] . '" style= "border: 1px solid red; ';
+        }
+        else
+        {
+            $temp = "";
+
+            if(isset($_POST[$field]))
+            {
+                $temp = $_POST[$field];
+            }
+            echo 'Enter '. $text . '" value="'.$temp.'"';
+        }
+    }
+?>
+</head>
     <body>
         <div id="body-part">
             <!--Wrapper div used to work with this part as a whole-->
@@ -30,23 +68,19 @@
             </div>       
             
             <div class="leftdiv" style="width:50%; float:left;">
-                <form action="" method="post" id="sell" onsubmit="return checkForErrors()" autocomplete="on">
-
-                <keygen name=="security" keytype="rsa"></keygen>
+                <form action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" id="sell" autocomplete="on">
                 <section>
                     <h2>Contact Information</h2>
-                    
                     <table>
                         <tr>
-                            <td><abbr class="message" title=""><input type="text" placeholder="Full name" name="Full name" class="required"></abbr></td>
+                            <td><abbr class="message" title=""><input type="text" placeholder="<?php showError('FullName', "Full Name") ?>" required name="FullName" ></abbr></td>
                         </tr>
                         <tr>
-                            <td><abbr class="message" title=""><input type="tel" placeholder="Phone" name="Phone" class="required"></abbr></td>
+                            <td><abbr class="message" title=""><input type="tel" placeholder="<?php showError('Phone', "Phone") ?>" required name="Phone" ></abbr></td>
                         </tr>
                         <tr>
-                            <td><abbr class="message" title=""><input type="email" placeholder="Email" name="email" class="required"></abbr></td>
+                            <td><abbr class="message" title=""><input type="email" placeholder="<?php showError('email', "email") ?>" required name="email" ></abbr></td>
                         </tr>
-                        
                     </table>
                 </section>
                 
@@ -55,15 +89,14 @@
                     
                     <table>
                         <tr>
-                            <td colspan="2"><abbr class="message" title=""><input type="text"  name="adress1" placeholder="Street Address" class="required" autocomplete="off"></abbr></td>
+                            <td colspan="2"><abbr class="message" title=""><input type="text"  name="address1" placeholder="<?php showError('address1', "address") ?>" required  autocomplete="off"></abbr></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="text"  name="adress1" placeholder="Street Address 2" autocomplete="off"></td>
+                            <td colspan="2"><input type="text"  name="address2" placeholder="<?php showError('address2', "address2") ?>" required autocomplete="off"></td>
                         </tr>
                         <tr>
-                            
                             <td>
-                               <abbr class="message" title=""> <input type="text"  list="city" name="city" placeholder="City" class="halflength required" autocomplete="off"></abbr>
+                               <abbr class="message" title=""> <input type="text"  list="city" name="city" placeholder="<?php showError('city', "city") ?>" required class="halflength required" autocomplete="off"></abbr>
                                 <datalist id="city">
                                 <option value="New York">
                                 <option value="San Francisco">
@@ -81,7 +114,7 @@
                                                         
                                 <td >Bedrooms:
                                     <p>
-                                        <abbr class="message" title=""><select class="halflength required" name="bedrooms">
+                                        <abbr class="message" title=""><select class="halflength required" name="bedrooms" placeholder="<?php showError('bedrooms', "bedrooms") ?>" required>
                                             <option></option>
                                             <option>1</option>
                                             <option>2</option>
@@ -99,7 +132,7 @@
                                 </td>
                                 <td>Bathrooms:
                                     <p>
-                                        <abbr class="message" title=""><select class="halflength required" name="bathrooms">
+                                        <abbr class="message" title=""><select class="halflength required" name="bathrooms" placeholder="<?php showError('bathrooms', "bathrooms") ?>" required> 
                                             <option></option>
                                             <option>1</option>
                                             <option>2</option>
@@ -165,7 +198,7 @@
                         <tr>
                                 <td colspan="2">
                                     How many years have you owned this home:
-                                    <p><input type="number" name="how many years" autocomplete="off"></p>
+                                    <p><input type="number" name="how many years" autocomplete="off" min="0"></p>
                                 </td>
                         </tr>
                         <tr>
@@ -177,7 +210,7 @@
                         <tr>
                                 <td colspan="2">
                                     How long has the property been for sale?
-                                    <p><input class="halflength" type="number" name="how long" autocomplete="off"></p>
+                                    <p><input class="halflength" type="number" name="how long" autocomplete="off" min="0"></p>
                                 </td>
                         </tr>
                     </table>
@@ -210,7 +243,7 @@
                 </script>
                 
                 <section>
-                    <input type="submit" id="submit" value="SUBMIT" >
+                    <input name="submit" type="submit" id="submit" value="SUBMIT" >
                 </section>
                 
                 </form>
