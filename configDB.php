@@ -11,12 +11,21 @@ class Database{
   
         $conn = null;
 
-        $conn = mysqli_connect(self::host, self::username, self::password, self::db_name);
 
-        if (!$conn) 
+        try
         {
-            die("Connection failed: " . mysqli_connect_error());
+            if ($conn = mysqli_connect(self::host, self::username, self::password, self::db_name))
+            {}
+            else
+            {
+                throw new Exception('Unable to connect');
+            }
         }
+        catch(Exception $e)
+        {
+            echo $e->getMessage();
+        }
+
 
         return $conn;
     }
