@@ -14,7 +14,20 @@ if(isset($_POST["log-out-submit"]))
 <header>
                 <div class='search'>
                     <input type='search' placeholder='Search by city' id='searchBar'>
-                    <input type='button' value='SEARCH' id='searchButton' onclick='search(); window.location.href = 'Buy_Page1.html';'>
+
+                    <input type='button' value='SEARCH' id='searchButton' onclick='search();'>
+                    <script>
+                      function search()
+                      {
+                        var x = document.getElementById("searchBar").value;
+                        if(x.length>=3)
+                        {window.location.href = 'Buy_Page1.php?city='+x+"&submit=Search";}
+                        else
+                        {
+                          window.location.href = 'Buy_Page1.php?city=error'+"&submit=Search";
+                        }
+                      }
+                    </script>
                 </div>
                 
                 <div class='title'>
@@ -34,8 +47,6 @@ if(isset($_POST["log-out-submit"]))
                             <!-- <li><a href='faq.php' id='faq'>FAQ</a></li>
                             <li><a href='Testimonials.php' id='testimonials'>TESTIMONIALS</a></li> -->
                             <li><a href='Contact.php' id='contact'>CONTACT</a></li>
-                            <?php if(isset($_SESSION["admin"]) && $_SESSION["admin"]==1) {
-                                echo '
                             <li>
                                 <a href="#" id="manageListings">MANAGE LISTINGS &#9660;</a>
                                 <ul>
@@ -43,9 +54,7 @@ if(isset($_POST["log-out-submit"]))
                                     <li><a href="update_listings.php">UPDATE</a></li>
                                     <li><a href="delete_listings.php">DELETE</a></li>
                                 </ul>
-                            </li>';
-                            }
-                            ?>
+                            </li>
                             <li><?php
                                 if(isset($_SESSION["login_user"]))
                                 {

@@ -106,8 +106,12 @@
             </select>
             </div>
             <input type="submit" id="submit" name="submit" value="Search">
+             
+            
+
         </section>
-        </form>
+        
+
         
         <p id="write"></p>
         
@@ -154,7 +158,9 @@
                 }
                 $result = mysqli_query($conn, $sql);
                 $number_of_results = mysqli_num_rows($result);
-                $results_per_page = 12;
+                $results_per_page = isset($_GET['items']) && ($_GET['items'] == 6 || $_GET['items'] == 9 ||
+                $_GET['items'] == 12 || $_GET['items'] == 24) ? $_GET['items'] : 12;
+                $results_per_page=(int)$results_per_page;
                 $number_of_pages = ceil($number_of_results/$results_per_page);
                 if (!isset($_GET['page']))$page = 1;
                 else $page = $_GET['page'];
@@ -217,19 +223,51 @@
                     if(preg_match("/{$search}/i", $a)) {
                         $a = substr($a, 11);
                     }
-                }                
+                } 
+                               
                 echo '<a class="buyPageNavigator" href="Buy_Page1.php?page=' . $page . "&$a". '">' . $page . '</a> ';                
             }
+            ?>
+
+            <select onchange="items_Per_Page1()" name="items" id="itemsPerPage" style="float:right;">
+                    <option >Items Per Page</option>
+                    <option>6</option>
+                    <option>9</option>
+                    <option>12</option>
+                    <option>24</option>
+                </select>
+            <script>
+                function items_Per_Page1()
+                {
+                    var nr = document.getElementById("itemsPerPage").value;
+                    window.location.href
+                    var str = window.location.href;
+                    if(str.indexOf("items")!=-1)
+                    {   
+                        n = str.indexOf("items");
+                        var s = str.substring(0,n)
+                        s+="items="+nr;
+                        window.location.href=s;
+                    }
+
+                    else document.getElementById("submit").click();
+                }
+            </script>
+                <?php
             echo"</div>";
                 ?>                
+            
+               
             </div>
         </section>
+        </form>
     </div>
 </div>
 
 
         <?php include("footer.php");?>
         <script src="js/general.js" onload="changeColorOfMenu('buy')"></script>
+
 
     </body>
 </html>

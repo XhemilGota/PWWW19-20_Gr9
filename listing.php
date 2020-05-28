@@ -117,7 +117,6 @@
         <p id="descriptionText"><?php echo $listing_data['description'] ?></p>
 
         <p>If you're interested in this property, then <a href=<?php echo '"interestedContact.php?Id=' . $listing_ID . '"'?> id="descriptionContact" target="blank">Contact Us</a></p>
-        <p>Did you like this? Then check our <a href="top10.html">top 10 houses</a> this year.</p>
         </div>
     </div>
 
